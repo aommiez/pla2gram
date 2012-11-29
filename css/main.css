@@ -62,6 +62,6 @@ body
     box-shadow: 0 0 1em #352F2A;
     opacity: 0.8;
 }
-#filters img:hover{opacity:1;cursor:pointer;}
+#filters img:hover{cursor:pointer;}
 
 .upload{background:#7c7264;padding:10px;color:#fff;font-weight:bold;border:3px solid #514a40;border-radius:8px;width: 80px;}

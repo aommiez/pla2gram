@@ -59,13 +59,13 @@ class SiteController extends Controller
         }
         else
         {
-            echo "Upload: " . $_FILES["file"]["name"] . "<br>";
-            echo "Type: " . $_FILES["file"]["type"] . "<br>";
-            echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
-            echo "Stored in: " . $_FILES["file"]["tmp_name"];
-            echo "<br>Filter : " . $_POST['filter'];
-            $rd = rand(10,10000);
-            Helper::redir("/?p=".$rd,0);
+            $min_rand=rand(0,1000);
+            $max_rand=rand(100000000000,10000000000000000);
+            $name_file=rand($min_rand,$max_rand);//this part is for creating random name for image
+            $ext=end(explode(".", $_FILES["file"]["name"]));//gets extension
+            move_uploaded_file($_FILES["file"]["tmp_name"],Yii::app()->request->baseUrl."photo/".$name_file.".".$ext );
+
+            Helper::redir("/?p=".$_FILES["file"]["name"],0);
         }
 
     }
