@@ -3,18 +3,26 @@
 
 $this->pageTitle=Yii::app()->name;
 ?>
+<form action="site/go" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="filter" value="">
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+    <div class="headText">1. Select Image</div>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
+    <input type="file" name="file" value="" class="upload" onchange="this.style.width = '100%';" >
 
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-</ul>
+    <div class="headText">2. Select Filter</div>
 
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+    <div id="filters">
+        <img data-filter="lomo" alt="" src="images/lomo.png" style="-webkit-transform: rotate(-5deg);">
+        <img data-filter="nashville" alt="" src="images/nashville.png" style="-webkit-transform: rotate(1deg);">
+        <img data-filter="kelvin" alt="" src="images/kelvin.png" style="-webkit-transform: rotate(-4deg);">
+        <img data-filter="toaster" alt="" src="images/toaster.png" style="-webkit-transform: rotate(11deg);">
+        <img data-filter="gotham" alt="" src="images/gotham.png" style="-webkit-transform: rotate(-11deg);">
+        <img data-filter="tilt_shift" alt="" src="images/tilt_shift.png" style="-webkit-transform: rotate(8deg);">
+    </div>
+
+    <div class="headText">3. Upload &amp; Process</div>
+
+    <button class="button" type="submit">Go!</button>
+
+</form>
