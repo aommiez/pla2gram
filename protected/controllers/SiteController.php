@@ -59,13 +59,18 @@ class SiteController extends Controller
         }
         else
         {
+            $f = $_POST['filter'];
             $min_rand=rand(0,1000);
             $max_rand=rand(100000000000,10000000000000000);
             $name_file=rand($min_rand,$max_rand);//this part is for creating random name for image
             $ext=end(explode(".", $_FILES["file"]["name"]));//gets extension
+            $file = Yii::app()->request->baseUrl."photo/".$name_file.".".$ext;
             move_uploaded_file($_FILES["file"]["tmp_name"],Yii::app()->request->baseUrl."photo/".$name_file.".".$ext );
-
-            Helper::redir("/?p=".$_FILES["file"]["name"],0);
+            chmod($file, 0777);
+            $filter = Instagraph::factory(Yii::app()->request->baseUrl."photo/".$name_file.".".$ext,Yii::app()->request->baseUrl."photo/".$name_file.".".$ext);
+            $filter->$f();
+            echo "<img src=\"{$file}\">";
+            //Helper::redir("/?p=".Yii::app()->request->baseUrl."photo/".$name_file.".".$ext,0);
         }
 
     }
