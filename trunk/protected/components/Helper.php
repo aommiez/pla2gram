@@ -171,6 +171,17 @@ class Helper {
         }
     }
 
+    public static function execute($command)
+    {
+        # remove newlines and convert single quotes to double to prevent errors
+        $command = str_replace(array("\n", "'"), array('', '"'), $command);
+        # replace multiple spaces with one
+        $command = preg_replace('#(\s){2,}#is', ' ', $command);
+        # escape shell metacharacters
+        $command = escapeshellcmd($command);
+        # execute convert program
+        exec($command);
+    }
 
 
 }
