@@ -67,7 +67,7 @@ class SiteController extends Controller
             $file = Yii::app()->request->baseUrl."photo/".$name_file.".".$ext;
             move_uploaded_file($_FILES["file"]["tmp_name"],Yii::app()->request->baseUrl."photo/".$name_file.".".$ext );
             chmod($file, 0777);
-            $filter = Instagraph::factory(Yii::app()->request->baseUrl."photo/".$name_file.".".$ext,Yii::app()->request->baseUrl."photo/".$name_file.".".$ext);
+            $filter = Instagraph::factory($file,$file);
             $filter->$f();
             echo "<img src=\"{$file}\">";
             //Helper::redir("/?p=".Yii::app()->request->baseUrl."photo/".$name_file.".".$ext,0);
