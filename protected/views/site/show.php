@@ -43,10 +43,6 @@ HTML;
 }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<meta name=”title” content=”Powered By PLA2GRAM.COM” />
-<meta name=”description” content=”Pla2gram.com ” />
-<link rel=”image_src” href=”http://www.pla2gram.com/<?php echo $link; ?>” />
-
 <style>
     #photo_img {
         -moz-box-shadow: 0 0 5px #888;
