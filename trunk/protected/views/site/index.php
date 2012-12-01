@@ -35,6 +35,7 @@ $this->pageTitle=Yii::app()->name;
         });
     });
 </script>
+
 <form id="goForm" action="site/go" method="post" enctype="multipart/form-data">
     <input type="hidden" name="filter" id="filter" value="">
 
