@@ -69,10 +69,24 @@ class SiteController extends Controller
             chmod($file, 0777);
             $filter = Instagraph::factory($file,$file);
             $filter->$f();
-            echo "<img src=\"/{$file}\">";
-            //Helper::redir("/?p=".Yii::app()->request->baseUrl."photo/".$name_file.".".$ext,0);
+            $photo = new Photo;
+            $photo->link = $file;
+            $photo->ip = $_SERVER['REMOTE_ADDR'];
+            if ($photo->save()) {
+                $id = $photo->id;
+                Helper::redir("/?p=".$id,0);
+            } else {
+                print_r($photo->getErrors());
+            }
+
+            //Helper::redir("/?p=".$id,0);
         }
 
+    }
+
+    public function getPhoto($id) {
+        $photo = Photo::model()->find("id = ".$id);
+        return $photo;
     }
 
 }
