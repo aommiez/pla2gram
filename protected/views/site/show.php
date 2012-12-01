@@ -14,6 +14,13 @@ $id = $photo['id'];
 $link = $photo['link'];
 $ip = $photo['ip'];
 $timeCreate = $photo['timeCreate'];
+
+?>
+<a href="http://www.facebook.com/sharer.php?u=http://www.pla2gram.com/p?=<?php echo $id; ?>&t=PhotoID:<?php echo $id; ?>" target=”_blank”>
+Share this post/page title
+</a>
+
+<?php
 echo <<<HTML
     <div>
         <div id="photo"><img src="/{$link}" id="photo_img"></div>
@@ -21,6 +28,11 @@ echo <<<HTML
     </div>
 HTML;
 ?>
+
+<meta name=”title” content=”Powered By PLA2GRAM.COM” />
+<meta name=”description” content=”Pla2gram.com ” />
+<link rel=”image_src” href=”http://www.pla2gram.com/<?php echo $link; ?>” />
+
 <style>
     #photo_img {
         -moz-box-shadow: 0 0 5px #888;
