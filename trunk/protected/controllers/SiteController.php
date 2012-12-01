@@ -69,7 +69,7 @@ class SiteController extends Controller
             chmod($file, 0777);
             $filter = Instagraph::factory($file,$file);
             $filter->$f();
-            echo "<img src=\"{$file}\">";
+            echo "<img src=\"/{$file}\">";
             //Helper::redir("/?p=".Yii::app()->request->baseUrl."photo/".$name_file.".".$ext,0);
         }
 
