@@ -16,9 +16,14 @@ $ip = $photo['ip'];
 $timeCreate = $photo['timeCreate'];
 
 ?>
-<a href="http://www.facebook.com/sharer.php?u=http://www.pla2gram.com/p?=<?php echo $id; ?>&t=PhotoID:<?php echo $id; ?>" target=”_blank”>
-Share this post/page title
-</a>
+<div id="share">
+    <fb:share-button class="meta">
+        <meta name="title" content="PLA2GRAM.COM"/>
+        <meta name="description" content="Read the Static FBML Bible and Rejoice!"/>
+        <link rel="image_src" href="http://www.pla2gram.com/<?php echo $link; ?>"/>
+        <link rel="target_url" href="http://www.pla2gram.com/?p=<?php echo $id; ?>"/>
+    </fb:share-button>
+</div>
 
 <?php
 echo <<<HTML
@@ -28,6 +33,15 @@ echo <<<HTML
     </div>
 HTML;
 ?>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1"; // appId must be valid
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
 
 <meta name=”title” content=”Powered By PLA2GRAM.COM” />
 <meta name=”description” content=”Pla2gram.com ” />
@@ -51,4 +65,5 @@ HTML;
         font-size: 14px;
         color: white;
     }
+
 </style>
