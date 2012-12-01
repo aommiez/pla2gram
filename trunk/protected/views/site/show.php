@@ -1,12 +1,7 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: aOmMiez ( Mir4ge )
- * Date: 11/29/12 AD
- * Time: 12:23 PM
- * Email : aommiez@gmail.com
- * File Name : show.php
- */
 
 $photo = Yii::app()->getController();
 $photo = $photo->getPhoto($p);
@@ -16,6 +11,10 @@ $ip = $photo['ip'];
 $timeCreate = $photo['timeCreate'];
 
 ?>
+<meta property="og:title" content="PLA2GRAM.COM" />
+<meta property="og:description" content="Read the Static FBML Bible and Rejoice!" />
+<meta property="og:image" content="http://www.pla2gram.com/<?php echo $link; ?>" />
+
 <div id="share">
     <fb:share-button class="meta">
         <meta name="title" content="PLA2GRAM.COM"/>
