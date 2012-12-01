@@ -26,9 +26,11 @@ HTML;
         -moz-box-shadow: 0 0 5px #888;
         -webkit-box-shadow: 0 0 5px#888;
         box-shadow: 0 0 5px #888;
+        max-width: 900px;
     }
     #photo , #timeCreate {
         text-align: center;
+
     }
     #timeCreate {
         margin-top: 10px;
