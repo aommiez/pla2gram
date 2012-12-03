@@ -69,6 +69,11 @@ class SiteController extends Controller
             chmod($file, 0777);
             $filter = Instagraph::factory($file,$file);
             $filter->$f();
+
+            $im = new Imagick($file);
+            $im->thumbnailImage(130);
+            $im->writeImage("thumb_".$name_file.".".$ext);
+
             $photo = new Photo;
             $photo->link = $file;
             $photo->ip = $_SERVER['REMOTE_ADDR'];

@@ -17,7 +17,7 @@ $timeCreate = $photo['timeCreate'];
     <fb:share-button class="meta">
         <meta name="title" content="PLA2GRAM.COM"/>
         <meta name="description" content="Read the Static FBML Bible and Rejoice!"/>
-        <link rel="image_src" href="http://www.code-digital.co.uk/preview.jpg"/>
+        <link rel="image_src" href="http://www.pla2gram.com/<?php echo $link; ?>"/>
         <link rel="target_url" href="http://www.pla2gram.com/?p=<?php echo $id; ?>"/>
     </fb:share-button>
 </div>
