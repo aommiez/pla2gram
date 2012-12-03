@@ -19,13 +19,11 @@ $image=urlencode("http://www.pla2gram.com/thumb/thumb_".$thumb);
 ?>
 
 
-<a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">
-    Insert text or an image here.
+<a id="btn_fbshare" onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">
+   <img src="images/fb32.png"> <?php echo Helper::fb_count($id); ?>
 </a>
 
-<div id="fbcount">
-    <?php	echo Helper::fb_count($id) ?>
-</div>
+
 <?php
 echo <<<HTML
     <div>
@@ -64,5 +62,27 @@ HTML;
     }
 
 
+    a{
+        text-decoration: none;
+    }
+#btn_fbshare {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #3B5998;
+    padding: 10px 8px;
+    background: -moz-linear-gradient( top, white 0%, white);
+    background: -webkit-gradient( linear, left top, left bottom, from(white), to(white));
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 0px solid black;
+    -moz-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 0px rgba(076,189,255,0);
+    -webkit-box-shadow: 0px 1px 3px rgba(000, 000, 000, 0.5), inset 0px 0px 0px rgba(076, 189, 255, 0);
+    box-shadow: 0px 1px 3px rgba(000, 000, 000, 0.5), inset 0px 0px 0px rgba(076, 189, 255, 0);
+    text-shadow: 0px -1px 3px rgba(255, 255, 255, 0.8), 0px 1px 0px rgba(255, 255, 255, 0.3);
+    line-height: 29px;
+    vertical-align: bottom;
+    font-size: 20px;
+}
 
 </style>
