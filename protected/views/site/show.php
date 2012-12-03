@@ -13,7 +13,7 @@ $thumb = str_replace("photo/","",$link);
 
 $title=urlencode("PLA2GRAM.COM : make your photo");
 $url=urlencode("http://www.pla2gram.com/?p=".$id);
-$summary=urlencode("แต่งรูปสวย ด้วยมือเรา 555+");
+$summary=urlencode("เว็บแต่งภาพสไตล์ retro ");
 $image=urlencode("http://www.pla2gram.com/thumb/thumb_".$thumb);
 
 ?>
