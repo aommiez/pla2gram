@@ -71,8 +71,8 @@ class SiteController extends Controller
             $filter->$f();
 
             $im = new Imagick($file);
-            $im->thumbnailImage(130);
-            $im->writeImage("thumb_".$name_file.".".$ext);
+            $im->thumbnailImage(130,110);
+            $im->writeImage(Yii::app()->request->baseUrl."thumb/thumb_".$name_file.".".$ext);
 
             $photo = new Photo;
             $photo->link = $file;
