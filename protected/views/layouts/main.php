@@ -21,7 +21,7 @@ Helper::register('jquery-1.8.3.min.js');
 
 <body>
 <div class="container" id="page">
-    <div id="logo"><a href="http://www.pla2gram.com" style="color: #ffffff">PLA2GRAM.COM</a></div>
+    <div id="logo"><a href="http://www.pla2gram.com" style="color: #ffffff;text-decoration: none;">PLA2GRAM.COM</a></div>
 
 	<?php echo $content; ?>
     <div id="footer">Copyright © 2011-2012 Pla2.Com All Rights Reserved ( Powered By Pla2.Com )</div>
