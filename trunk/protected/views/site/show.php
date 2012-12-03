@@ -20,7 +20,7 @@ $image=urlencode("http://www.pla2gram.com/thumb/thumb_".$thumb);
 
 
 <a id="btn_fbshare" onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">
-   <img src="images/fb32.png"> <?php echo Helper::fb_count($id); ?>
+   <img src="images/fb32.png"> Share
 </a>
 
 
