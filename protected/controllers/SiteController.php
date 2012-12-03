@@ -84,10 +84,7 @@ class SiteController extends Controller
             } else {
                 print_r($photo->getErrors());
             }
-
-            //Helper::redir("/?p=".$id,0);
         }
-
     }
 
     public function getPhoto($id) {
