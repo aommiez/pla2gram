@@ -51,7 +51,9 @@ HTML;
     }
     #photo , #timeCreate {
         text-align: center;
-
+    }
+    #photo {
+        margin-top: 16px;
     }
     #timeCreate {
         margin-top: 10px;
