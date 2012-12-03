@@ -10,18 +10,22 @@ $link = $photo['link'];
 $ip = $photo['ip'];
 $timeCreate = $photo['timeCreate'];
 $thumb = str_replace("photo/","",$link);
+
+$title=urlencode("PLA2GRAM.COM : make your photo");
+$url=urlencode("http://www.pla2gram.com/?p=".$id);
+$summary=urlencode("แต่งรูปสวย ด้วยมือเรา 555+");
+$image=urlencode("http://www.pla2gram.com/thumb/thumb_".$thumb);
+
 ?>
 
 
-<div id="share">
-    <fb:share-button class="meta">
-        <meta name="title" content="PLA2GRAM.COM"/>
-        <meta name="description" content="Read the Static FBML Bible and Rejoice!"/>
-        <link rel="image_src" href="http://www.pla2gram.com/thumb/thumb_<?php echo $thumb; ?>"/>
-        <link rel="target_url" href="http://www.pla2gram.com/?p=<?php echo $id; ?>"/>
-    </fb:share-button>
-</div>
+<a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">
+    Insert text or an image here.
+</a>
 
+<div id="fbcount">
+    <?php	echo Helper::fb_count($id) ?>
+</div>
 <?php
 echo <<<HTML
     <div>
@@ -58,5 +62,7 @@ HTML;
         font-size: 14px;
         color: white;
     }
+
+
 
 </style>

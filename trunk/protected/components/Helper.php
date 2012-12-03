@@ -171,69 +171,18 @@ class Helper {
         }
     }
 
-    function _mirrorImage ( $imgsrc)
-    {
-        $width = imagesx ( $imgsrc );
-        $height = imagesy ( $imgsrc );
-
-        $src_x = $width -1;
-        $src_y = 0;
-        $src_width = -$width;
-        $src_height = $height;
-
-        $imgdest = imagecreatetruecolor ( $width, $height );
-
-        if ( imagecopyresampled ( $imgdest, $imgsrc, 0, 0, $src_x, $src_y, $width, $height, $src_width, $src_height ) )
-        {
-            return $imgdest;
+    public static function fb_count($id) {
+        $facebook = file_get_contents('http://api.facebook.com/restserver.php?method=links.getStats&urls=http://www.pla2gram.com/?p='.$id);
+        $fbbegin = '<share_count>'; $fbend = '</share_count>';
+        $fbpage = $facebook;
+        $fbparts = explode($fbbegin,$fbpage);
+        $fbpage = $fbparts[1];
+        $fbparts = explode($fbend,$fbpage);
+        $fbcount = $fbparts[0];
+        if($fbcount == '') {
+            $fbcount = '0';
         }
-
-        return $imgsrc;
-    }
-
-    function adjustPicOrientation($full_filename){
-        $exif = exif_read_data($full_filename);
-        if($exif && isset($exif['Orientation'])) {
-            $orientation = $exif['Orientation'];
-            if($orientation != 1){
-                $img = imagecreatefromjpeg($full_filename);
-
-                $mirror = false;
-                $deg    = 0;
-
-                switch ($orientation) {
-                    case 2:
-                        $mirror = true;
-                        break;
-                    case 3:
-                        $deg = 180;
-                        break;
-                    case 4:
-                        $deg = 180;
-                        $mirror = true;
-                        break;
-                    case 5:
-                        $deg = 270;
-                        $mirror = true;
-                        break;
-                    case 6:
-                        $deg = 270;
-                        break;
-                    case 7:
-                        $deg = 90;
-                        $mirror = true;
-                        break;
-                    case 8:
-                        $deg = 90;
-                        break;
-                }
-                if ($deg) $img = imagerotate($img, $deg, 0);
-                if ($mirror) $img = _mirrorImage($img);
-                $full_filename = str_replace('.jpg', "-O$orientation.jpg",  $full_filename);
-                imagejpeg($img, $full_filename, 95);
-            }
-        }
-        return $full_filename;
+        return $fbcount;
     }
 
 
