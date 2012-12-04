@@ -72,7 +72,12 @@ class SiteController extends Controller
 
             if ( $orientation == 6 ) {
                 $imz = new Imagick($file);
-                //$imz->setimageorientation(1);
+                $imz->rotateimage("#FFF", 90);
+                $imz->writeImage($file);
+                chmod($file, 0777);
+            } else if ( $orientation == 8) {
+                $imz = new Imagick($file);
+                $imz->rotateimage("#FFF", -90);
                 $imz->writeImage($file);
                 chmod($file, 0777);
             }
