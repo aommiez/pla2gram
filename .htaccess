@@ -11,11 +11,11 @@ RewriteRule . index.php
 
 <Ifmodule mod_php4.c>
 	php_value error_log "/home/admin/__processed_stats/pla2gram.com.phplog"
-	php_value upload_max_filesize 100M
+	php_value upload_max_filesize 10000M
 	php_value max_execution_time  200
 	php_value max_input_time  200
 	php_value memory_limit  1024M
-	php_value post_max_size  100M
+	php_value post_max_size  10000M
 	php_flag register_globals  off
 	php_flag display_errors  off
 	php_flag file_uploads  on
@@ -34,11 +34,11 @@ RewriteRule . index.php
 
 <Ifmodule mod_php5.c>
 	php_value error_log "/home/admin/__processed_stats/pla2gram.com.phplog"
-	php_value upload_max_filesize 100M
+	php_value upload_max_filesize 10000M
 	php_value max_execution_time  200
 	php_value max_input_time  200
 	php_value memory_limit  1024M
-	php_value post_max_size  100M
+	php_value post_max_size  10000M
 	php_flag register_globals  off
 	php_flag display_errors  off
 	php_flag file_uploads  on
