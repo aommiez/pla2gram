@@ -47,7 +47,7 @@ HTML;
             echo <<<HTML
 <div id="userZone">
     <div id="fbImg">
-        <img src="https://graph.facebook.com/{$fbID}/picture"/>
+        <img src="http://graph.facebook.com/{$fbID}/picture"/>
     </div>
     <div id="fbNickname">
         {$fbNickname}
