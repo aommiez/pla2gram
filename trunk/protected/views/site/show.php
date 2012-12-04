@@ -30,8 +30,8 @@ $image=urlencode("http://www.pla2gram.com/thumb/thumb_".$thumb);
    <img src="images/fb32.png"> Share
 </a>
 
-<?php echo "http://www.pla2gram.com/thumb/thumb_".$thumb;?>
 
+<div class="fb-like" data-href="http://www.pla2gram.com/?p=<?php echo $id;?>" data-send="true" data-width="450" data-show-faces="true"></div>
 <?php
 echo <<<HTML
     <div>
@@ -40,15 +40,15 @@ echo <<<HTML
     </div>
 HTML;
 ?>
+
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1"; // appId must be valid
+    js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=405563946182604";
     fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <style>
     #photo_img {
