@@ -92,4 +92,6 @@ class SiteController extends Controller
         return $photo;
     }
 
+
+
 }

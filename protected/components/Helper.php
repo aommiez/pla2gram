@@ -173,7 +173,8 @@ class Helper {
 
     public static function fb_count($id) {
         $facebook = file_get_contents('http://api.facebook.com/restserver.php?method=links.getStats&urls=http://www.pla2gram.com/?p='.$id);
-        $fbbegin = '<share_count>'; $fbend = '</share_count>';
+        $fbbegin = '<share_count>';
+        $fbend = '</share_count>';
         $fbpage = $facebook;
         $fbparts = explode($fbbegin,$fbpage);
         $fbpage = $fbparts[1];
@@ -185,5 +186,8 @@ class Helper {
         return $fbcount;
     }
 
-
+    public static function last_upload ($limit){
+        $photo = Photo::model()->findAll(array('limit' => $limit, 'order' => 'id DESC'));
+        return $photo;
+    }
 }

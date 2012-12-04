@@ -65,3 +65,25 @@ body
 #filters img:hover{cursor:pointer;}
 
 .upload{background:#7c7264;padding:10px;color:#fff;font-weight:bold;border:3px solid #514a40;border-radius:8px;width: 80px;}
+#last_upload {
+    font-family: Droid Serif;
+    color: white !important;
+    margin: 15px 0;
+    text-shadow: 0 2px 0 #352F2A;
+    font-size: 26px;
+    border-bottom: 1px solid gray;
+    padding-bottom: 6px;
+}
+.last_ul {
+
+}
+.last_ul li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 14px;
+}
+.last_ul li img {
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+}
