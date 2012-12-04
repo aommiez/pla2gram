@@ -93,6 +93,7 @@ class SiteController extends Controller
         return $photo;
     }
 
+
     public function fixOrientation($imgSrc) {
         $exif = exif_read_data($imgSrc);
         $orientation = $exif['Orientation'];
@@ -108,5 +109,6 @@ class SiteController extends Controller
                 break;
         }
     }
+
 
 }
