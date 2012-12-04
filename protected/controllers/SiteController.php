@@ -100,6 +100,9 @@ class SiteController extends Controller
         return $photo;
     }
 
+    public function actionphpinfo() {
+        echo phpinfo();
+    }
 
 
 }
