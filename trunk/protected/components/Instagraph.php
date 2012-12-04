@@ -185,4 +185,11 @@ class Instagraph
         $this->output();
     }
 
+    public  function whiteBlack (){
+        $this->tempfile();
+        $this->execute("convert $this->_tmp -fill rgb(255,255,255) ");
+        $this->output();
+    }
+
+
 }
