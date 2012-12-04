@@ -67,14 +67,7 @@ class SiteController extends Controller
             $file = Yii::app()->request->baseUrl."photo/".$name_file.".".$ext;
             move_uploaded_file($_FILES["file"]["tmp_name"],Yii::app()->request->baseUrl."photo/".$name_file.".".$ext );
             chmod($file, 0777);
-            $exif = exif_read_data($file);
-            $orientation = $exif['Orientation'];
-            if ( $orientation == 6 ) {
-                $im = new Imagick($file);
-                $im->setimageorientation(1);
-                $im->writeImage($file);
-                chmod($file, 0777);
-            }
+
             $filter = Instagraph::factory($file,$file);
             $filter->$f();
 
