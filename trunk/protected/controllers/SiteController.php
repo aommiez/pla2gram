@@ -73,6 +73,7 @@ class SiteController extends Controller
                 $im = new Imagick($file);
                 $im->setimageorientation(1);
                 $im->writeImage($file);
+                chmod($file, 0777);
             }
             $filter = Instagraph::factory($file,$file);
             $filter->$f();
