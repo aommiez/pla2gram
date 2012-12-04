@@ -11,13 +11,16 @@ $ip = $photo['ip'];
 $timeCreate = $photo['timeCreate'];
 $thumb = str_replace("photo/","",$link);
 
-$title=urlencode("PLA2GRAM.COM : make your photo");
+$title=urlencode("PLA2GRAM.COM : Stylize your photo");
 $url=urlencode("http://www.pla2gram.com/?p=".$id);
 $summary=urlencode("เว็บแต่งภาพสไตล์ retro ");
 $image=urlencode("http://www.pla2gram.com/thumb/thumb_".$thumb);
 
 ?>
-
+<meta property="og:image" content="<?php echo "http://www.pla2gram.com/thumb/thumb_".$thumb; ?>"/>
+<meta property="og:url" content="<?php echo "http://www.pla2gram.com/?p=".$id; ?>"/>
+<meta property="og:title" content="PLA2GRAM.COM : Stylize your photo""/>
+<meta property="og:type" content="website"/>
 
 <a id="btn_fbshare" onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;&p[images][0]=<?php echo $image;?>', 'sharer', 'toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)">
    <img src="images/fb32.png"> Share
