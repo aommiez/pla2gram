@@ -69,14 +69,14 @@ class SiteController extends Controller
             chmod($file, 0777);
             $exif = exif_read_data($file);
             $orientation = $exif['Orientation'];
-            /*
+
             if ( $orientation == 6 ) {
-                $im = new Imagick($file);
-                $im->setimageorientation(1);
-                $im->writeImage($file);
-                chmod($file, 0777);
+                $imz = new Imagick($file);
+                $imz->setimageorientation(1);
+                //$imz->writeImage($file);
+                //chmod($file, 0777);
             }
-            */
+
             $filter = Instagraph::factory($file,$file);
             $filter->$f();
 
