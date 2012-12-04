@@ -25,20 +25,14 @@ Helper::register('jquery-1.8.3.min.js');
 <div class="container" id="page">
 
     <div id="logo"><a href="<?php echo "/";?>" style="color: #ffffff;text-decoration: none;">PLA2GRAM.COM</a></div>
-    <a id="do-fb-login">Connect</a>
-    <script>
-        document.getElementById('do-fb-login').onclick = function() {
-            FB.Connect.requireSession();
-        };
-    </script>
+
 	<?php
 
 
         if ( Yii::app()->facebook->getUser() == 0 ) {
             $params = array(
                 'scope' => 'email ,user_about_me, user_activities, user_likes, user_location ,user_photos, user_status, user_videos, friends_about_me, friends_likes, friends_photos, publish_actions , user_online_presence, publish_stream, offline_access , status_update , photo_upload , video_upload , publish_checkins',
-                'redirect_uri' => 'https://www.pla2gram.com/',
-                'display' => 'popup'
+                'redirect_uri' => 'https://www.pla2gram.com/'
             );
             $fbUrl = Yii::app()->facebook->getLoginUrl($params);
             echo <<<HTML
