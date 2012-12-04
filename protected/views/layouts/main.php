@@ -41,13 +41,13 @@ HTML;
         } else {
             $fbID = Yii::app()->facebook->getUser();
             $results = Yii::app()->facebook->api('/me');
-            $params = array( 'next' => 'https://www.pla2gram.com/' );
+            $params = array( 'next' => 'http://www.pla2gram.com/' );
             $fbUrl = Yii::app()->facebook->getLogoutUrl($params);
             $fbNickname = $results['name'];
             echo <<<HTML
 <div id="userZone">
     <div id="fbImg">
-        <img src="http://graph.facebook.com/{$fbID}/picture"/>
+        <img src="https://graph.facebook.com/{$fbID}/picture"/>
     </div>
     <div id="fbNickname">
         {$fbNickname}
