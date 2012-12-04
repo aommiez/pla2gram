@@ -40,6 +40,10 @@ Helper::register('jquery-1.8.3.min.js');
 HTML;
         } else {
             $fbID = Yii::app()->facebook->getUser();
+            $results = Yii::app()->facebook->api('/me');
+            echo "<pre>";
+            print_r($results);
+            echo "</pre>";
             echo <<<HTML
 <div id="userZone">
     <div id="fbImg">
