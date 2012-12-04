@@ -25,8 +25,11 @@ Helper::register('jquery-1.8.3.min.js');
 <div class="container" id="page">
 
     <div id="logo"><a href="<?php echo "/";?>" style="color: #ffffff;text-decoration: none;">PLA2GRAM.COM</a></div>
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
-	<?php echo $content; ?>
+
+	<?php
+        echo Yii::app()->facebook->getUser();
+        //echo $content;
+    ?>
     <div>
         <div id="last_upload">Last Upload</div>
         <div style="text-align: center;">
