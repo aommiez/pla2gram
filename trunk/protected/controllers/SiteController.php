@@ -29,6 +29,7 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
+        Yii::app()->facebook->initJs();
         if ( !empty($_GET['p'])) {
             $p = $_GET['p'];
             $this->render('show',array( 'p' => $p));
