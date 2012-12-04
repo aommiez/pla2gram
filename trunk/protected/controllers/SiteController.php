@@ -67,7 +67,13 @@ class SiteController extends Controller
             $file = Yii::app()->request->baseUrl."photo/".$name_file.".".$ext;
             move_uploaded_file($_FILES["file"]["tmp_name"],Yii::app()->request->baseUrl."photo/".$name_file.".".$ext );
             chmod($file, 0777);
-            //$this->fixOrientation($file);
+            $exif = exif_read_data($file);
+            $orientation = $exif['Orientation'];
+            if ( $orientation == 6 ) {
+                $im = new Imagick($file);
+                $im->setimageorientation(1);
+                $im->writeImage($file);
+            }
             $filter = Instagraph::factory($file,$file);
             $filter->$f();
 
@@ -81,7 +87,8 @@ class SiteController extends Controller
             $photo->ip = $_SERVER['REMOTE_ADDR'];
             if ($photo->save()) {
                 $id = $photo->id;
-                Helper::redir("/?p=".$id,0);
+                //echo $orientation;
+               // Helper::redir("/?p=".$id,0);
             } else {
                 print_r($photo->getErrors());
             }
@@ -93,22 +100,6 @@ class SiteController extends Controller
         return $photo;
     }
 
-
-    public function fixOrientation($imgSrc) {
-        $exif = exif_read_data($imgSrc);
-        $orientation = $exif['Orientation'];
-        $p = new Imagick($imgSrc);
-        switch($orientation) {
-            case 6: // rotate 90 degrees CW
-                $p->setimageorientation(90);
-                //$this->image->rotateimage("#FFF", 90);
-                break;
-            case 8: // rotate 90 degrees CCW
-                $p->setimageorientation(-90);
-                //$this->image->rotateimage("#FFF", -90);
-                break;
-        }
-    }
 
 
 }
