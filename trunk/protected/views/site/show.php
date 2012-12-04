@@ -2,7 +2,9 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <?php
-
+header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+header("Cache-Control: no-cache");
+header("Pragma: no-cache");
 $photo = Yii::app()->getController();
 $photo = $photo->getPhoto($p);
 $id = $photo['id'];
