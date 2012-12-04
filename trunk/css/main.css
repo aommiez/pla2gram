@@ -87,3 +87,18 @@ body
     -webkit-box-shadow: 0 0 5px#888;
     box-shadow: 0 0 5px #888;
 }
+#userZone {
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+#userZone img {
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+}
+#fbImg  {
+    display: inline-block;
+}
+#fbNickname {
+    display: inline-block;
+}
