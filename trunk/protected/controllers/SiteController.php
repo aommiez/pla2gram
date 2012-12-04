@@ -88,7 +88,7 @@ class SiteController extends Controller
             if ($photo->save()) {
                 $id = $photo->id;
                 //echo $orientation;
-               // Helper::redir("/?p=".$id,0);
+                Helper::redir("/?p=".$id,0);
             } else {
                 print_r($photo->getErrors());
             }
