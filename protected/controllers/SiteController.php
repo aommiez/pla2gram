@@ -72,9 +72,9 @@ class SiteController extends Controller
 
             if ( $orientation == 6 ) {
                 $imz = new Imagick($file);
-                $imz->setimageorientation(1);
-                //$imz->writeImage($file);
-                //chmod($file, 0777);
+                //$imz->setimageorientation(1);
+                $imz->writeImage($file);
+                chmod($file, 0777);
             }
 
             $filter = Instagraph::factory($file,$file);
