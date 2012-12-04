@@ -44,6 +44,7 @@ HTML;
         } else {
             echo $content;
         }
+        echo Yii::app()->facebook->getUser();
     ?>
     <div>
         <div id="last_upload">Last Upload</div>
