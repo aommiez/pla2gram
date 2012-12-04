@@ -65,7 +65,9 @@ class Instagraph
     }
     
     /** ACTIONS */
-    
+
+
+
     public function colortone($input, $color, $level, $type = 0)
     {
         $args[0] = $level;
