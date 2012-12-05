@@ -60,7 +60,7 @@ if ( Yii::app()->facebook->getUser() == 0 ) {
 HTML;
 } else {
     Helper::YiiImport("GetController");
-    $fbInfo = GetController::getFbUser();
+    //$fbInfo = GetController::getFbUser();
     $params = array( 'next' => 'http://www.pla2gram.com/' );
     $fbUrl = Yii::app()->facebook->getLogoutUrl($params);
     $fbNickname = $fbInfo['name'];
@@ -71,7 +71,7 @@ HTML;
 
     </div>
     <div id="fbNickname">
-        {$fbNickname}
+
     </div>
     <div>
         <a href="{$fbUrl}">Log Out Facebook !</a>
