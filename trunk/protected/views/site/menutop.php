@@ -59,9 +59,23 @@ if ( Yii::app()->facebook->getUser() == 0 ) {
             </a>
 HTML;
 } else {
+    Helper::YiiImport("GetController");
+    $fbInfo = GetController::getFbUser();
+    $params = array( 'next' => 'http://www.pla2gram.com/' );
+    $fbUrl = Yii::app()->facebook->getLogoutUrl($params);
+    $fbNickname = $fbInfo['name'];
+    $fbID = Yii::app()->facebook->getUser();
     echo <<<HTML
-            <a class="uibutton" href="{$fbUrl}">
-                LogOut Facebook !
-            </a>
+<div id="userZone">
+    <div id="fbImg">
+        <img src="https://graph.facebook.com/{$fbID}/picture"/>
+    </div>
+    <div id="fbNickname">
+        {$fbNickname}
+    </div>
+    <div>
+        <a href="{$fbUrl}">Log Out Facebook !</a>
+    </div>
+</div>
 HTML;
 }
