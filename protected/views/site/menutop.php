@@ -20,10 +20,17 @@ if ( Yii::app()->facebook->getUser() == 0 ) {
 HTML;
 } else {
     $fbID = Yii::app()->facebook->getUser();
-    $results = Yii::app()->facebook->api('/me');
+    $apiFbKey = md5(trim("Yii::app()->facebook->api($fbID)"));
+    if ( Yii::app()->cache->get($apiFbKey) == false ) {
+        $results = Yii::app()->facebook->api($fbID);
+        Yii::app()->cache->set($apiFbKey,$results,1800);
+        $fbInfo = $results;
+    } else {
+        $fbInfo = Yii::app()->cache->get($apiFbKey);
+    }
     $params = array( 'next' => 'http://www.pla2gram.com/' );
     $fbUrl = Yii::app()->facebook->getLogoutUrl($params);
-    $fbNickname = $results['name'];
+    $fbNickname = $fbInfo['name'];
     echo <<<HTML
 <div id="userZone">
     <div id="fbImg">
