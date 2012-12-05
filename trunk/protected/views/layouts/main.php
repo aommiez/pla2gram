@@ -32,7 +32,7 @@ Helper::register('jquery-1.8.3.min.js');
             echo $content;
     ?>
     <?php
-            echo $this->renderPartial('lastupload');
+            echo $this->renderPartial('lastUpload');
     ?>
 
     <div id="footer">Copyright © 2011-2012 Pla2.Com All Rights Reserved ( Powered By Pla2.Com )</div>
