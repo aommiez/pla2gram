@@ -59,7 +59,7 @@ if ( Yii::app()->facebook->getUser() == 0 ) {
             </a>
 HTML;
 } else {
-    Helper::YiiImport("GetController");
+    //Helper::YiiImport("GetController");
     //$fbInfo = GetController::getFbUser();
     $params = array( 'next' => 'http://www.pla2gram.com/' );
     $fbUrl = Yii::app()->facebook->getLogoutUrl($params);
