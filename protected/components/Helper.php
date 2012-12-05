@@ -186,8 +186,4 @@ class Helper {
         return $fbcount;
     }
 
-    public static function last_upload ($limit){
-        $photo = Photo::model()->findAll(array('limit' => $limit, 'order' => 'id DESC'));
-        return $photo;
-    }
 }

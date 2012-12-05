@@ -54,10 +54,14 @@ if ( Yii::app()->facebook->getUser() == 0 ) {
     );
     $fbUrl = Yii::app()->facebook->getLoginUrl($params);
     echo <<<HTML
-            <a href="{$fbUrl}">
-              <img src="http://static.ak.fbcdn.net/rsrc.php/z2Y31/hash/cxrz4k7j.gif">
+            <a class="uibutton" href="{$fbUrl}">
+                Login with Facebook
             </a>
 HTML;
 } else {
-    echo "Login with Facebook is ok !";
+    echo <<<HTML
+            <a class="uibutton" href="{$fbUrl}">
+                LogOut Facebook !
+            </a>
+HTML;
 }
