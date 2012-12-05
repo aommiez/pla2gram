@@ -63,7 +63,7 @@ HTML;
     //$fbInfo = Yii::app()->cache->get("1914d992522d74e424c262b7c18c0781");
     $params = array( 'next' => 'http://www.pla2gram.com/' );
     $fbUrl = Yii::app()->facebook->getLogoutUrl($params);
-    $fbNickname = $fbInfo['name'];
+    //$fbNickname = $fbInfo['name'];
     $fbID = Yii::app()->facebook->getUser();
     echo <<<HTML
 <div id="userZone">
@@ -71,7 +71,7 @@ HTML;
         <img src="https://graph.facebook.com/{$fbID}/picture"/>
     </div>
     <div id="fbNickname">
-        {$fbNickname}
+
     </div>
     <div>
         <a href="{$fbUrl}">Log Out Facebook !</a>
