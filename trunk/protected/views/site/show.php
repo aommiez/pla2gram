@@ -18,8 +18,13 @@ $image=urlencode("http://www.pla2gram.com/thumb/thumb_".$thumb);
 <?php
 echo <<<HTML
     <div>
-        <div id="photo"><img src="/{$link}" id="photo_img"></div>
-        <div id="timeCreate">Upload Time : {$timeCreate}</div>
+        <div id="showPhotoDiv">
+            <div id="photo"><img src="/{$link}" id="photo_img"></div>
+        </div>
+        <div id="showDetail">
+            <div>Photo By : test</div>
+            <div>Upload Time : {$timeCreate}</div>
+        </div>
     </div>
 HTML;
 ?>
