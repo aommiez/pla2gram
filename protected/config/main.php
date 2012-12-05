@@ -76,6 +76,13 @@ return array(
             //'image'=>'URL_TO_WEBSITE_LOGO',
             //),
         ),
+        'cache'=>array(
+            'class'=>'system.caching.CMemCache',
+            'servers'=>array(
+                array('host'=>'localhost', 'port'=>11211, 'weight'=>100),
+                //array('host'=>'localhost', 'port'=>11211, 'weight'=>40),
+            ),
+        ),
         /*
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
@@ -111,6 +118,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'admin@pla2gram.com',
 	),
 );

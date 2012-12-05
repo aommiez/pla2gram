@@ -1,7 +1,9 @@
 <?php
-/* @var $this SiteController */
-
 $this->pageTitle=Yii::app()->name;
+
+if ( Yii::app()->facebook->getUser() == 0) {
+    return false;
+}
 ?>
 <script type = "text/javascript">
     // Define the entry point
@@ -37,6 +39,7 @@ $this->pageTitle=Yii::app()->name;
 </script>
 
 <form id="goForm" action="site/go" method="post" enctype="multipart/form-data">
+
     <input type="hidden" name="filter" id="filter" value="">
 
     <div class="headText">1. Select Image</div>
