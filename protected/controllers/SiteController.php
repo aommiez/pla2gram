@@ -71,6 +71,38 @@ class SiteController extends Controller
             $exif = exif_read_data($file);
             $orientation = $exif['Orientation'];
 
+            // Max vert or horiz resolution
+            $maxsize=1200;
+
+            // create new Imagick object
+            $image = new Imagick($file);
+
+            // Resizes to whichever is larger, width or height
+            if($image->getImageHeight() <= $image->getImageWidth())
+            {
+            // Resize image using the lanczos resampling algorithm based on width
+                $image->resizeImage($maxsize,0,Imagick::FILTER_LANCZOS,1);
+            }
+            else
+            {
+            // Resize image using the lanczos resampling algorithm based on height
+                $image->resizeImage(0,$maxsize,Imagick::FILTER_LANCZOS,1);
+            }
+
+            // Set to use jpeg compression
+            $image->setImageCompression(Imagick::COMPRESSION_JPEG);
+            // Set compression level (1 lowest quality, 100 highest quality)
+            $image->setImageCompressionQuality(75);
+            // Strip out unneeded meta data
+            $image->stripImage();
+            // Writes resultant image to output directory
+            $image->writeImage($file);
+            // Destroys Imagick object, freeing allocated resources in the process
+            $image->destroy();
+            chmod($file, 0777);
+
+
+
             if ( $orientation == 6 ) {
                 $imz = new Imagick($file);
                 $imz->rotateimage("#FFF", 90);
