@@ -7,5 +7,18 @@
  * Email : aommiez@gmail.com
  * File Name : index.php
  */
+require 'instagraph.php';
+try
+{
+    $instagraph = Instagraph::factory('test.JPG', 'test_output.JPG');
+}
+catch (Exception $e)
+{
+    echo $e->getMessage();
+    die;
+}
+$instagraph->toaster(); // name of the filter
 
-$im = new Imagick("test.JPG");
+?>
+<img src="test.JPG"><br>
+<img src="test_output.JPG">
