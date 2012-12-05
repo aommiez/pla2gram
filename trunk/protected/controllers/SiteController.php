@@ -113,5 +113,9 @@ class SiteController extends Controller
         echo phpinfo();
     }
 
+    public function actionmenutop() {
+        $this->renderPartial("menutop");
+    }
+
 
 }
