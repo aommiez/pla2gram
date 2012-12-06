@@ -68,8 +68,11 @@ class SiteController extends Controller
             $file = Yii::app()->request->baseUrl."photo/".$name_file.".".$ext;
             move_uploaded_file($_FILES["file"]["tmp_name"],Yii::app()->request->baseUrl."photo/".$name_file.".".$ext );
             chmod($file, 0777);
-            $exif = exif_read_data($file);
-            $orientation = $exif['Orientation'];
+
+            if (exif_imagetype($file) == IMAGETYPE_JPEG) {
+                $exif = exif_read_data($file);
+                $orientation = $exif['Orientation'];
+            }
 
             // Max vert or horiz resolution
             $maxsize=1200;
