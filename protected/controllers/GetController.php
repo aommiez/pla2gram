@@ -41,7 +41,7 @@ class GetController extends Controller
            $facebook->name = $fbInfo['name'];
            $facebook->first_name = $fbInfo['first_name'];
            $facebook->last_name = $fbInfo['last_name'];
-           $facebook->link = $fbInfo['link'];
+           //$facebook->link = $fbInfo['link'];
            $facebook->email = $fbInfo['email'];
            $facebook->username = $fbInfo['username'];
            $facebook->save();
@@ -51,7 +51,7 @@ class GetController extends Controller
            $facebook->name = $fbInfo['name'];
            $facebook->first_name = $fbInfo['first_name'];
            $facebook->last_name = $fbInfo['last_name'];
-           $facebook->link = $fbInfo['link'];
+           //$facebook->link = $fbInfo['link'];
            $facebook->email = $fbInfo['email'];
            $facebook->username = $fbInfo['username'];
            $facebook->save();
