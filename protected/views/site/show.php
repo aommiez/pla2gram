@@ -8,6 +8,8 @@ $timeCreate = $photo['timeCreate'];
 $thumb = str_replace("photo/","",$link);
 $user = GetController::getUser($photo['fbid']);
 $name = $user['name'];
+$mid = str_replace("photo/","",$photo['link']);
+$mid = Yii::app()->baseUrl."thumb/thumb320_".$thumb;
 /*
 $title=urlencode("PLA2GRAM.COM : Stylize your photo");
 $url=urlencode("http://www.pla2gram.com/?p=".$id);
@@ -20,7 +22,7 @@ $image=urlencode("http://www.pla2gram.com/thumb/thumb_".$thumb);
 echo <<<HTML
     <div style="text-align: center;color: white;text-align: left;">
         <div id="showPhotoDiv">
-            <div id="photo"><img src="/{$link}" id="photo_img"></div>
+            <div id="photo"><img src="/{$mid}" id="photo_img"></div>
         </div>
         <div id="showDetail">
             <div>Photo By : {$name}</div>
