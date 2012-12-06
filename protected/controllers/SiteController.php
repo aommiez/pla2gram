@@ -72,6 +72,17 @@ class SiteController extends Controller
             if (exif_imagetype($file) == IMAGETYPE_JPEG) {
                 $exif = exif_read_data($file);
                 $orientation = $exif['Orientation'];
+                if ( $orientation == 6 ) {
+                    $imz = new Imagick($file);
+                    $imz->rotateimage("#FFF", 90);
+                    $imz->writeImage($file);
+                    chmod($file, 0777);
+                } else if ( $orientation == 8) {
+                    $imz = new Imagick($file);
+                    $imz->rotateimage("#FFF", -90);
+                    $imz->writeImage($file);
+                    chmod($file, 0777);
+                }
             }
 
             // Max vert or horiz resolution
@@ -107,17 +118,7 @@ class SiteController extends Controller
 
 
 
-            if ( $orientation == 6 ) {
-                $imz = new Imagick($file);
-                $imz->rotateimage("#FFF", 90);
-                $imz->writeImage($file);
-                chmod($file, 0777);
-            } else if ( $orientation == 8) {
-                $imz = new Imagick($file);
-                $imz->rotateimage("#FFF", -90);
-                $imz->writeImage($file);
-                chmod($file, 0777);
-            }
+
 
             $filter = Instagraph::factory($file,$file);
             $filter->$f();
