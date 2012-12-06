@@ -118,10 +118,6 @@ class SiteController extends Controller
             $image->destroy();
             chmod($file, 0777);
 
-
-
-
-
             $filter = Instagraph::factory($file,$file);
             $filter->$f();
 
@@ -143,10 +139,6 @@ class SiteController extends Controller
         }
     }
 
-    public function getPhoto($id) {
-        $photo = Photo::model()->find("id = ".$id);
-        return $photo;
-    }
 
     public function actionphpinfo() {
         echo phpinfo();

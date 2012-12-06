@@ -1,7 +1,6 @@
 <?php
-
-$photo = Yii::app()->getController();
-$photo = $photo->getPhoto($p);
+Helper::YiiImport("GetController");
+$photo = GetController::getPhoto($p);
 $id = $photo['id'];
 $link = $photo['link'];
 $ip = $photo['ip'];
