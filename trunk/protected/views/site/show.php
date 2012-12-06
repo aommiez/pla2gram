@@ -8,7 +8,7 @@ $timeCreate = $photo['timeCreate'];
 $thumb = str_replace("photo/","",$link);
 $user = GetController::getUser($photo['fbid']);
 echo "<pre>";
-print_r($user);
+print_r($photo);
 echo "</pre>";
 /*
 $title=urlencode("PLA2GRAM.COM : Stylize your photo");

@@ -63,7 +63,7 @@ class GetController extends Controller
     }
 
     public static function getUser($id){
-        $user = Facebook::model()->findAll("id = ".$id);
+        $user = Facebook::model()->find("id = ".$id);
         return $user;
     }
 }
