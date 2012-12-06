@@ -6,12 +6,16 @@ $link = $photo['link'];
 $ip = $photo['ip'];
 $timeCreate = $photo['timeCreate'];
 $thumb = str_replace("photo/","",$link);
-
+$user = GetController::getUser($photo['fbid']);
+echo "<pre>";
+print_r($user);
+echo "</pre>";
+/*
 $title=urlencode("PLA2GRAM.COM : Stylize your photo");
 $url=urlencode("http://www.pla2gram.com/?p=".$id);
 $summary=urlencode("เว็บแต่งภาพสไตล์ retro ");
 $image=urlencode("http://www.pla2gram.com/thumb/thumb_".$thumb);
-print_r($photo);
+*/
 ?>
 
 <?php
