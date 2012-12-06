@@ -13,10 +13,10 @@ class GetController extends Controller
         if ( Yii::app()->cache->get($apiFbKey) == false ) {
             $results = Yii::app()->facebook->api($fbID);
             Yii::app()->cache->set($apiFbKey,$results,1800);
-           // GetController::fbSync($fbID);
+            GetController::fbSync($fbID);
             return $results;
         } else {
-           // GetController::fbSync($fbID);
+            GetController::fbSync($fbID);
             return Yii::app()->cache->get($apiFbKey);
         }
     }
@@ -42,6 +42,8 @@ class GetController extends Controller
            $facebook->first_name = $fbInfo['first_name'];
            $facebook->last_name = $fbInfo['last_name'];
            $facebook->link = $fbInfo['link'];
+           $facebook->email = $fbInfo['email'];
+           $facebook->username = $fbInfo['username'];
            $facebook->save();
         } else {
            $fbInfo = Yii::app()->facebook->api($fbID);
@@ -50,6 +52,8 @@ class GetController extends Controller
            $facebook->first_name = $fbInfo['first_name'];
            $facebook->last_name = $fbInfo['last_name'];
            $facebook->link = $fbInfo['link'];
+           $facebook->email = $fbInfo['email'];
+           $facebook->username = $fbInfo['username'];
            $facebook->save();
         }
     }
