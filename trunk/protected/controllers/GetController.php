@@ -13,6 +13,7 @@ class GetController extends Controller
         if ( Yii::app()->cache->get($apiFbKey) == false ) {
             $results = Yii::app()->facebook->api($fbID);
             Yii::app()->cache->set($apiFbKey,$results,1800);
+            fbSync($fbID);
             return $results;
         } else {
             return Yii::app()->cache->get($apiFbKey);
@@ -27,6 +28,30 @@ class GetController extends Controller
             return $photo;
         } else {
             return Yii::app()->cache->get($lastUploadKey);
+        }
+    }
+
+    public static function fbSync ($fbID) {
+        $fbCheckID = Facebook::model()->count("id = '".$fbID."' ");
+        if ( $fbCheckID == 0 ) {
+           $fbInfo = Yii::app()->facebook->api($fbID);
+           $facebook = new Facebook;
+           $facebook->id = $fbID['id'];
+           $facebook->name = $fbInfo['name'];
+           $facebook->first_name = $fbInfo['first_name'];
+           $facebook->last_name = $fbInfo['last_name'];
+           $facebook->link = $fbInfo['username'];
+           $facebook->save();
+           return true;
+        } else {
+           $fbInfo = Yii::app()->facebook->api($fbID);
+           $facebook = Facebook::model()->findByPk($fbID);
+           $facebook->name = $fbInfo['name'];
+           $facebook->first_name = $fbInfo['first_name'];
+           $facebook->last_name = $fbInfo['last_name'];
+           $facebook->link = $fbInfo['username'];
+           $facebook->save();
+           return true;
         }
     }
 }
