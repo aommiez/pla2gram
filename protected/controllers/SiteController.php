@@ -121,10 +121,23 @@ class SiteController extends Controller
             $filter = Instagraph::factory($file,$file);
             $filter->$f();
 
+            $immid = new Imagick($file);
+            if ( $immid->getimagewidth() > 320 ) {
+                $immid->thumbnailImage(320,null);
+                $immid->writeImage(Yii::app()->request->baseUrl."thumb/thumb320_".$name_file.".".$ext);
+                $immid->destroy();
+                chmod(Yii::app()->request->baseUrl."thumb/thumb320_".$name_file.".".$ext, 0777);
+            } else {
+                $immid->writeImage(Yii::app()->request->baseUrl."thumb/thumb320_".$name_file.".".$ext);
+                $immid->destroy();
+                chmod(Yii::app()->request->baseUrl."thumb/thumb320_".$name_file.".".$ext, 0777);
+            }
+
             $im = new Imagick($file);
             $im->thumbnailImage(130,110);
             $im->writeImage(Yii::app()->request->baseUrl."thumb/thumb_".$name_file.".".$ext);
             chmod(Yii::app()->request->baseUrl."thumb/thumb_".$name_file.".".$ext, 0777);
+            $im->destroy();
 
             $photo = new Photo;
             $photo->link = $file;
