@@ -186,4 +186,9 @@ class Helper {
         return $fbcount;
     }
 
+    public static function memCacheDel (){
+        Yii::app()->cache->flush();
+        return true;
+    }
+
 }
