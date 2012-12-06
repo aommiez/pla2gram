@@ -7,9 +7,7 @@ $ip = $photo['ip'];
 $timeCreate = $photo['timeCreate'];
 $thumb = str_replace("photo/","",$link);
 $user = GetController::getUser($photo['fbid']);
-echo "<pre>";
-print_r($photo);
-echo "</pre>";
+$name = $user['name'];
 /*
 $title=urlencode("PLA2GRAM.COM : Stylize your photo");
 $url=urlencode("http://www.pla2gram.com/?p=".$id);
@@ -25,7 +23,7 @@ echo <<<HTML
             <div id="photo"><img src="/{$link}" id="photo_img"></div>
         </div>
         <div id="showDetail">
-            <div>Photo By : test</div>
+            <div>Photo By : {$name}</div>
             <div>Upload Time : {$timeCreate}</div>
         </div>
     </div>
