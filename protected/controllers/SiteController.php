@@ -71,19 +71,19 @@ class SiteController extends Controller
 
             if (exif_imagetype($file) == IMAGETYPE_JPEG) {
                 $exif = exif_read_data($file);
-                print_r($exif);
-                exit();
-                $orientation = $exif['Orientation'];
-                if ( $orientation == 6 ) {
-                    $imz = new Imagick($file);
-                    $imz->rotateimage("#FFF", 90);
-                    $imz->writeImage($file);
-                    chmod($file, 0777);
-                } else if ( $orientation == 8) {
-                    $imz = new Imagick($file);
-                    $imz->rotateimage("#FFF", -90);
-                    $imz->writeImage($file);
-                    chmod($file, 0777);
+                if ( isset($exif['Orientation']) ) {
+                    $orientation = $exif['Orientation'];
+                    if ( $orientation == 6 ) {
+                        $imz = new Imagick($file);
+                        $imz->rotateimage("#FFF", 90);
+                        $imz->writeImage($file);
+                        chmod($file, 0777);
+                    } else if ( $orientation == 8) {
+                        $imz = new Imagick($file);
+                        $imz->rotateimage("#FFF", -90);
+                        $imz->writeImage($file);
+                        chmod($file, 0777);
+                    }
                 }
             }
 
