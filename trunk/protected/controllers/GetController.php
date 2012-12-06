@@ -58,7 +58,13 @@ class GetController extends Controller
     }
 
     public static function getPhoto($id) {
-        $photo = Photo::model()->find("id = ".$id);
+        $with_condition = array(
+            'select' => 'name',
+            'joinType' => 'LEFT JOIN',
+        );
+
+        $photo = Photo::model()->with(array('facebook' => $with_condition))->live()->find("id = ".$id);
+        //$photo = Photo::model()->find("id = ".$id);
         return $photo;
     }
 }

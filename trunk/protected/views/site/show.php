@@ -11,7 +11,7 @@ $title=urlencode("PLA2GRAM.COM : Stylize your photo");
 $url=urlencode("http://www.pla2gram.com/?p=".$id);
 $summary=urlencode("เว็บแต่งภาพสไตล์ retro ");
 $image=urlencode("http://www.pla2gram.com/thumb/thumb_".$thumb);
-
+print_r($photo);
 ?>
 
 <?php
