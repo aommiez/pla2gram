@@ -56,4 +56,5 @@ class GetController extends Controller
            $facebook->save();
         }
     }
+
 }

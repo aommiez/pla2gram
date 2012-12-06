@@ -91,6 +91,7 @@ class SiteController extends Controller
 
             // Set to use jpeg compression
             $image->setImageCompression(Imagick::COMPRESSION_JPEG);
+
             // Set compression level (1 lowest quality, 100 highest quality)
             $image->setImageCompressionQuality(75);
             // Strip out unneeded meta data
@@ -125,10 +126,10 @@ class SiteController extends Controller
 
             $photo = new Photo;
             $photo->link = $file;
+            $photo->fbid = Yii::app()->facebook->getUser();
             $photo->ip = $_SERVER['REMOTE_ADDR'];
             if ($photo->save()) {
                 $id = $photo->id;
-                //echo $orientation;
                 Helper::redir("/?p=".$id,0);
             } else {
                 print_r($photo->getErrors());

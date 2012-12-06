@@ -5,6 +5,7 @@
  *
  * The followings are the available columns in table 'photo':
  * @property integer $id
+ * @property string $fbid
  * @property string $link
  * @property string $timeCreate
  * @property string $ip
@@ -37,12 +38,12 @@ class Photo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('link,  ip', 'required'),
-			array('link', 'length', 'max'=>255),
+			array('fbid, link,  ip', 'required'),
+			array('fbid, link', 'length', 'max'=>255),
 			array('ip', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, link, timeCreate, ip', 'safe', 'on'=>'search'),
+			array('id, fbid, link, timeCreate, ip', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -64,6 +65,7 @@ class Photo extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+			'fbid' => 'Fbid',
 			'link' => 'Link',
 			'timeCreate' => 'Time Create',
 			'ip' => 'Ip',
@@ -82,6 +84,7 @@ class Photo extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+		$criteria->compare('fbid',$this->fbid,true);
 		$criteria->compare('link',$this->link,true);
 		$criteria->compare('timeCreate',$this->timeCreate,true);
 		$criteria->compare('ip',$this->ip,true);
