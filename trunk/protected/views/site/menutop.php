@@ -61,7 +61,7 @@ HTML;
 } else {
     Helper::YiiImport("GetController");
     $fbInfo = GetController::getFbUser();
-    $params = array( 'next' => 'http://www.pla2gram.com/' );
+    //$params = array( 'next' => 'http://www.pla2gram.com/' );
     //$fbUrl = Yii::app()->facebook->getLogoutUrl($params);
     $fbNickname = $fbInfo['name'];
     $fbID = Yii::app()->facebook->getUser();

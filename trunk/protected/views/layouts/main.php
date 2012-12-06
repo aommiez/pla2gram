@@ -34,7 +34,6 @@ Helper::register('jquery-1.8.3.min.js');
     ?>
     <?php
             echo $this->renderPartial('lastUpload');
-            Helper::memCacheDel();
     ?>
 
     <div id="footer">Copyright © 2011-2012 Pla2.Com All Rights Reserved ( Powered By Pla2.Com )</div>
