@@ -9,6 +9,8 @@
  * @property string $first_name
  * @property string $last_name
  * @property string $link
+ * @property string $email
+ * @property string $username
  * @property string $createTime
  */
 class Facebook extends CActiveRecord
@@ -39,11 +41,11 @@ class Facebook extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, name, first_name, last_name, link ', 'required'),
-			array('id, name, first_name, last_name, link', 'length', 'max'=>255),
+			array('id, name, first_name, last_name, link, email, username ', 'required'),
+			array('id, name, first_name, last_name, link, email, username', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, first_name, last_name, link, createTime', 'safe', 'on'=>'search'),
+			array('id, name, first_name, last_name, link, email, username, createTime', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,6 +71,8 @@ class Facebook extends CActiveRecord
 			'first_name' => 'First Name',
 			'last_name' => 'Last Name',
 			'link' => 'Link',
+			'email' => 'Email',
+			'username' => 'Username',
 			'createTime' => 'Create Time',
 		);
 	}
@@ -89,6 +93,8 @@ class Facebook extends CActiveRecord
 		$criteria->compare('first_name',$this->first_name,true);
 		$criteria->compare('last_name',$this->last_name,true);
 		$criteria->compare('link',$this->link,true);
+		$criteria->compare('email',$this->email,true);
+		$criteria->compare('username',$this->username,true);
 		$criteria->compare('createTime',$this->createTime,true);
 
 		return new CActiveDataProvider($this, array(
