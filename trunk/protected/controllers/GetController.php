@@ -37,7 +37,7 @@ class GetController extends Controller
         if ( $fbCheckID == 0 ) {
            $fbInfo = Yii::app()->facebook->api($fbID);
            $facebook = new Facebook;
-           $facebook->id = $fbID['id'];
+           $facebook->id = $fbID;
            $facebook->name = $fbInfo['name'];
            $facebook->first_name = $fbInfo['first_name'];
            $facebook->last_name = $fbInfo['last_name'];
