@@ -41,8 +41,8 @@ class Facebook extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, name, first_name, last_name, link, email, username ', 'required'),
-			array('id, name, first_name, last_name, link, email, username', 'length', 'max'=>255),
+			array('id, name, first_name, last_name,  email, username ', 'required'),
+			array('id, name, first_name, last_name,  email, username', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, first_name, last_name, link, email, username, createTime', 'safe', 'on'=>'search'),
