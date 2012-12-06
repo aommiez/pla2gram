@@ -63,7 +63,7 @@ class GetController extends Controller
             'joinType' => 'LEFT JOIN',
         );
 
-        $photo = Photo::model()->with(array('facebook' => $with_condition))->live()->find("id = ".$id);
+        $photo = Photo::model()->with(array('facebook' => $with_condition))->find("id = ".$id);
         //$photo = Photo::model()->find("id = ".$id);
         return $photo;
     }
