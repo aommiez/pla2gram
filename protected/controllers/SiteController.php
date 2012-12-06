@@ -71,6 +71,8 @@ class SiteController extends Controller
 
             if (exif_imagetype($file) == IMAGETYPE_JPEG) {
                 $exif = exif_read_data($file);
+                print_r($exif);
+                exit();
                 $orientation = $exif['Orientation'];
                 if ( $orientation == 6 ) {
                     $imz = new Imagick($file);
