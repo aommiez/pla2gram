@@ -69,7 +69,6 @@ class SiteController extends Controller
             move_uploaded_file($_FILES["file"]["tmp_name"],Yii::app()->request->baseUrl."photo/".$name_file.".".$ext );
             chmod($file, 0777);
 
-            /*
             if (exif_imagetype($file) == IMAGETYPE_JPEG) {
                 $exif = exif_read_data($file);
                 if ( isset($exif['Orientation']) ) {
@@ -87,20 +86,7 @@ class SiteController extends Controller
                     }
                 }
             }
-            */
-            $exif = exif_read_data($file);
-            $orientation = $exif['Orientation'];
-            if ( $orientation == 6 ) {
-                $imz = new Imagick($file);
-                $imz->rotateimage("#FFF", 90);
-                $imz->writeImage($file);
-                chmod($file, 0777);
-            } else if ( $orientation == 8) {
-                $imz = new Imagick($file);
-                $imz->rotateimage("#FFF", -90);
-                $imz->writeImage($file);
-                chmod($file, 0777);
-            }
+
             // Max vert or horiz resolution
             $maxsize=1200;
 
