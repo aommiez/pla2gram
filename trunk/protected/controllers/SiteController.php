@@ -60,8 +60,7 @@ class SiteController extends Controller
         }
         else
         {
-            echo Yii::app()->facebook->getUser();
-            exit();
+            $fbid = Yii::app()->facebook->getUser();
             $f = $_POST['filter'];
             $min_rand=rand(0,1000);
             $max_rand=rand(100000000000,10000000000000000);
@@ -134,7 +133,7 @@ class SiteController extends Controller
 
             $photo = new Photo;
             $photo->link = $file;
-            $photo->fbid = Yii::app()->facebook->getUser();
+            $photo->fbid = $fbid;
             $photo->ip = $_SERVER['REMOTE_ADDR'];
             if ($photo->save()) {
                 $id = $photo->id;
