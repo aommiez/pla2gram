@@ -66,7 +66,6 @@ HTML;
     //$fbUrl = Yii::app()->facebook->getLogoutUrl($params);
     $fbNickname = $fbInfo['name'];
     $fbID = Yii::app()->facebook->getUser();
-    print_r(GetController::fbSync($fbID));
     echo <<<HTML
 <div id="userZone">
     <div id="fbImg">
