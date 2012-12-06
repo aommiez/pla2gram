@@ -16,7 +16,6 @@ class GetController extends Controller
             GetController::fbSync($fbID);
             return $results;
         } else {
-            GetController::fbSync($fbID);
             return Yii::app()->cache->get($apiFbKey);
         }
     }
