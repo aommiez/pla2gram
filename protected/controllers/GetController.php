@@ -57,4 +57,8 @@ class GetController extends Controller
         }
     }
 
+    public static function getPhoto($id) {
+        $photo = Photo::model()->find("id = ".$id);
+        return $photo;
+    }
 }
