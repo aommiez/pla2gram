@@ -13,10 +13,10 @@ class GetController extends Controller
         if ( Yii::app()->cache->get($apiFbKey) == false ) {
             $results = Yii::app()->facebook->api($fbID);
             Yii::app()->cache->set($apiFbKey,$results,1800);
-            GetController::fbSync($fbID);
+           // GetController::fbSync($fbID);
             return $results;
         } else {
-            GetController::fbSync($fbID);
+           // GetController::fbSync($fbID);
             return Yii::app()->cache->get($apiFbKey);
         }
     }
