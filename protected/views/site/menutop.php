@@ -25,7 +25,7 @@ HTML;
 }
 else {
 
-    $user_profile = $facebook->api('/me');
+    $user_profile = Yii::app()->facebook->api('/me');
 }
 if ( $user_profile ) {
     try {
