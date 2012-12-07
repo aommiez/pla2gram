@@ -137,7 +137,7 @@ class SiteController extends Controller
             // null x 230 show last upload
             $imlast = new Imagick($file);
             if ( $imlast->getimageheight() > 230 ) {
-                $imlast->thumbnailimage(null,230);
+                $imlast->thumbnailimage($imlast->getimagewidth(),230);
                 $imlast->writeImage(Yii::app()->request->baseUrl."thumb/thumb230_".$name_file.".".$ext);
                 $imlast->destroy();
                 chmod(Yii::app()->request->baseUrl."thumb/thumb230_".$name_file.".".$ext, 0777);
