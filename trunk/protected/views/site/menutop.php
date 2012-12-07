@@ -24,10 +24,9 @@ HTML;
     echo $this->renderPartial('lastUpload');
 }
 else {
-
     $user_profile = Yii::app()->facebook->api('/me');
 }
-if ( $user_profile ) {
+if ( isset($user_profile) ) {
     try {
         Helper::YiiImport("GetController");
         $fbInfo = GetController::getFbUser();
