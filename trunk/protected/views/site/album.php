@@ -20,7 +20,7 @@ foreach($albums['data'] as $album)
 for($i = 0;$i<count($albums['data']);$i++){
     for($j = 0;$j<count($albums['data'][$i]);$j++){
         if($albums['data'][$i]['name'] == "Cover Photos"){
-            echo $facebook->api('/me/albums/'.$albums['data'][$i]['cover_photo'],'GET');
+            echo Yii::app()->facebook->api('/me/albums/'.$albums['data'][$i]['cover_photo'],'GET');
         }
     }
 }
