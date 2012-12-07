@@ -8,8 +8,10 @@
  * File Name : album.php
  */
 Helper::YiiImport("GetController");
-echo Yii::app()->facebook->getAccessToken();
-/*
+$token =  Yii::app()->facebook->getAccessToken();
+Yii::app()->facebook->setAccessToken($token);
+echo $token;
+
 $albums = GetController::getAlbums();
 
 foreach($albums['data'] as $album)
@@ -19,4 +21,3 @@ foreach($albums['data'] as $album)
 echo "<pre>";
 print_r($albums);
 echo "</pre>";
-*/
