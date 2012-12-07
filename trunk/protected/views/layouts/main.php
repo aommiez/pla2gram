@@ -1,6 +1,3 @@
-<?php
-Helper::register('jquery-1.8.3.min.js');
- ?>
 <html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,6 +13,7 @@ Helper::register('jquery-1.8.3.min.js');
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/facebook.css" />
+    <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
 </head>
