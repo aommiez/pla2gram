@@ -24,9 +24,6 @@ HTML;
     echo $this->renderPartial('lastUpload');
 }
 else {
-    $user_profile = Yii::app()->facebook->api('/me');
-}
-if ( isset($user_profile) ) {
     try {
         Helper::YiiImport("GetController");
         $fbInfo = GetController::getFbUser();
@@ -54,6 +51,7 @@ HTML;
             'redirect_uri' => 'http://www.pla2gram.com/'
         );
         $fbUrl = Yii::app()->facebook->getLoginUrl($params);
+        $user_id = null;
         echo "<script type='text/javascript'>top.location.href = '$fbUrl';</script>";
         exit;
     }
