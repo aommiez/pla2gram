@@ -11,6 +11,7 @@ $user = GetController::getUser($photo['fbid']);
 $name = $user['name'];
 $mid = str_replace("photo/","",$photo['link']);
 $mid = Yii::app()->baseUrl."thumb/thumb320_".$thumb;
+Yii::app()->facebook->ogTags['image'] = "http://www.pla2gram.com/thumb/thumb_".$thumb;
 /*
 $title=urlencode("PLA2GRAM.COM : Stylize your photo");
 $url=urlencode("http://www.pla2gram.com/?p=".$id);

@@ -70,11 +70,11 @@ return array(
             'xfbml'=>true,  // JS SDK - parse XFBML / html5 Social Plugins
             //'frictionlessRequests'=>true, // JS SDK - enable frictionless requests for request dialogs
             'html5'=>true,  // use html5 Social Plugins instead of XFBML
-            //'ogTags'=>array(  // set default OG tags
-            //'title'=>'MY_WEBSITE_NAME',
-            //'description'=>'MY_WEBSITE_DESCRIPTION',
-            //'image'=>'URL_TO_WEBSITE_LOGO',
-            //),
+            'ogTags'=>array(  // set default OG tags
+            'title'=>'PLA2GRAM.COM',
+            'description'=>'PLA2GRAM.COM : Stylize your photo',
+            'image'=>'URL_TO_WEBSITE_LOGO',
+            ),
         ),
         'cache'=>array(
             'class'=>'system.caching.CMemCache',
