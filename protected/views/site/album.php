@@ -9,6 +9,7 @@
  */
 Helper::YiiImport("GetController");
 $albums = GetController::getAlbums();
+echo Yii::app()->facebook->getAccessToken();
 
 foreach($albums['data'] as $album)
 {

@@ -74,7 +74,6 @@ class GetController extends Controller
     }
 
     public static function getFbToken () {
-        Yii::app()->facebook->api("/me");
         return Yii::app()->facebook->getAccessToken();
     }
 }
