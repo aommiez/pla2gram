@@ -58,7 +58,7 @@ return array(
             'class' => 'ext.yii-facebook-opengraph.SFacebook',
             'appId'=>'413892292015301', // needed for JS SDK, Social Plugins and PHP SDK
             'secret'=>'5fa170f45bec31af24abbdcb291b0dab', // needed for the PHP SDK
-            //'fileUpload'=>false, // needed to support API POST requests which send files
+            'fileUpload'=>true, // needed to support API POST requests which send files
             //'trustForwarded'=>false, // trust HTTP_X_FORWARDED_* headers ?
             'locale'=>'en_US', // override locale setting (defaults to en_US)
             'jsSdk'=>true, // don't include JS SDK
