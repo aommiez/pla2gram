@@ -15,6 +15,7 @@ foreach($albums['data'] as $album)
 {
     $albumID = $album['id'];
     $albumName = $album['name'];
+    echo $albumName."<br>";
 }
 
 
