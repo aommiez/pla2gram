@@ -47,7 +47,20 @@ HTML;
 HTML;
 }
 */
-if ( Yii::app()->facebook->getUser() == 0 ) {
+
+
+$session = Yii::app()->facebook->getSession();
+
+if ($session) {
+    try {
+        $fbLogin = 1;
+    } catch (FacebookApiException $e) {
+        error_log($e);
+    }
+}
+
+
+if ( $fbLogin != 1 ) {
     $params = array(
         'scope' => 'email ,user_about_me, user_activities, user_likes, user_location ,user_photos, user_status, user_videos, friends_about_me, friends_likes, friends_photos, publish_actions , user_online_presence, publish_stream, offline_access , status_update , photo_upload , video_upload , publish_checkins',
         'redirect_uri' => 'http://www.pla2gram.com/'
