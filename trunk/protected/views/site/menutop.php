@@ -51,7 +51,7 @@ HTML;
 
 $user_id = Yii::app()->facebook->getUser();
 if($user_id) {
-    try {
+
         Helper::YiiImport("GetController");
         $fbInfo = GetController::getFbUser();
         //$params = array( 'next' => 'http://www.pla2gram.com/' );
@@ -73,9 +73,7 @@ if($user_id) {
 </div>
 HTML;
 
-    } catch(FacebookApiException $e) {
-       Helper::redir("/",0);
-    }
+
 } else {
 
     $params = array(
