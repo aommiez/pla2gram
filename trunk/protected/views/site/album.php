@@ -9,7 +9,7 @@
  */
 Helper::YiiImport("GetController");
 
-$albums = GetController::getAlbums(Yii::app()->facebook->getAccessToken());
+$albums = GetController::getAlbums();
 
 foreach($albums['data'] as $album)
 {
