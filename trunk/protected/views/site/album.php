@@ -9,8 +9,7 @@
  */
 Helper::YiiImport("GetController");
 $albums = GetController::getAlbums(Yii::app()->facebook->getUser());
+echo "<pre>";
+print_r($albums);
+echo "</pre>";
 
-
-foreach ( $albums as $key => $value ) {
-    echo $value['name']."<br>";
-}
