@@ -51,26 +51,23 @@ HTML;
 
 $user_id = Yii::app()->facebook->getUser();
 if($user_id) {
-
-    // We have a user ID, so probably a logged in user.
-    // If not, we'll get an exception, which we handle below.
     try {
-
         Helper::YiiImport("GetController");
         $fbInfo = GetController::getFbUser();
-
         //$params = array( 'next' => 'http://www.pla2gram.com/' );
         //$fbUrl = Yii::app()->facebook->getLogoutUrl($params);
         $fbNickname = $fbInfo['name'];
         $fbID = Yii::app()->facebook->getUser();
         $albumLink = Yii::app()->createUrl("site/album");
+        $token = GetController::setAccessToken();
         echo <<<HTML
 <div id="userZone">
     <div id="fbImg">
         <img src="https://graph.facebook.com/{$fbID}/picture"/>
     </div>
     <div id="fbNickname">
-        {$fbNickname}
+        {$fbNickname}<br>
+        {$token}
     </div>
     <div id="userMenu">
         <span><a href="{$albumLink}">Albums</a></span>
@@ -79,10 +76,6 @@ if($user_id) {
 HTML;
 
     } catch(FacebookApiException $e) {
-        // If the user is logged out, you can have a
-        // user ID even though the access token is invalid.
-        // In this case, we'll get an exception, so we'll
-        // just ask the user to login again here.
         $params = array(
             'scope' => 'email ,user_about_me, user_activities, user_likes, user_location ,user_photos, user_status, user_videos, friends_about_me, friends_likes, friends_photos, publish_actions , user_online_presence, publish_stream, offline_access , status_update , photo_upload , video_upload , publish_checkins',
             'redirect_uri' => 'http://www.pla2gram.com/'
