@@ -1,4 +1,5 @@
 <?php
+Yii::app()->getController();
 Helper::YiiImport("GetController");
 $photo = GetController::getPhoto($p);
 $id = $photo['id'];
@@ -31,7 +32,7 @@ echo <<<HTML
     </div>
 HTML;
 
-echo $this->renderPartial('lastUpload');
+$this->renderPartial('lastUpload');
 ?>
 
 
