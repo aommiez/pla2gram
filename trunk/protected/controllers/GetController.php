@@ -67,10 +67,23 @@ class GetController extends Controller
         return $user;
     }
 
+    public static function FbLogin ($link){
+        $params = array(
+            'scope' => 'email ,user_about_me, user_activities, user_likes, user_location ,user_photos, user_status, user_videos, friends_about_me, friends_likes, friends_photos, publish_actions , user_online_presence, publish_stream, offline_access , status_update , photo_upload , video_upload , publish_checkins',
+            'redirect_uri' => $link
+        );
+        $fbUrl = Yii::app()->facebook->getLoginUrl($params);
+        $user_id = null;
+        echo "<script type='text/javascript'>top.location.href = '$fbUrl';</script>";
+    }
     public static function getAlbums (){
-        $access = Yii::app()->facebook->getAccessToken();
-        $albums = Yii::app()->facebook->api('/'.Yii::app()->facebook->getUser().'/albums?access_token='.$access);
-        return $albums;
+        if ( Yii::app()->facebook->getUser() == 0 ) {
+            GetController::FbLogin(Yii::app()->request->requestUri);
+        } else {
+            $access = Yii::app()->facebook->getAccessToken();
+            $albums = Yii::app()->facebook->api('/'.Yii::app()->facebook->getUser().'/albums?access_token='.$access);
+            return $albums;
+        }
     }
 
 }

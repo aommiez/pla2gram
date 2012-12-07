@@ -27,7 +27,6 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-
         if ( !empty($_GET['code'])) {
             Helper::redir("/",0);
         }
@@ -37,7 +36,6 @@ class SiteController extends Controller
         } else {
             $this->render('index');
         }
-
 	}
 
 	/**
@@ -174,6 +172,9 @@ class SiteController extends Controller
 
 
     public function actionalbum() {
+        if ( !empty($_GET['code'])) {
+            Helper::redir(Yii::app()->request->requestUri,0);
+        }
         $this->render("album");
     }
 
