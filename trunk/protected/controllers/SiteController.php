@@ -171,6 +171,7 @@ class SiteController extends Controller
         $this->renderPartial("menutop");
     }
 
+
     public function actionalbum() {
         $this->render("album");
     }
