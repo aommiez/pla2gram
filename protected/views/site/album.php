@@ -10,9 +10,10 @@
 Helper::YiiImport("GetController");
 $albums = GetController::getAlbums();
 
-
-
 foreach($albums['data'] as $album)
 {
     echo $album['id'].$album['name']."<br>";
 }
+echo "<pre>";
+print_r($albums);
+echo "</pre>";
