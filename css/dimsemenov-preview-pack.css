@@ -54,11 +54,11 @@ img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 }		
 #carousel-image-and-text .touchcarousel-item {
 	margin-right: 1px;	
-	width: 170px;
+
 	height: 277px;		
 }
 #carousel-image-and-text .item-block {
-	width: 170px;
+
 	height: 277px;
 	display: block;
 }

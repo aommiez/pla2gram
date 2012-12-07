@@ -23,18 +23,17 @@ Helper::register("dimsemenov-preview-pack.css");
     <ul class="touchcarousel-container">
         <?php
         Helper::YiiImport("GetController");
-        $last = GetController::last_upload(14);
+        $last = GetController::last_upload(15);
         foreach ( $last as $key => $value ) {
             $thumb = str_replace("photo/","",$value['link']);
             $l = Yii::app()->baseUrl."thumb/thumb230_".$thumb;
             $i = $value['id'];
-            $fb = GetController::getUser($value['fbid']);
+
             echo <<<HTML
             <li class="touchcarousel-item">
             <a class="item-block" href="/?p={$i}">
                 <img src="{$l}" width="170" height="230" />
-                <h4>test</h4>
-                <p>like</p>
+
             </a>
         </li>
 
