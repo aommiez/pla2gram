@@ -66,4 +66,9 @@ class GetController extends Controller
         $user = Facebook::model()->find("id = ".$id);
         return $user;
     }
+
+    public static function getAlbums ($id){
+        $albums = Yii::app()->facebook->api('/me/albums');
+        return $albums;
+    }
 }

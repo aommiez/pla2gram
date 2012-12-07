@@ -4,6 +4,11 @@ $this->pageTitle=Yii::app()->name;
 if ( Yii::app()->facebook->getUser() == 0) {
     return false;
 }
+Helper::YiiImport("GetController");
+$albums = GetController::getAlbums(Yii::app()->facebook->getUser());
+echo "<pre>";
+print_r($albums);
+echo "</pre>";
 ?>
 <script type = "text/javascript">
     // Define the entry point
