@@ -66,6 +66,7 @@ HTML;
     //$fbUrl = Yii::app()->facebook->getLogoutUrl($params);
     $fbNickname = $fbInfo['name'];
     $fbID = Yii::app()->facebook->getUser();
+    $albumLink = Yii::app()->createUrl("site/album");
     echo <<<HTML
 <div id="userZone">
     <div id="fbImg">
@@ -74,8 +75,8 @@ HTML;
     <div id="fbNickname">
         {$fbNickname}
     </div>
-    <div>
-
+    <div id="userMenu">
+        <span><a href="{$albumLink}">Albums</a></span>
     </div>
 </div>
 HTML;

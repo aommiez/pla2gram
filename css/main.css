@@ -98,7 +98,7 @@ body
 #fbImg  {
     display: inline-block;
 }
-#fbnickname {
+#fbnickname,#userMenu {
     display: inline-block;
     color: white;
 }
