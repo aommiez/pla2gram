@@ -48,11 +48,9 @@ HTML;
 }
 */
 
-$facebook_id = Yii::app()->facebook->getUser();
-if ($facebook_id) { // check that you get a Facebook ID before calling api()
-    // now we know we have a Facebook Session,
-    $user_info = Yii::app()->facebook->api('/me'); // so it's safe to call api()
-    if ($user_info) {
+
+$user_id = Yii::app()->facebook->getUser();
+if($user_id) {
         Helper::YiiImport("GetController");
         $fbInfo = GetController::getFbUser();
         //$params = array( 'next' => 'http://www.pla2gram.com/' );
@@ -73,22 +71,22 @@ if ($facebook_id) { // check that you get a Facebook ID before calling api()
     </div>
 </div>
 HTML;
-    } else {
-        $params = array(
-            'scope' => 'email ,user_about_me, user_activities, user_likes, user_location ,user_photos, user_status, user_videos, friends_about_me, friends_likes, friends_photos, publish_actions , user_online_presence, publish_stream, offline_access , status_update , photo_upload , video_upload , publish_checkins',
-            'redirect_uri' => 'http://www.pla2gram.com/'
-        );
-        $fbUrl = Yii::app()->facebook->getLoginUrl($params);
-        echo <<<HTML
+
+
+} else {
+
+    $params = array(
+        'scope' => 'email ,user_about_me, user_activities, user_likes, user_location ,user_photos, user_status, user_videos, friends_about_me, friends_likes, friends_photos, publish_actions , user_online_presence, publish_stream, offline_access , status_update , photo_upload , video_upload , publish_checkins',
+        'redirect_uri' => 'http://www.pla2gram.com/'
+    );
+    $fbUrl = Yii::app()->facebook->getLoginUrl($params);
+    echo <<<HTML
     <div id="facebook-login-btb">
 		<a href="{$fbUrl}">login with <span>facebook</span></a>
 	</div>
 HTML;
 
-    }
 }
-
-
 
 
 
