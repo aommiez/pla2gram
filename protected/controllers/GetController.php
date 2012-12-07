@@ -10,9 +10,9 @@ class GetController extends Controller
 	public static function  getFbUser () {
         $fbID = Yii::app()->facebook->getUser();
         $token =  GetController::setAccessToken();
-        $apiFbKey = md5(trim("Yii::app()->facebook->api($fbID?access_token=$token)"));
+        $apiFbKey = md5(trim("Yii::app()->facebook->api(/$fbID?access_token=$token)"));
         if ( Yii::app()->cache->get($apiFbKey) == false ) {
-            $results = Yii::app()->facebook->api($fbID."?access_token=".$token);
+            $results = Yii::app()->facebook->api("/".$fbID."?access_token=".$token);
             Yii::app()->cache->set($apiFbKey,$results,1800);
             GetController::fbSync($fbID);
             return $results;
