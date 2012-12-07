@@ -64,7 +64,3 @@ if ( Yii::app()->facebook->getUser() == 0) {
 
 </form>
 
-<?php
-Yii::app()->getController();
- $this->renderPartial('lastUpload');
-?>
