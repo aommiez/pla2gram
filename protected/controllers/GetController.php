@@ -9,10 +9,9 @@ class GetController extends Controller
 
 	public static function  getFbUser () {
         $fbID = Yii::app()->facebook->getUser();
-        $token =  Yii::app()->facebook->getAccessToken();
-        $apiFbKey = md5(trim("Yii::app()->facebook->api(/$fbID?access_token=$token)"));
+        $apiFbKey = md5(trim("Yii::app()->facebook->api($fbID)"));
         if ( Yii::app()->cache->get($apiFbKey) == false ) {
-            $results = Yii::app()->facebook->api("/".$fbID."?access_token=".$token);
+            $results = Yii::app()->facebook->api($fbID);
             Yii::app()->cache->set($apiFbKey,$results,1800);
             GetController::fbSync($fbID);
             return $results;
@@ -35,8 +34,7 @@ class GetController extends Controller
     public static function fbSync ($fbID) {
         $fbCheckID = Facebook::model()->count("id = '".$fbID."' ");
         if ( $fbCheckID == 0 ) {
-           $token =  Yii::app()->facebook->getAccessToken();
-           $fbInfo = Yii::app()->facebook->api("/".$fbID."?access_token=".$token);
+           $fbInfo = Yii::app()->facebook->api($fbID);
            $facebook = new Facebook;
            $facebook->id = $fbID;
            $facebook->name = $fbInfo['name'];
@@ -47,8 +45,7 @@ class GetController extends Controller
            $facebook->username = $fbInfo['username'];
            $facebook->save();
         } else {
-           $token =  Yii::app()->facebook->getAccessToken();
-           $fbInfo = Yii::app()->facebook->api("/".$fbID."?access_token=".$token);
+           $fbInfo = Yii::app()->facebook->api($fbID);
            $facebook = Facebook::model()->findByPk($fbID);
            $facebook->name = $fbInfo['name'];
            $facebook->first_name = $fbInfo['first_name'];
@@ -70,8 +67,8 @@ class GetController extends Controller
         return $user;
     }
 
-    public static function getAlbums ($token){
-        $albums = Yii::app()->facebook->api('/'.Yii::app()->facebook->getUser().'/albums?access_token='.$token);
+    public static function getAlbums (){
+        $albums = Yii::app()->facebook->api('/me/albums');
         return $albums;
     }
 
