@@ -56,24 +56,56 @@ if($user_id) {
     // If not, we'll get an exception, which we handle below.
     try {
 
-        $user_profile = Yii::app()->facebook->api('/me','GET');
-        echo "Name: " . $user_profile['name'];
+        Helper::YiiImport("GetController");
+        $fbInfo = GetController::getFbUser();
+
+        //$params = array( 'next' => 'http://www.pla2gram.com/' );
+        //$fbUrl = Yii::app()->facebook->getLogoutUrl($params);
+        $fbNickname = $fbInfo['name'];
+        $fbID = Yii::app()->facebook->getUser();
+        $albumLink = Yii::app()->createUrl("site/album");
+        echo <<<HTML
+<div id="userZone">
+    <div id="fbImg">
+        <img src="https://graph.facebook.com/{$fbID}/picture"/>
+    </div>
+    <div id="fbNickname">
+        {$fbNickname}
+    </div>
+    <div id="userMenu">
+        <span><a href="{$albumLink}">Albums</a></span>
+    </div>
+</div>
+HTML;
 
     } catch(FacebookApiException $e) {
         // If the user is logged out, you can have a
         // user ID even though the access token is invalid.
         // In this case, we'll get an exception, so we'll
         // just ask the user to login again here.
-        $login_url = Yii::app()->facebook->getLoginUrl();
-        echo 'Please <a href="' . $login_url . '">login.</a>';
-        error_log($e->getType());
-        error_log($e->getMessage());
+        $params = array(
+            'scope' => 'email ,user_about_me, user_activities, user_likes, user_location ,user_photos, user_status, user_videos, friends_about_me, friends_likes, friends_photos, publish_actions , user_online_presence, publish_stream, offline_access , status_update , photo_upload , video_upload , publish_checkins',
+            'redirect_uri' => 'http://www.pla2gram.com/'
+        );
+        $fbUrl = Yii::app()->facebook->getLoginUrl($params);
+        echo <<<HTML
+    <div id="facebook-login-btb">
+		<a href="{$fbUrl}">login with <span>facebook</span></a>
+	</div>
+HTML;
     }
 } else {
 
-    // No user, print a link for the user to login
-    $login_url = Yii::app()->facebook->getLoginUrl();
-    echo 'Please <a href="' . $login_url . '">login.</a>';
+    $params = array(
+        'scope' => 'email ,user_about_me, user_activities, user_likes, user_location ,user_photos, user_status, user_videos, friends_about_me, friends_likes, friends_photos, publish_actions , user_online_presence, publish_stream, offline_access , status_update , photo_upload , video_upload , publish_checkins',
+        'redirect_uri' => 'http://www.pla2gram.com/'
+    );
+    $fbUrl = Yii::app()->facebook->getLoginUrl($params);
+    echo <<<HTML
+    <div id="facebook-login-btb">
+		<a href="{$fbUrl}">login with <span>facebook</span></a>
+	</div>
+HTML;
 
 }
 
