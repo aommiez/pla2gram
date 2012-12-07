@@ -9,7 +9,7 @@ class GetController extends Controller
 
 	public static function  getFbUser () {
         $fbID = Yii::app()->facebook->getUser();
-        $token =  GetController::setAccessToken();
+        $token =  Yii::app()->facebook->getAccessToken();
         $apiFbKey = md5(trim("Yii::app()->facebook->api(/$fbID?access_token=$token)"));
         if ( Yii::app()->cache->get($apiFbKey) == false ) {
             $results = Yii::app()->facebook->api("/".$fbID."?access_token=".$token);
@@ -35,7 +35,7 @@ class GetController extends Controller
     public static function fbSync ($fbID) {
         $fbCheckID = Facebook::model()->count("id = '".$fbID."' ");
         if ( $fbCheckID == 0 ) {
-           $token =  GetController::setAccessToken();
+           $token =  Yii::app()->facebook->getAccessToken();
            $fbInfo = Yii::app()->facebook->api("/".$fbID."?access_token=".$token);
            $facebook = new Facebook;
            $facebook->id = $fbID;
@@ -47,7 +47,7 @@ class GetController extends Controller
            $facebook->username = $fbInfo['username'];
            $facebook->save();
         } else {
-           $token =  GetController::setAccessToken();
+           $token =  Yii::app()->facebook->getAccessToken();
            $fbInfo = Yii::app()->facebook->api("/".$fbID."?access_token=".$token);
            $facebook = Facebook::model()->findByPk($fbID);
            $facebook->name = $fbInfo['name'];
@@ -70,17 +70,9 @@ class GetController extends Controller
         return $user;
     }
 
-    public static function getAlbums (){
-        $token =  GetController::setAccessToken();
-        $albums = Yii::app()->facebook->api('/me/albums?access_token='.$token);
+    public static function getAlbums ($token){
+        $albums = Yii::app()->facebook->api('/'.Yii::app()->facebook->getUser().'/albums?access_token='.$token);
         return $albums;
     }
-
-    public static function setAccessToken() {
-        $token =  Yii::app()->facebook->getAccessToken();
-        Yii::app()->facebook->setAccessToken($token);
-        return $token;
-    }
-
 
 }
