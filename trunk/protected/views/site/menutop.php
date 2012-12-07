@@ -59,7 +59,6 @@ if($user_id) {
         $fbNickname = $fbInfo['name'];
         $fbID = Yii::app()->facebook->getUser();
         $albumLink = Yii::app()->createUrl("site/album");
-        $token = GetController::setAccessToken();
         echo <<<HTML
 <div id="userZone">
     <div id="fbImg">
@@ -67,7 +66,6 @@ if($user_id) {
     </div>
     <div id="fbNickname">
         {$fbNickname}<br>
-        {$token}
     </div>
     <div id="userMenu">
         <span><a href="{$albumLink}">Albums</a></span>
