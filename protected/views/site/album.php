@@ -14,10 +14,5 @@ $albums = GetController::getAlbums(Yii::app()->facebook->getUser());
 
 foreach($albums['data'] as $album)
 {
-
-    $photos = Yii::app()->facebook->api("/{$album['id']}/photos");
-    foreach($photos['data'] as $photo)
-    {
-        echo "<img src='{$photo['source']}' />", "<br />";
-    }
+    echo $album['id'].$album['name']."<br>";
 }
