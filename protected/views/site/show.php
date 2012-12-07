@@ -30,6 +30,8 @@ echo <<<HTML
         </div>
     </div>
 HTML;
+
+echo $this->renderPartial('lastUpload');
 ?>
 
 
