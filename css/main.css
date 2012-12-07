@@ -3,7 +3,7 @@ body
 	margin: 0;
 	padding: 0;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-    background: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/low_contrast_linen.png);
+    background: url(/images/low_contrast_linen.png);
 }
 
 #page
@@ -103,4 +103,42 @@ body
     color: white;
 }
 
+#facebook-login-btb {
+    margin-top: 20;
+    font-size: 14px;
+    text-align: center;
 
+}
+
+#facebook-login-btb span{
+    font-weight:bold;
+}
+
+#facebook-login-btb a {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, rgba(131, 155, 195, 1) 0%,rgba(87, 111, 163, 1) 100%);
+    border: 1px solid #566383;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 1px 0 #CADBFE inset, 0 3px 0 0 #2D447F, 0 4px 2px #999;
+    color: white;
+    display: inline-block;
+    line-height: 30px;
+    height: 30px;
+    padding: 0 10px;
+    position: relative;
+    text-decoration: none;
+    top: -1px;
+    -webkit-transition-property: top, box-shadow;
+    -webkit-transition-duration: 0.1s, 0.1s;
+    -webkit-transition-timing-function: linear, linear;
+}
+
+#facebook-login-btb a:hover {
+    background-image:linear-gradient(top,  rgba(139,161,199,1) 0%,rgba(96,119,170,1) 100%);
+}
+
+#facebook-login-btb a:active
+{
+    box-shadow: 0 1px 0 #cadbfe inset, 0 1px 0 0 #2d447f, 0 2px 2px #999999;
+    top:2px;
+}

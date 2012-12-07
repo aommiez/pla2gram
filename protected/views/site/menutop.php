@@ -54,9 +54,9 @@ if ( Yii::app()->facebook->getUser() == 0 ) {
     );
     $fbUrl = Yii::app()->facebook->getLoginUrl($params);
     echo <<<HTML
-            <a class="uibutton" href="{$fbUrl}">
-                Login with Facebook
-            </a>
+    <div id="facebook-login-btb">
+		<a href="{$fbUrl}">login with <span>facebook</span></a>
+	</div>
 HTML;
 } else {
     Helper::YiiImport("GetController");
