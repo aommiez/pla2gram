@@ -22,6 +22,18 @@ Helper::register('jquery-1.8.3.min.js');
 
 <body>
 
+<div id="logoz">
+    <div class="body">
+        <div class="cloud">
+            <div class="gear">
+                <div class="tooth a"></div>
+                <div class="tooth b"></div>
+                <div class="tooth c"></div>
+                <div class="tooth d"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container" id="page">
 
