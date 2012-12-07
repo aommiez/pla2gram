@@ -32,7 +32,7 @@ Helper::register("dimsemenov-preview-pack.css");
             echo <<<HTML
             <li class="touchcarousel-item">
             <a class="item-block" href="/?p={$i}">
-                <img src="{$l}"  height="230" />
+                <img src="{$l}" />
 
             </a>
         </li>
