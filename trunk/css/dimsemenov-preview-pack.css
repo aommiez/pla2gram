@@ -6,13 +6,6 @@
    Links
    ========================================================================== */
 
-a { color: #06A; cursor: pointer; }
-a:visited { color: #06A; }
-a:hover { color: #C00; }
-a:focus { outline: thin dotted; }
-
-/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
-a:hover, a:active { outline: 0; }
 
 
 
