@@ -32,7 +32,7 @@ echo <<<HTML
     </div>
 HTML;
 
-$this->renderPartial('lastUpload');
+echo $this->renderPartial('lastUpload');
 ?>
 
 
