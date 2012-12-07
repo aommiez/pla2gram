@@ -48,6 +48,39 @@ HTML;
 }
 */
 
+
+$user_id = Yii::app()->facebook->getUser();
+if($user_id) {
+
+    // We have a user ID, so probably a logged in user.
+    // If not, we'll get an exception, which we handle below.
+    try {
+
+        $user_profile = Yii::app()->facebook->api('/me','GET');
+        echo "Name: " . $user_profile['name'];
+
+    } catch(FacebookApiException $e) {
+        // If the user is logged out, you can have a
+        // user ID even though the access token is invalid.
+        // In this case, we'll get an exception, so we'll
+        // just ask the user to login again here.
+        $login_url = Yii::app()->facebook->getLoginUrl();
+        echo 'Please <a href="' . $login_url . '">login.</a>';
+        error_log($e->getType());
+        error_log($e->getMessage());
+    }
+} else {
+
+    // No user, print a link for the user to login
+    $login_url = Yii::app()->facebook->getLoginUrl();
+    echo 'Please <a href="' . $login_url . '">login.</a>';
+
+}
+
+
+
+
+
 /*
 
 if ( Yii::app()->facebook->getUser() == 0 ) {
@@ -86,24 +119,3 @@ HTML;
 }*/
 
 ?>
-<script>
-    FB.getLoginStatus(function(response) {
-        if (response.status === 'connected') {
-            // the user is logged in and has authenticated your
-            // app, and response.authResponse supplies
-            // the user's ID, a valid access token, a signed
-            // request, and the time the access token
-            // and signed request each expire
-            var uid = response.authResponse.userID;
-            var accessToken = response.authResponse.accessToken;
-            alert("connected");
-        } else if (response.status === 'not_authorized') {
-            // the user is logged in to Facebook,
-            // but has not authenticated your app
-            alert("not_authorized");
-        } else {
-            // the user isn't logged in to Facebook.
-            alert("not_login");
-        }
-    });
-</script>
