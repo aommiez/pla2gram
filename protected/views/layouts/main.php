@@ -28,7 +28,7 @@ Helper::register('jquery-1.8.3.min.js');
 
     <div id="logo"><a href="<?php echo "/";?>" style="color: #ffffff;text-decoration: none;">PLA2GRAM.COM</a></div>
     <?php
-            echo $this->renderPartial('menutop');
+            $this->renderPartial('menutop');
     ?>
 	<?php
             echo $content;
