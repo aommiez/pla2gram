@@ -48,19 +48,9 @@ HTML;
 }
 */
 
+/*
 
-$session = Yii::app()->facebook->getSession();
-
-if ($session) {
-    try {
-        $fbLogin = 1;
-    } catch (FacebookApiException $e) {
-        error_log($e);
-    }
-}
-
-
-if ( $fbLogin != 1 ) {
+if ( Yii::app()->facebook->getUser() == 0 ) {
     $params = array(
         'scope' => 'email ,user_about_me, user_activities, user_likes, user_location ,user_photos, user_status, user_videos, friends_about_me, friends_likes, friends_photos, publish_actions , user_online_presence, publish_stream, offline_access , status_update , photo_upload , video_upload , publish_checkins',
         'redirect_uri' => 'http://www.pla2gram.com/'
@@ -93,4 +83,27 @@ HTML;
     </div>
 </div>
 HTML;
-}
+}*/
+
+?>
+<script>
+    FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+            // the user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token
+            // and signed request each expire
+            var uid = response.authResponse.userID;
+            var accessToken = response.authResponse.accessToken;
+            alert("connected");
+        } else if (response.status === 'not_authorized') {
+            // the user is logged in to Facebook,
+            // but has not authenticated your app
+            alert("not_authorized");
+        } else {
+            // the user isn't logged in to Facebook.
+            alert("not_login");
+        }
+    });
+</script>
