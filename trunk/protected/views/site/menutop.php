@@ -53,7 +53,7 @@ $params = array(
     'no_session' => 'https://www.pla2gram.com/',
 );
 
-$next_url = $facebook->getLoginStatusUrl($params);
+$next_url = Yii::app()->facebook->getLoginStatusUrl($params);
 
 $user_id = Yii::app()->facebook->getUser();
 if($user_id) {
