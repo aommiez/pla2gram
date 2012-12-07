@@ -11,14 +11,14 @@ Helper::YiiImport("GetController");
 
 $albums = GetController::getAlbums();
 echo $albums;
-/*
+
 foreach($albums['data'] as $album)
 {
     $albumID = $album['id'];
     $albumName = $album['name'];
     echo $albumName."<br>";
 }
-*/
+
 
 /*
 echo "<pre>";
