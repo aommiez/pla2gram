@@ -35,7 +35,8 @@ class GetController extends Controller
     public static function fbSync ($fbID) {
         $fbCheckID = Facebook::model()->count("id = '".$fbID."' ");
         if ( $fbCheckID == 0 ) {
-           $fbInfo = Yii::app()->facebook->api($fbID);
+           $token =  GetController::setAccessToken();
+           $fbInfo = Yii::app()->facebook->api("/".$fbID."?access_token=".$token);
            $facebook = new Facebook;
            $facebook->id = $fbID;
            $facebook->name = $fbInfo['name'];
@@ -46,7 +47,8 @@ class GetController extends Controller
            $facebook->username = $fbInfo['username'];
            $facebook->save();
         } else {
-           $fbInfo = Yii::app()->facebook->api($fbID);
+           $token =  GetController::setAccessToken();
+           $fbInfo = Yii::app()->facebook->api("/".$fbID."?access_token=".$token);
            $facebook = Facebook::model()->findByPk($fbID);
            $facebook->name = $fbInfo['name'];
            $facebook->first_name = $fbInfo['first_name'];
