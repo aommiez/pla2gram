@@ -68,8 +68,12 @@ class GetController extends Controller
     }
 
     public static function getAlbums (){
-        $access = Yii::app()->facebook->getAccessToken();
+        $access = GetController::getFbToken();
         $albums = Yii::app()->facebook->api('/me/albums?access_token='.$access);
         return $albums;
+    }
+
+    public static function getFbToken () {
+        return Yii::app()->facebook->getAccessToken();
     }
 }
