@@ -13,3 +13,13 @@ echo "<pre>";
 print_r($albums);
 echo "</pre>";
 
+
+foreach($albums['data'] as $album)
+{
+
+    $photos = $facebook->api("/{$album['id']}/photos");
+    foreach($photos['data'] as $photo)
+    {
+        echo "<img src='{$photo['source']}' />", "<br />";
+    }
+}
