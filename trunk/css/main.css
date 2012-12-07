@@ -32,8 +32,7 @@ body
     text-shadow: 1px 1px 4px#000;
     font-size: 14px;
     text-align: center;
-    border-top: 1px solid gray;
-    padding-top: 10px;
+    padding-top: 30px;
 }
 .headText {
     font-family: Droid Serif;
@@ -68,11 +67,12 @@ body
 #last_upload {
     font-family: Droid Serif;
     color: white !important;
-    margin: 15px 0;
+    margin-top: 15px;
     text-shadow: 0 2px 0 #352F2A;
     font-size: 26px;
     border-bottom: 1px solid gray;
     padding-bottom: 6px;
+}
 }
 .last_ul {
 
