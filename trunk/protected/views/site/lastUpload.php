@@ -2,7 +2,7 @@
 Helper::register("jquery.touchcarousel-1.0.min.js");
 Helper::register("jquery.ba-hashchange.min.js");
 Helper::register("dimsemenov-preview-pack.css");
-if ( $lastUploadDisplay == 0 ) {
+if ( isset($lastUploadDisplay) == 0 ) {
     return false;
 }
 ?>
