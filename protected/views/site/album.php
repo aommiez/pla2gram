@@ -33,7 +33,7 @@ $albums = GetController::getAlbums();
                     for(var v=0;v<photos.length;v++) {
                         var image_arr = photos[v]["images"];
 
-                        var subImages_text1 = "Photo "+(v+1);
+                        //var subImages_text1 = "Photo "+(v+1);
 
                         //this is for the small picture that comes in the second column
                         var subImages_text2 = '<img src="'+image_arr[(image_arr.length-1)]["source"]+'" class="fbPhoto"/> ';
@@ -42,17 +42,18 @@ $albums = GetController::getAlbums();
                         var subImages_text3 = "";
 
                         //gets all the different sizes available for a given image
+                        /*
                         for(var j = 0 ;j<image_arr.length;j++) {
                             //subImages_text3 += '<img src="'+image_arr[j]["source"]+'" class="fbPhoto"/>';
                             subImages_text3 += '<a target="_blank" href="'+image_arr[j]["source"]+'">Photo('+image_arr[j]["width"]+"X"+image_arr[j]["height"]+')</a><br/>';
                         }
+                        */
                         addNewRow(subImages_text1,subImages_text2,subImages_text3);
                     }
                 });
             });
 
             function addNewRow(subImages_text1,subImages_text2,subImages_text3) {
-                $("#photoCount").append(subImages_text1);
                 $("#photoAlbum").append(subImages_text2);
             }
     });
