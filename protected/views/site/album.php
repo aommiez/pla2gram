@@ -18,7 +18,6 @@ $albums = GetController::getAlbums();
         -moz-box-shadow: 0 0 5px #888;
         -webkit-box-shadow: 0 0 5px#888;
         box-shadow: 0 0 5px #888;
-        width: 114px;
         margin-right: 16px;
     }
 </style>
