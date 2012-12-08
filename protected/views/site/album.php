@@ -11,14 +11,14 @@ Helper::YiiImport("GetController");
 
 $albums = GetController::getAlbums();
 
-/*
-echo "<pre>";
-print_r($albums);
-echo "</pre>";
-*/
-
 ?>
-<select>
+<script>
+    $("#albumList").change( function() {
+        var albumID = $(this).val();
+        alert(albumID);
+    });
+</script>
+<select id="albumList">
         <option value="0" selected>เลือกอัลบัม</option>
     <?php
     foreach($albums['data'] as $album)
@@ -31,3 +31,6 @@ HTML;
     }
     ?>
 </select>
+<div>
+
+</div>
