@@ -38,6 +38,10 @@ $albums = GetController::getAlbums();
                     }
                 });
             });
+
+            function addNewRow(subImages_text1,subImages_text2,subImages_text3) {
+                $("#photoAlbum").append(subImages_text2);
+            }
     });
 </script>
 <select id="albumList">
@@ -53,6 +57,5 @@ HTML;
     }
     ?>
 </select>
-<div id="photos_header">
-
-</div>
+<div id="photoCount"></div>
+<div id="photoAlbum"></div>
