@@ -10,7 +10,9 @@
 Helper::YiiImport("GetController");
 
 $albums = GetController::getAlbums();
-
+echo "<pre>";
+print_r($album);
+echo "</pre>";
 ?>
 <script>
     jQuery(function($) {
@@ -53,9 +55,9 @@ $albums = GetController::getAlbums();
     {
         $albumID = $album['id'];
         $albumName = $album['name'];
-        $albumPhotoCount = $album['count'];
+        //$albumPhotoCount = $album['count'];
         echo <<<HTML
-        <option value="{$albumID}">{$albumName} ({$albumPhotoCount})</option>
+        <option value="{$albumID}">{$albumName} ()</option>
 HTML;
     }
     ?>
