@@ -82,7 +82,6 @@ class GetController extends Controller
         } else {
             $access = Yii::app()->facebook->getAccessToken();
             $albums = Yii::app()->facebook->api('/'.Yii::app()->facebook->getUser().'/albums?access_token='.$access);
-            //echo $access;
             return $albums;
         }
     }
