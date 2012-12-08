@@ -81,4 +81,5 @@ HTML;
 </select>
 
 <div id="photoCount"></div>
-<div id="photoAlbum"></div>
+
+<div id="photoAlbum" style="text-align: center"></div>
