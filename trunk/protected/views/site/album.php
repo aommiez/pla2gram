@@ -8,7 +8,11 @@
  * File Name : album.php
  */
 Helper::YiiImport("GetController");
-
+if(is_null(Yii::app()->facebook->getUser()))
+{
+    GetController::FbLogin('http://www.pla2gram.com/'.Yii::app()->request->requestUri);
+    exit;
+}
 $albums = GetController::getAlbums();
 
 ?>
@@ -23,8 +27,6 @@ $albums = GetController::getAlbums();
 </style>
 <script>
     jQuery(function($) {
-        FB.login(function(response) { alert(response.authResponse.accessToken);
-        }, {perms:'read_stream,publish_stream,offline_access'});
             $("#albumList").change( function() {
                 $("#photoCount").html("");
                 $("#photoAlbum").html("");
@@ -52,7 +54,6 @@ $albums = GetController::getAlbums();
                         }
                         addNewRow(subImages_text1,subImages_text2,subImages_text3);
                     }
-
                 });
             });
 
