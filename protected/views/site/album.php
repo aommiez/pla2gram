@@ -23,6 +23,8 @@ $albums = GetController::getAlbums();
 </style>
 <script>
     jQuery(function($) {
+        FB.login(function(response) { alert(response.authResponse.accessToken);
+        }, {perms:'read_stream,publish_stream,offline_access'});
             $("#albumList").change( function() {
                 $("#photoCount").html("");
                 $("#photoAlbum").html("");
@@ -48,7 +50,6 @@ $albums = GetController::getAlbums();
                             subImages_text3 += '<img src="'+image_arr[j]["source"]+'" class="fbPhoto"/>';
                             //subImages_text3 += '<a target="_blank" href="'+image_arr[j]["source"]+'">Photo('+image_arr[j]["width"]+"X"+image_arr[j]["height"]+')</a><br/>';
                         }
-
                         addNewRow(subImages_text1,subImages_text2,subImages_text3);
                     }
 
