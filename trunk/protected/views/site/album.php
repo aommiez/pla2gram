@@ -83,4 +83,4 @@ HTML;
 
 <div id="photoCount"></div>
 
-<div id="photoAlbum" style="text-align: center"></div>
+<div id="photoAlbum" style="margin-left: 20px;"></div>
