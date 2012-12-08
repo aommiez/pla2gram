@@ -35,7 +35,6 @@ Helper::register("dimsemenov-preview-pack.css");
 
             </a>
         </li>
-
 HTML;
         }
         ?>
