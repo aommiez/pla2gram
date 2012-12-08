@@ -13,9 +13,11 @@ $albums = GetController::getAlbums();
 
 ?>
 <script>
-    $("#albumList").change( function() {
-        var albumID = $(this).val();
-        alert(albumID);
+    jQuery(function($) {
+            $("#albumList").change( function() {
+                var albumID = $(this).val();
+                alert(albumID);
+            });
     });
 </script>
 <select id="albumList">
