@@ -11,7 +11,7 @@ Helper::YiiImport("GetController");
 
 $albums = GetController::getAlbums();
 echo "<pre>";
-print_r($album);
+print_r($albums);
 echo "</pre>";
 ?>
 <script>
