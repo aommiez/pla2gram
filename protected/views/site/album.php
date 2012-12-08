@@ -53,8 +53,9 @@ $albums = GetController::getAlbums();
     {
         $albumID = $album['id'];
         $albumName = $album['name'];
+        $albumPhotoCount = $album['count'];
         echo <<<HTML
-        <option value="{$albumID}">{$albumName}</option>
+        <option value="{$albumID}">{$albumName} ({$albumPhotoCount})</option>
 HTML;
     }
     ?>
