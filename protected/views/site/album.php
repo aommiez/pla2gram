@@ -52,6 +52,7 @@ $albums = GetController::getAlbums();
             });
 
             function addNewRow(subImages_text1,subImages_text2,subImages_text3) {
+                $("#photoCount").append(subImages_text1);
                 $("#photoAlbum").append(subImages_text2);
             }
     });
