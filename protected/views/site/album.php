@@ -36,7 +36,7 @@ $albums = GetController::getAlbums();
                         var subImages_text1 = "Photo "+(v+1);
 
                         //this is for the small picture that comes in the second column
-                        var subImages_text2 = '<img src="'+image_arr[(image_arr.length)]["source"]+'" class="fbPhoto"/> ';
+                        var subImages_text2 = '<img src="'+image_arr[(image_arr.length-1)]["source"]+'" class="fbPhoto"/> ';
 
                         //this is for the third column, which holds the links other size versions of a picture
                         var subImages_text3 = "";
