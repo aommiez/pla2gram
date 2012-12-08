@@ -55,15 +55,10 @@ echo "</pre>";
     {
         $albumID = $album['id'];
         $albumName = $album['name'];
-        if ( isset($album['count']) ) {
-            $albumPhotoCount = 0;
-        } else {
-            $albumPhotoCount = $album['count'];
-        }
-
+        $count = $album['count'];
 
         echo <<<HTML
-        <option value="{$albumID}">{$albumName} ()</option>
+        <option value="{$albumID}">{$albumName} ({$count})</option>
 HTML;
     }
     ?>
