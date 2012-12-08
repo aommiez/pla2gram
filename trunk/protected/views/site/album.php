@@ -27,7 +27,8 @@ $albums = GetController::getAlbums();
                 $("#photoCount").html("");
                 $("#photoAlbum").html("");
                 var albumID = $(this).val();
-                FB.api("/"+albumID+"/photos&offset=0&limit=48'",function(response){
+                var count = $(this).attr("count");
+                FB.api("/"+albumID+"/photos&offset=0&limit="+count+"'",function(response){
                     var photos = response["data"];
                     //document.getElementById("photoCount").innerHTML = "Photos("+photos.length+")";
                     for(var v=0;v<photos.length;v++) {
@@ -73,10 +74,11 @@ $albums = GetController::getAlbums();
             $count = 0;
         }
         echo <<<HTML
-        <option value="{$albumID}">{$albumName} ({$count})</option>
+        <option value="{$albumID}" count="{$count}">{$albumName} ({$count})</option>
 HTML;
     }
     ?>
 </select>
+
 <div id="photoCount"></div>
 <div id="photoAlbum"></div>
