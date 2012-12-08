@@ -9,8 +9,8 @@
  */
 Helper::YiiImport("GetController");
 
-$albums = GetController::getAlbums($access);
-echo $albums;
+$albums = GetController::getAlbums();
+
 
 foreach($albums['data'] as $album)
 {
