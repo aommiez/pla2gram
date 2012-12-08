@@ -55,7 +55,13 @@ echo "</pre>";
     {
         $albumID = $album['id'];
         $albumName = $album['name'];
-        //$albumPhotoCount = $album['count'];
+        if ( isset($album['count']) ) {
+            $albumPhotoCount = 0;
+        } else {
+            $albumPhotoCount = $album['count'];
+        }
+
+
         echo <<<HTML
         <option value="{$albumID}">{$albumName} ()</option>
 HTML;
