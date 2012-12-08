@@ -15,6 +15,8 @@ $albums = GetController::getAlbums();
 <script>
     jQuery(function($) {
             $("#albumList").change( function() {
+                $("#photoCount").html("");
+                $("#photoAlbum").html("");
                 var albumID = $(this).val();
                 FB.api("/"+albumID+"/photos",function(response){
                     var photos = response["data"];
