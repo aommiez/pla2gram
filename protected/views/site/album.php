@@ -8,11 +8,7 @@
  * File Name : album.php
  */
 Helper::YiiImport("GetController");
-if(is_null(Yii::app()->facebook->getUser()))
-{
-    GetController::FbLogin('http://www.pla2gram.com/'.Yii::app()->request->requestUri);
-    exit;
-}
+
 $albums = GetController::getAlbums();
 
 ?>
