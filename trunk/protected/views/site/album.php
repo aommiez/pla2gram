@@ -10,9 +10,7 @@
 Helper::YiiImport("GetController");
 
 $albums = GetController::getAlbums();
-echo "<pre>";
-print_r($albums);
-echo "</pre>";
+
 ?>
 <script>
     jQuery(function($) {
