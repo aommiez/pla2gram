@@ -175,7 +175,7 @@ class SiteController extends Controller
         if ( !empty($_GET['code'])) {
             Helper::redir(Yii::app()->request->requestUri,0);
         }
-        $this->render("album");
+        $this->render("album",array('lastUploadDisplay' => 0));
     }
 
 
