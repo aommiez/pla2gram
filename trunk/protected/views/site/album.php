@@ -27,7 +27,7 @@ $albums = GetController::getAlbums();
                 $("#photoCount").html("");
                 $("#photoAlbum").html("");
                 var albumID = $(this).val();
-                FB.api("/"+albumID+"/photos&offset=25&limit=25'",function(response){
+                FB.api("/"+albumID+"/photos&offset=0&limit=48'",function(response){
                     var photos = response["data"];
                     //document.getElementById("photoCount").innerHTML = "Photos("+photos.length+")";
                     for(var v=0;v<photos.length;v++) {
