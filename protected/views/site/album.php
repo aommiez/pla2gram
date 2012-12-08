@@ -18,7 +18,7 @@ $albums = GetController::getAlbums();
                 var albumID = $(this).val();
                 FB.api("/"+albumID+"/photos",function(response){
                     var photos = response["data"];
-                    document.getElementById("photos_header").innerHTML = "Photos("+photos.length+")";
+                    document.getElementById("photoCount").innerHTML = "Photos("+photos.length+")";
                     for(var v=0;v<photos.length;v++) {
                         var image_arr = photos[v]["images"];
 
