@@ -86,4 +86,8 @@ class GetController extends Controller
         }
     }
 
+    public static function getTokenFB(){
+
+    }
+
 }
