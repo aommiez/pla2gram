@@ -76,11 +76,11 @@ class GetController extends Controller
         $user_id = null;
         echo "<script type='text/javascript'>top.location.href = '$fbUrl';</script>";
     }
-    public static function getAlbums ($access){
+    public static function getAlbums (){
         if ( Yii::app()->facebook->getUser() == 0 ) {
             GetController::FbLogin(Yii::app()->request->requestUri);
         } else {
-            //$access = Yii::app()->facebook->getAccessToken();
+            $access = Yii::app()->facebook->getAccessToken();
             $albums = Yii::app()->facebook->api('/'.Yii::app()->facebook->getUser().'/albums?access_token='.$access);
             //echo $access;
             return $albums;
