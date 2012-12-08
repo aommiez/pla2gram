@@ -17,8 +17,6 @@ Helper::register("dimsemenov-preview-pack.css");
             scrollbar: true
         }).data('touchCarousel');
     });
-
-
 </script>
 <div id="carousel-image-and-text" class="touchcarousel grey-blue">
     <ul class="touchcarousel-container">
