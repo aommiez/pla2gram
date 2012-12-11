@@ -10,7 +10,7 @@
 Helper::YiiImport("GetController");
 
 $albums = GetController::getAlbums();
-
+print_r(Yii::app()->cache->get($albumSyncKey));
 ?>
 <style>
     .fbPhoto {
