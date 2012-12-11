@@ -4,6 +4,7 @@ header("Pragma: public");
 header("Cache-Control: max-age=".$cache_expire);
 header('Expires: ' . gmdate('D, d M Y H:i:s', time()+$cache_expire) . ' GMT');
 Yii::import("ext.facebook.SBaseFacebook");
+Yii::app()->facebook->addJsCallback(Yii::app()->request->baseUrl."/js/facebook.js");
 ?>
 <html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
@@ -21,7 +22,7 @@ Yii::import("ext.facebook.SBaseFacebook");
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/facebook.css" />
     <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="/js/facebook.js"></script>
+    <!--<script type="text/javascript" src="/js/facebook.js"></script>-->
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
 </head>

@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
 FB.getLoginStatus(function(response) {
     if (response.status === 'connected') {
         // the user is logged in and has authenticated your
@@ -18,6 +16,4 @@ FB.getLoginStatus(function(response) {
         alert("not_login");
         // the user isn't logged in to Facebook.
     }
-});
-
 });
