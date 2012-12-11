@@ -9,4 +9,6 @@
  */
 Helper::YiiImport("GetController");
 
+$albums = GetController::getAlbums();
+
 ?>
