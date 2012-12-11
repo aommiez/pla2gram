@@ -8,14 +8,7 @@
  * File Name : album.php
  */
 Helper::YiiImport("GetController");
-$user_id = Yii::app()->facebook->getUser();
-try {
-    echo $user_id;
-} catch (FacebookApiException $e) {
-    if ( $e['code'] == 102 ) {
-        echo "102";
-    }
-}
+
 $albums = GetController::getAlbums();
 
 ?>
