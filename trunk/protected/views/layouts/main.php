@@ -4,11 +4,7 @@ header("Pragma: public");
 header("Cache-Control: max-age=".$cache_expire);
 header('Expires: ' . gmdate('D, d M Y H:i:s', time()+$cache_expire) . ' GMT');
 Yii::import("ext.facebook.SBaseFacebook");
-if (  Yii::app()->facebook->addJsCallback(Yii::app()->request->baseUrl."/js/facebook.js")) {
-    echo "true";
-} else {
-    echo "false";
-}
+print_r(Yii::app()->facebook->addJsCallback(Yii::app()->request->baseUrl."/js/facebook.js"));
 ?>
 <html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
