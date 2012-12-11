@@ -61,7 +61,7 @@ return array(
             'fileUpload'=>true, // needed to support API POST requests which send files
             //'trustForwarded'=>false, // trust HTTP_X_FORWARDED_* headers ?
             'locale'=>'en_US', // override locale setting (defaults to en_US)
-            //'jsSdk'=>true, // don't include JS SDK
+            'jsSdk'=>true, // don't include JS SDK
             'async'=>true, // load JS SDK asynchronously
             //'jsCallback'=>false, // declare if you are going to be inserting any JS callbacks to the async JS SDK loader
             'status'=>true, // JS SDK - check login status
