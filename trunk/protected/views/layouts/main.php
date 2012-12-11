@@ -3,7 +3,7 @@ $cache_expire = 60*60*24*365;
 header("Pragma: public");
 header("Cache-Control: max-age=".$cache_expire);
 header('Expires: ' . gmdate('D, d M Y H:i:s', time()+$cache_expire) . ' GMT');
-
+Yii::import("ext.facebook.SBaseFacebook");
 ?>
 <html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
