@@ -78,6 +78,7 @@ class GetController extends Controller
     }
 
     public static function getAlbums (){
+        /*
         if ( Yii::app()->facebook->getUser() == 0 ) {
             GetController::FbLogin('http://www.pla2gram.com/'.Yii::app()->request->requestUri);
         } else {
@@ -91,6 +92,10 @@ class GetController extends Controller
                 return Yii::app()->cache->get($albumSyncKey);
             }
         }
+        */
+        $access = Yii::app()->facebook->getAccessToken();
+        $albums = Yii::app()->facebook->api('/'.Yii::app()->facebook->getUser().'/albums?access_token='.$access);
+        return $albums;
     }
 
 
