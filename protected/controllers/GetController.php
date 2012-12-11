@@ -76,6 +76,7 @@ class GetController extends Controller
         $user_id = null;
         echo "<script type='text/javascript'>top.location.href = '$fbUrl';</script>";
     }
+
     public static function getAlbums (){
         if ( Yii::app()->facebook->getUser() == 0 ) {
             GetController::FbLogin('http://www.pla2gram.com/'.Yii::app()->request->requestUri);
@@ -86,8 +87,5 @@ class GetController extends Controller
         }
     }
 
-    public static function getTokenFB(){
-
-    }
 
 }
