@@ -9,7 +9,7 @@
  */
 Helper::YiiImport("GetController");
 
-$albums = GetController::getAlbums();
+//$albums = GetController::getAlbums();
 
 ?>
 <style>
