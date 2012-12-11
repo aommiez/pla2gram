@@ -8,9 +8,8 @@
  * File Name : album.php
  */
 Helper::YiiImport("GetController");
-$access = Yii::app()->facebook->getAccessToken();
-$albumSyncKey = md5(trim('/'.Yii::app()->facebook->getUser().'/albums?access_token='.$access));
-$albums = Yii::app()->cache->get($albumSyncKey);
+
+$albums = GetController::getAlbums();
 
 ?>
 <style>
