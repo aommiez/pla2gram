@@ -1,3 +1,9 @@
+<?php
+$cache_expire = 60*60*24*365;
+header("Pragma: public");
+header("Cache-Control: max-age=".$cache_expire);
+header('Expires: ' . gmdate('D, d M Y H:i:s', time()+$cache_expire) . ' GMT');
+?>
 <html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
