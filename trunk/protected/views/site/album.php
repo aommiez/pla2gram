@@ -12,14 +12,9 @@ $user_id = Yii::app()->facebook->getUser();
 try {
     echo $user_id;
 } catch (FacebookApiException $e) {
-    $params = array(
-        'scope' => 'email ,user_about_me, user_activities, user_likes, user_location ,user_photos, user_status, user_videos, friends_about_me, friends_likes, friends_photos, publish_actions ,  publish_stream, offline_access , status_update , photo_upload , video_upload , publish_checkins',
-        'redirect_uri' => 'http://www.pla2gram.com/'.Yii::app()->request->requestUri
-    );
-    $fbUrl = Yii::app()->facebook->getLoginUrl($params);
-    $user_id = null;
-    echo "<script type='text/javascript'>top.location.href = '$fbUrl';</script>";
-    exit;
+    if ( $e['code'] == 102 ) {
+        echo "102";
+    }
 }
 $albums = GetController::getAlbums();
 
