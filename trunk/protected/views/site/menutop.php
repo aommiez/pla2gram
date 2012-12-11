@@ -20,8 +20,7 @@ if (!$user_id) {
 		<a href="{$fbUrl}">login with <span>facebook</span></a>
 	</div>
 HTML;
-    Yii::app()->getController();
-    echo $this->renderPartial('lastUpload');
+
 }
 else {
     try {

@@ -38,6 +38,13 @@ header('Expires: ' . gmdate('D, d M Y H:i:s', time()+$cache_expire) . ' GMT');
             echo $content;
     ?>
 
+    <?php
+            if( Yii::app()->request->requestUri == '/site/album' ) {
+                return false;
+            } else {
+                $this->renderPartial('lastUpload');
+            }
+    ?>
     <div id="footer">Copyright © 2012-2013 Pla2.Com All Rights Reserved ( Powered By Pla2.Com )</div>
 </div><!-- page -->
 
