@@ -16,6 +16,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+        'extensions.yii-facebook-opengraph.facebook.SBaseFacebook',
 	),
 
 	'modules'=>array(
