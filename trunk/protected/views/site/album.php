@@ -77,7 +77,7 @@ HTML;
     }
     ?>
 </select>
-
+<button id="albumSync">Sync Facebook Now</button>
 <div id="photoCount"></div>
 
 <div id="photoAlbum" style="margin-left: 20px;"></div>
