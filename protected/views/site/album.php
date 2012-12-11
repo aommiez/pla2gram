@@ -11,8 +11,7 @@ Helper::YiiImport("GetController");
 
 $albums = GetController::getAlbums();
 $access = Yii::app()->facebook->getAccessToken();
-$albumSyncKey = md5(trim('/'.Yii::app()->facebook->getUser().'/albums?access_token='.$access));
-echo $albumSyncKey;
+
 ?>
 <style>
     .fbPhoto {
