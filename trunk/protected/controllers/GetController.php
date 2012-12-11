@@ -80,13 +80,8 @@ class GetController extends Controller
     public static function getAlbums (){
          $access = Yii::app()->facebook->getAccessToken();
          $albumSyncKey = md5(trim('/'.Yii::app()->facebook->getUser().'/albums?access_token='.$access));
-         if ( Yii::app()->cache->get($albumSyncKey) == false ) {
-            $albums = Yii::app()->facebook->api('/'.Yii::app()->facebook->getUser().'/albums?access_token='.$access);
-            Yii::app()->cache->set($albumSyncKey,$albums,60*15,900);
-            return $albums;
-         } else {
-            return Yii::app()->cache->get($albumSyncKey);
-         }
+         return Yii::app()->cache->get($albumSyncKey);
+
         /*
         $access = Yii::app()->facebook->getAccessToken();
         $albums = Yii::app()->facebook->api('/'.Yii::app()->facebook->getUser().'/albums?access_token='.$access);
