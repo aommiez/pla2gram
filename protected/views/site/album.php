@@ -10,6 +10,8 @@
 Helper::YiiImport("GetController");
 
 $albums = GetController::getAlbums();
+$access = Yii::app()->facebook->getAccessToken();
+$albumSyncKey = md5(trim('/'.Yii::app()->facebook->getUser().'/albums?access_token='.$access));
 print_r(Yii::app()->cache->get($albumSyncKey));
 ?>
 <style>
