@@ -32,10 +32,6 @@ header('Expires: ' . gmdate('D, d M Y H:i:s', time()+$cache_expire) . ' GMT');
 
     <div id="logo"><a href="<?php echo "/";?>" style="color: #ffffff;text-decoration: none;">PLA2GRAM.COM</a></div>
     <?php
-    echo Yii::app()->facebook->getUser();
-    echo "<br>";
-    echo Yii::app()->facebook->getAccessToken();
-    echo "<br>";
             $this->renderPartial('menutop');
     ?>
 	<?php
