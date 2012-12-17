@@ -37,7 +37,7 @@ $albums = GetController::getAlbums();
                         var subImages_text1 = "Photo "+(v+1);
 
                         //this is for the small picture that comes in the second column
-                        var subImages_text2 = '<img src="'+image_arr[6]["source"]+'" class="fbPhoto"/> ';
+                        var subImages_text2 = '<img src="'+image_arr[6]["source"]+'" class="fbPhoto urlPhoto"/> ';
 
                         //this is for the third column, which holds the links other size versions of a picture
                         var subImages_text3 = "";
@@ -57,9 +57,8 @@ $albums = GetController::getAlbums();
                 $("#photoAlbum").append(subImages_text2);
             }
 
-            $(".fbPhoto").click(function(){
-                var url = $(this).attr("src");
-                alert(url);
+            $("urlPhoto").click(function() {
+                alert("Handler for .click() called.");
             });
 
             $("#albumSync").click(function(){
