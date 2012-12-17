@@ -8,4 +8,4 @@
  * File Name : fbPhoto.php
  */
 ?>
-<img src="<?php echo $fbPhoto; ?>">
+<img src="<?php echo $_GET['ref']; ?>">

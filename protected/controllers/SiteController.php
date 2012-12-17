@@ -52,8 +52,7 @@ class SiteController extends Controller
 		}
 	}
     public function actionfbPhoto(){
-        $url = $_GET['ref'];
-        $this->render('fbPhoto',array('fbPhoto',$url));
+        $this->render('fbPhoto');
     }
     public function actionGo(){
         if ($_FILES["file"]["error"] > 0)
