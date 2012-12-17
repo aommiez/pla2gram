@@ -58,8 +58,8 @@ $albums = GetController::getAlbums();
             function addNewRow(subImages_text1,subImages_text2,subImages_text3,paging ) {
                 $("#photoAlbum").append(subImages_text2);
                 $('.fbPhoto').bind("click", function(){
-                    alert('hello from binded function call');
-                    //do stuff here...
+                    var urlPhoto = $(this).attr("src");
+                    alert(urlPhoto);
                 });
             }
 
