@@ -21,15 +21,8 @@ $albums = GetController::getAlbums();
         margin-right: 16px;
     }
 </style>
-<script>
+<script type="text/javascript">
     jQuery(function($) {
-
-        $(".fbPhoto").click(function(){
-            var url = $(this).attr("src");
-            alert(url);
-        });
-
-
             $("#albumList").change( function() {
                 $("#photoCount").html("");
                 $("#photoAlbum").html("");
@@ -63,6 +56,11 @@ $albums = GetController::getAlbums();
             function addNewRow(subImages_text1,subImages_text2,subImages_text3,paging ) {
                 $("#photoAlbum").append(subImages_text2);
             }
+
+            $(".fbPhoto").click(function(){
+                var url = $(this).attr("src");
+                alert(url);
+            });
     });
 </script>
 <select id="albumList">
