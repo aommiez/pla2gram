@@ -51,15 +51,17 @@ $albums = GetController::getAlbums();
                         addNewRow(subImages_text1,subImages_text2,subImages_text3);
                     }
                 });
+
+                $('.urlPhoto').click(function() {
+                    alert("Handler for .click() called.");
+                });
             });
 
             function addNewRow(subImages_text1,subImages_text2,subImages_text3,paging ) {
                 $("#photoAlbum").append(subImages_text2);
             }
 
-            $("urlPhoto").click(function() {
-                alert("Handler for .click() called.");
-            });
+
 
             $("#albumSync").click(function(){
                alert("Sync");
