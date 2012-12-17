@@ -46,7 +46,7 @@ $albums = GetController::getAlbums();
 
                         for(var j = 0 ;j<image_arr.length;j++) {
                             subImages_text3 += '<img src="'+image_arr[j]["source"]+'" class="fbPhoto"/>';
-                            //subImages_text3 += '<a target="_blank" href="'+image_arr[j]["source"]+'">Photo('+image_arr[j]["width"]+"X"+image_arr[j]["height"]+')</a><br/>';
+                            subImages_text3 += '<a target="_blank" href="'+image_arr[j]["source"]+'">Photo('+image_arr[j]["width"]+"X"+image_arr[j]["height"]+')</a><br/>';
                         }
                         addNewRow(subImages_text1,subImages_text2,subImages_text3);
                     }
@@ -56,12 +56,14 @@ $albums = GetController::getAlbums();
             });
 
             function addNewRow(subImages_text1,subImages_text2,subImages_text3,paging ) {
-                $("#photoAlbum").append(subImages_text2);
+                $("#photoAlbum").append(subImages_text3);
+                /*
                 $('.fbPhoto').bind("click", function(){
                     var urlPhoto = $(this).attr("src");
                     document.location.href= "http://www.pla2gram.com<?php echo Yii::app()->createUrl("site/fbPhoto"); ?>?ref="+urlPhoto;
                     return false;
                 });
+                */
             }
 
 
