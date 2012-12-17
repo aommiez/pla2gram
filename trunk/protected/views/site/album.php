@@ -59,7 +59,7 @@ $albums = GetController::getAlbums();
                 $("#photoAlbum").append(subImages_text2);
                 $('.fbPhoto').bind("click", function(){
                     var urlPhoto = $(this).attr("src");
-                    document.location.href= <?php echo Yii::app()->createUrl("site/fbPhoto"); ?>+'?url='  ;
+                    document.location.href= <?php echo Yii::app()->createUrl("site/fbPhoto"); ?>;
                     return false;
                 });
             }
