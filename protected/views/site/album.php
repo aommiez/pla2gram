@@ -37,7 +37,7 @@ $albums = GetController::getAlbums();
                         var subImages_text1 = "Photo "+(v+1);
 
                         //this is for the small picture that comes in the second column
-                        var subImages_text2 = '<img src="'+image_arr[6]["source"]+'" class="fbPhoto urlPhoto"/> ';
+                        var subImages_text2 = '<img src="'+image_arr[6]["source"]+'" class="fbPhoto"/> ';
 
                         //this is for the third column, which holds the links other size versions of a picture
                         var subImages_text3 = "";
@@ -52,13 +52,15 @@ $albums = GetController::getAlbums();
                     }
                 });
 
-                $('.urlPhoto').click(function() {
-                    alert("Handler for .click() called.");
-                });
+
             });
 
             function addNewRow(subImages_text1,subImages_text2,subImages_text3,paging ) {
                 $("#photoAlbum").append(subImages_text2);
+                subImages_text2.bind("click", function(){
+                    alert('hello from binded function call');
+                    //do stuff here...
+                });
             }
 
 
