@@ -56,14 +56,14 @@ $albums = GetController::getAlbums();
             });
 
             function addNewRow(subImages_text1,subImages_text2,subImages_text3,paging ) {
-                $("#photoAlbum").append(subImages_text3);
-                /*
+                $("#photoAlbum").append(subImages_text2);
+
                 $('.fbPhoto').bind("click", function(){
                     var urlPhoto = $(this).attr("src");
                     document.location.href= "http://www.pla2gram.com<?php echo Yii::app()->createUrl("site/fbPhoto"); ?>?ref="+urlPhoto;
                     return false;
                 });
-                */
+
             }
 
 
