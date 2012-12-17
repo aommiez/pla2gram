@@ -22,7 +22,7 @@ $albums = GetController::getAlbums();
     }
 </style>
 <script type="text/javascript">
-    jQuery(function($) {
+    $(document).ready(function() {
             $("#albumList").change( function() {
                 $("#photoCount").html("");
                 $("#photoAlbum").html("");
@@ -60,6 +60,10 @@ $albums = GetController::getAlbums();
             $(".fbPhoto").click(function(){
                 var url = $(this).attr("src");
                 alert(url);
+            });
+
+            $("#albumSync").click(function(){
+               alert("Sync");
             });
     });
 </script>
