@@ -25,7 +25,7 @@ Helper::register("dimsemenov-preview-pack.css");
         $last = GetController::last_upload(12);
         foreach ( $last as $key => $value ) {
             $thumb = str_replace("photo/","",$value['link']);
-            $l = Yii::app()->baseUrl."thumb/thumb230_".$thumb;
+            $l = Yii::app()->baseUrl."/thumb/thumb230_".$thumb;
             $i = $value['id'];
 
             echo <<<HTML
