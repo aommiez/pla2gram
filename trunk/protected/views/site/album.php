@@ -23,6 +23,13 @@ $albums = GetController::getAlbums();
 </style>
 <script>
     jQuery(function($) {
+
+        $(".fbPhoto").click(function(){
+            var url = $(this).attr("src");
+            alert(url);
+        });
+
+
             $("#albumList").change( function() {
                 $("#photoCount").html("");
                 $("#photoAlbum").html("");
