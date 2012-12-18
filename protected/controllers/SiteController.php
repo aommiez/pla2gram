@@ -183,8 +183,9 @@ class SiteController extends Controller
     public function actiongoPhotoFB(){
         $urlPhoto = $_GET['urlPhoro'];
         $filter = $_GET['filter'];
-        echo $urlPhoto;
-        echo "<br>".$filter;
+        //Helper::save_image($urlPhoto,Yii::app()->request->baseUrl."fbPhoto/");
+        print_r(parse_url($urlPhoto));
+        echo parse_url($urlPhoto, PHP_URL_PATH);
     }
 
 }
