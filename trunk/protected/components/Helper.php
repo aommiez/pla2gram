@@ -214,5 +214,12 @@ class Helper {
         return end($pathTokens); // get the last segment
     }
 
+    public static function getLastPath($url) {
+        $url_path = parse_url($url, PHP_URL_PATH);
+        $parts = explode('/', $url_path);
+        $last = end($parts);
+        return $last;
+    }
+
 
 }
