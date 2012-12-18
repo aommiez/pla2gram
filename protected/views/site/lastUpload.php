@@ -9,9 +9,9 @@ Helper::register("dimsemenov-preview-pack.css");
 <script type="text/javascript">
     jQuery(function($) {
         carouselInstance = $("#carousel-image-and-text").touchCarousel({
-            pagingNav: false,
-            snapToItems: false,
-            itemsPerMove: 4,
+            pagingNav: true,
+            snapToItems: true,
+            itemsPerMove: 1,
             scrollToLast: false,
             loopItems: true,
             scrollbar: false
