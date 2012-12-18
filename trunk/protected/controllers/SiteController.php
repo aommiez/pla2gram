@@ -193,13 +193,10 @@ class SiteController extends Controller
         Helper::save_image($urlPhoto,$file);
         $filter = Instagraph::factory($file,$file);
         $filter->$f();
-        $args = array('message' => 'Test Photo From Pla2Gram.COM');
+        $args = array('message' => 'Photo Filter : http://www.pla2gram.com');
         $args['image'] = '@' . realpath($file);
         Yii::app()->facebook->api('/me/photos', 'post', $args);
-        echo <<<HTML
-        <img src="/fbPhoto/{$name}">
-HTML;
-
+        Helper::redir("https://www.facebook.com/".Yii::app()->facebook->getUser(),0);
     }
 
 }
