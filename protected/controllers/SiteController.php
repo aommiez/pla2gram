@@ -183,7 +183,8 @@ class SiteController extends Controller
     public function actiongoPhotoFB(){
         $urlPhoto = $_GET['urlPhoro'];
         $filter = $_GET['filter'];
-        $namePhoto = Helper::getLastPathSegment($urlPhoto);
+        $last_slash = strrpos('/', $urlPhoto);
+        $namePhoto = substr($urlPhoto, $last_slash);
         echo $namePhoto;
         //Helper::save_image($urlPhoto,Yii::app()->request->baseUrl."fbPhoto/");
 
