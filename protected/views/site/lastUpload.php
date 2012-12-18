@@ -13,8 +13,8 @@ Helper::register("dimsemenov-preview-pack.css");
             snapToItems: false,
             itemsPerMove: 4,
             scrollToLast: false,
-            loopItems: false,
-            scrollbar: true
+            loopItems: true,
+            scrollbar: false
         }).data('touchCarousel');
     });
 </script>
