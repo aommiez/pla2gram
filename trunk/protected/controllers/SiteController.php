@@ -180,6 +180,8 @@ class SiteController extends Controller
         $this->render("album");
     }
 
-
+    public function actiongoPhotoFB(){
+        echo "goPhotoFB";
+    }
 
 }

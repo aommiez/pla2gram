@@ -10,7 +10,10 @@
 ?>
 <script type="text/javascript">
     $(document).ready(function() {
-
+        $("#go").click(function(){
+           var filter = $("#filter").val();
+           var urlPhoro = $("#urlPhoto").val();
+        });
     });
 </script>
 <div>
