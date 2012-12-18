@@ -189,10 +189,11 @@ class SiteController extends Controller
         $name_file=rand($min_rand,$max_rand);//this part is for creating random name for image
         $ext=end(explode(".", $namePhoto));//gets extension
         $file = Yii::app()->request->baseUrl."fbPhoto/".$name_file.".".$ext;
+        $name = $name_file.".".$ext;
         Helper::save_image($urlPhoto,$file);
-
-        header( "Content-Type: image/".$ext );
-        echo $file;
+        echo <<<HTML
+        <img src="/fbPhoto/{$name}">
+HTML;
     }
 
 }
