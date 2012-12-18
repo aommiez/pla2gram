@@ -8,19 +8,21 @@
  * File Name : fbPhoto.php
  */
 ?>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+    });
+</script>
 <div>
     <img src="<?php echo $_GET['ref']; ?>">
 </div>
 <div>
     <div class="headText"> Select Filter</div>
     <input type="hidden" name="filter" id="filter" value="">
+    <input type="hidden" name="urlPhoto" id="urlPhoto" value="<?php echo $_GET['url']; ?>">
     <div id="filters">
         <img data="lomo" alt="" src="/images/lomo.png" style="-webkit-transform: rotate(-5deg);" class="filterList">
-        <!--<img data="nashville" alt="" src="images/nashville.png" style="-webkit-transform: rotate(1deg);" class="filterList">-->
-        <!--<<img data="kelvin" alt="" src="images/kelvin.png" style="-webkit-transform: rotate(-4deg);" class="filterList">-->
-        <!--<<img data="toaster" alt="" src="images/toaster.png" style="-webkit-transform: rotate(11deg);" class="filterList">-->
         <img data="gotham" alt="" src="/images/gotham.png" style="-webkit-transform: rotate(-11deg);" class="filterList">
-        <!--<<img data="tilt_shift" alt="" src="images/tilt_shift.png" style="-webkit-transform: rotate(8deg);" class="filterList">-->
     </div>
-    <button class="button">Go!</button>
+    <button class="button" id="go">Go!</button>
 </div>
