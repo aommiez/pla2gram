@@ -191,7 +191,7 @@ class Helper {
         return true;
     }
 
-    function save_image($inPath,$outPath)
+    public static function save_image($inPath,$outPath)
     { //Download images from remote server
         $in=    fopen($inPath, "rb");
         $out=   fopen($outPath, "wb");
