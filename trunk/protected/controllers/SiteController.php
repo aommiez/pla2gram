@@ -182,18 +182,18 @@ class SiteController extends Controller
 
     public function actiongoPhotoFB(){
         $urlPhoto = $_GET['urlPhoro'];
-        $filter = $_GET['filter'];
+        $f = $_GET['filter'];
         $namePhoto = Helper::getLastPath($urlPhoto);
         $min_rand=rand(0,1000);
         $max_rand=rand(100000000000,10000000000000000);
         $name_file=rand($min_rand,$max_rand);//this part is for creating random name for image
         $ext=end(explode(".", $namePhoto));//gets extension
-        $file = Yii::app()->request->baseUrl."fbPhoto/".$name_file.".".$ext;
+        $file = Yii::app()->request->baseUrl."/fbPhoto/".$name_file.".".$ext;
         $name = $name_file.".".$ext;
         echo $file;
-        //Helper::save_image($urlPhoto,$file);
-        //$filter = Instagraph::factory($file,$file);
-        //$filter->$filter();
+        Helper::save_image($urlPhoto,$file);
+        $filter = Instagraph::factory($file,$file);
+        $filter->$f();
         echo <<<HTML
         <img src="/fbPhoto/{$name}">
 HTML;
