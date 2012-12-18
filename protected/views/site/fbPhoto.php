@@ -14,6 +14,7 @@
     });
 </script>
 <div>
+    <div class="headText"> Photo From Facebook Album</div>
     <img src="<?php echo $_GET['ref']; ?>">
 </div>
 <div>
@@ -24,5 +25,6 @@
         <img data="lomo" alt="" src="/images/lomo.png" style="-webkit-transform: rotate(-5deg);" class="filterList">
         <img data="gotham" alt="" src="/images/gotham.png" style="-webkit-transform: rotate(-11deg);" class="filterList">
     </div>
+    <div class="headText">Process</div>
     <button class="button" id="go">Go!</button>
 </div>
