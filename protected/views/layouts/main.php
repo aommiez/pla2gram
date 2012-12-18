@@ -30,7 +30,7 @@ header('Expires: ' . gmdate('D, d M Y H:i:s', time()+$cache_expire) . ' GMT');
 
 <div class="container" id="page">
 
-    <div id="logo"><a href="<?php echo "/";?>" style="color: #ffffff;text-decoration: none;">PLA2GRAM.COM</a></div>
+    <div id="logo"><a href="<?php echo "/";?>" style="color: #ffffff;text-decoration: none;"><img src="/images/pla2gram.png"> PLA2GRAM.COM</a></div>
     <?php
             $this->renderPartial('menutop');
     ?>
