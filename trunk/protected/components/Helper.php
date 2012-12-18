@@ -193,6 +193,7 @@ class Helper {
 
     public static function save_image($inPath,$outPath)
     { //Download images from remote server
+        chmod($inPath, 0777);
         $in=    fopen($inPath, "rb");
         $out=   fopen($outPath, "wb");
         while ($chunk = fread($in,8192))
