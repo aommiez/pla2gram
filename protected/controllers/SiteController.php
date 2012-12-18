@@ -190,6 +190,7 @@ class SiteController extends Controller
         $ext=end(explode(".", $namePhoto));//gets extension
         $file = Yii::app()->request->baseUrl."fbPhoto/".$name_file.".".$ext;
         Helper::save_image($urlPhoto,$file);
+
         header( "Content-Type: image/".$ext );
         echo $file;
     }
