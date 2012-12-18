@@ -9,7 +9,8 @@
  */
 
 $user_id = Yii::app()->facebook->getUser();
-if (!$user_id) {
+
+if (!$user_id  ) {
     $params = array(
         'scope' => 'email ,user_about_me, user_activities, user_likes, user_location ,user_photos, user_status, user_videos, friends_about_me, friends_likes, friends_photos, publish_actions ,  publish_stream, offline_access , status_update , photo_upload , video_upload , publish_checkins',
         'redirect_uri' => 'http://www.pla2gram.com/'

@@ -3,6 +3,9 @@ $cache_expire = 60*60*24*365;
 header("Pragma: public");
 header("Cache-Control: max-age=".$cache_expire);
 header('Expires: ' . gmdate('D, d M Y H:i:s', time()+$cache_expire) . ' GMT');
+if ( isset($_GET['code'])) {
+    Helper::redir("http://www.pla2gram.com",0);
+}
 ?>
 <html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
