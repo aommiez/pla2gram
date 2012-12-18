@@ -74,7 +74,7 @@ return array(
             'ogTags'=>array(  // set default OG tags
             'title'=>'PLA2GRAM.COM : Stylize your photo',
             'description'=>'PLA2GRAM.COM : Stylize your photo',
-            'image'=>'URL_TO_WEBSITE_LOGO',
+            'image'=>'http://www.pla2gram.com/images/pla2gram.png',
             ),
         ),
         'cache'=>array(
