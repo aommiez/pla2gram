@@ -188,9 +188,8 @@ class SiteController extends Controller
         $max_rand=rand(100000000000,10000000000000000);
         $name_file=rand($min_rand,$max_rand);//this part is for creating random name for image
         $ext=end(explode(".", $namePhoto));//gets extension
-        $file = Yii::app()->request->baseUrl."/fbPhoto/".$name_file.".".$ext;
+        $file = Yii::app()->request->baseUrl."fbPhoto/".$name_file.".".$ext;
         $name = $name_file.".".$ext;
-        echo $file;
         Helper::save_image($urlPhoto,$file);
         $filter = Instagraph::factory($file,$file);
         $filter->$f();
