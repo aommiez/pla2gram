@@ -7,12 +7,31 @@
  * Email : aommiez@gmail.com
  * File Name : fbPhoto.php
  */
+if ( isset($_GET['ref'])) {
+
+}
 ?>
 <script type="text/javascript">
     $(document).ready(function() {
+
+        $(".filterList").click(function(){
+            var filter = $(this).attr("data");
+            $(".filterList").css("opacity","0.8");
+            $(this).css("opacity","1");
+            $("#filter").val(filter);
+            return true;
+        });
+
         $("#go").click(function(){
            var filter = $("#filter").val();
            var urlPhoro = $("#urlPhoto").val();
+           if ( filter == "" ) {
+               alert("กรุณาเลือก Filter ก่อนครับ");
+               return false;
+           }
+
+           document.location.href= "http://www.pla2gram.com<?php echo Yii::app()->createUrl("site/goPhotoFB"); ?>?filter="+filter+"&urlPhoro="+urlPhoro;
+
         });
     });
 </script>

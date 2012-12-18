@@ -181,7 +181,10 @@ class SiteController extends Controller
     }
 
     public function actiongoPhotoFB(){
-        echo "goPhotoFB";
+        $urlPhoto = $_GET['urlPhoro'];
+        $filter = $_GET['filter'];
+        echo $urlPhoto;
+        echo "<br>".$filter;
     }
 
 }
