@@ -55,9 +55,11 @@ HTML;
         exit;
     }
 }
+/*
 echo Yii::app()->facebook->getUser();
 echo "<br>";
 echo Yii::app()->facebook->getAccessToken();
 echo "<br>";
+*/
 ?>
 
