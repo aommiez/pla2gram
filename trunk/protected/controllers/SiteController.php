@@ -183,7 +183,6 @@ class SiteController extends Controller
     public function actiongoPhotoFB(){
         $urlPhoto = $_GET['urlPhoro'];
         $filter = $_GET['filter'];
-        print_r(parse_url($urlPhoto));
         $url_path = parse_url($urlPhoto, PHP_URL_PATH);
         $parts = explode('/', $url_path);
         $last = end($parts);
