@@ -35,9 +35,15 @@ if ( isset($_GET['ref'])) {
         });
     });
 </script>
+<style>
+    #capPhoto {
+
+    }
+</style>
 <div>
     <div class="headText"> Photo From Facebook Album</div>
     <img src="<?php echo $_GET['ref']; ?>">
+    <textarea id="capPhoto">เพิ่มคำอธิบายรูป</textarea>
 </div>
 <div>
     <div class="headText"> Select Filter</div>
