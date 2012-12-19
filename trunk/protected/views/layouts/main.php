@@ -13,8 +13,8 @@ if ( isset($_GET['code'])) {
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- blueprint CSS framework -->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
@@ -30,9 +30,24 @@ if ( isset($_GET['code'])) {
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
 </head>
-
 <body>
+<script type="text/javascript">
+    function hideAddressBar()
+    {
+        if(!window.location.hash)
+        {
+            if(document.height < window.outerHeight)
+            {
+                document.body.style.height = (window.outerHeight + 50) + 'px';
+            }
 
+            setTimeout( function(){ window.scrollTo(0, 1); }, 50 );
+        }
+    }
+
+    window.addEventListener("load", function(){ if(!window.pageYOffset){ hideAddressBar(); } } );
+    window.addEventListener("orientationchange", hideAddressBar );
+</script>
 
 <div class="container" id="page">
 
