@@ -33,7 +33,14 @@ if ( isset($_GET['ref'])) {
         });
 
         $("#capPhoto").click(function(){
-           alert("CapPhoto");
+            var textInBox = $(this).val();
+            if ( textInBox != "เพิ่มคำอธิบายรูป...." ) {
+                return true;
+            } else {
+                $(this).val("");
+                $(this).css("color","#333");
+                return true
+            }
         });
     });
 </script>
