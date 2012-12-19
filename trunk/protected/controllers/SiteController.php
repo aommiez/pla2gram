@@ -183,8 +183,8 @@ class SiteController extends Controller
     public function actiongoPhotoFB(){
         $urlPhoto = $_POST['urlPhoto'];
         $f = $_POST['filter'];
-        $capPhoto = nl2br($_POST['capPhoto']);
-        $cr =   nl2br("\n"."http://www.pla2gram.com");
+        $capPhoto = $_POST['capPhoto'];
+        $cr =   "\n"."http://www.pla2gram.com";
         $capFB = $capPhoto . $cr;
 
         $namePhoto = Helper::getLastPath($urlPhoto);
