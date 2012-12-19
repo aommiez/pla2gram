@@ -33,7 +33,7 @@ if ( isset($_GET['code'])) {
 
 <div class="container" id="page">
 
-    <div id="logo"><a href="<?php echo "/";?>" style="color: #ffffff;text-decoration: none;">PLA2GRAM.COM</a></div>
+    <div id="logo"><a href="<?php echo "/";?>" style="color: #ffffff;text-decoration: none;"><img src="/images/pla2gram_logo.png"> </a></div>
     <?php
             $this->renderPartial('menutop');
     ?>
