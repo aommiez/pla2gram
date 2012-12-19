@@ -183,7 +183,7 @@ class SiteController extends Controller
     public function actiongoPhotoFB(){
         $urlPhoto = $_GET['urlPhoro'];
         $f = $_GET['filter'];
-        echo $_GET['cap'];
+        echo htmlspecialchars($_GET['cap']);
         /*
         $namePhoto = Helper::getLastPath($urlPhoto);
         $min_rand=rand(0,1000);
