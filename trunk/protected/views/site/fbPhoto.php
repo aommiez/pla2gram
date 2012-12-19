@@ -29,21 +29,31 @@ if ( isset($_GET['ref'])) {
                alert("กรุณาเลือก Filter ก่อนครับ");
                return false;
            }
-
            document.location.href= "http://www.pla2gram.com<?php echo Yii::app()->createUrl("site/goPhotoFB"); ?>?filter="+filter+"&urlPhoro="+urlPhoro;
+        });
 
+        $("#capPhoto").click(function(){
+           alert("CapPhoto");
         });
     });
 </script>
 <style>
     #capPhoto {
-
+        height: 100px;
+        padding: 8px;
+        border: 1px solid #CCC;
+        line-height: 130%;
+        font-size: 13px;
+        display: block;
+        width: 320px;
+        resize: none;
+        color: gray;
     }
 </style>
 <div>
     <div class="headText"> Photo From Facebook Album</div>
-    <img src="<?php echo $_GET['ref']; ?>">
-    <textarea id="capPhoto">เพิ่มคำอธิบายรูป</textarea>
+    <img src="<?php echo $_GET['ref']; ?>" style="margin-bottom: 20px;">
+    <textarea id="capPhoto">เพิ่มคำอธิบายรูป....</textarea>
 </div>
 <div>
     <div class="headText"> Select Filter</div>
