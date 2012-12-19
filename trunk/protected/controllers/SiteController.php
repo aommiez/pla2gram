@@ -181,7 +181,7 @@ class SiteController extends Controller
     }
 
     public function actiongoPhotoFB(){
-        $urlPhoto = $_POST['urlPhoro'];
+        $urlPhoto = $_POST['urlPhoto'];
         $f = $_POST['filter'];
         $capPhoto = nl2br($_POST['capPhoto']);
         $cr = ":  http://www.pla2gram.com'";
