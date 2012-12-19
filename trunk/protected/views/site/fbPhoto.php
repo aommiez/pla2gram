@@ -22,16 +22,6 @@ if ( isset($_GET['ref'])) {
             return true;
         });
 
-        $("#go").click(function(){
-           var filter = $("#filter").val();
-           var urlPhoro = $("#urlPhoto").val();
-           var capPhoto = htmlspecialchars($("#capPhoto").val());
-           if ( filter == "" ) {
-               alert("กรุณาเลือก Filter ก่อนครับ");
-               return false;
-           }
-           document.location.href= "http://www.pla2gram.com<?php echo Yii::app()->createUrl("site/goPhotoFB"); ?>?filter="+filter+"&urlPhoro="+urlPhoro+"&cap="+capPhoto;
-        });
 
         $("#capPhoto").click(function(){
             var textInBox = $(this).val();
@@ -43,9 +33,19 @@ if ( isset($_GET['ref'])) {
                 return true
             }
         });
-        function htmlspecialchars(string)  {
-            return $('<span>').text(string).html();
-        }
+
+        $('#goPhotoFBForm').submit(function() {
+            var filter = $("#filter").val();
+            var urlPhoro = $("#urlPhoto").val();
+            var capPhoto = $("#capPhoto").val();
+            if ( filter == "" ) {
+                alert("กรุณาเลือก Filter ก่อนครับ");
+                return false;
+            } else if ( urlPhoro == "" ) {
+                return false;
+            }
+            return true;
+        });
     });
 </script>
 <style>
@@ -61,6 +61,7 @@ if ( isset($_GET['ref'])) {
         color: gray;
     }
 </style>
+    <form id="goPhotoFBForm" action="site/goPhotoFB" method="post" enctype="multipart/form-data">
 <div>
     <div class="headText"> Photo From Facebook Album</div>
     <img src="<?php echo $_GET['ref']; ?>" style="margin-bottom: 20px;">
@@ -75,5 +76,6 @@ if ( isset($_GET['ref'])) {
         <img data="gotham" alt="" src="/images/gotham.png" style="-webkit-transform: rotate(-11deg);" class="filterList">
     </div>
     <div class="headText">Process</div>
-    <button class="button" id="go">Go!</button>
+    <button class="button" id="go" type="submit">Go!</button>
 </div>
+    </form>
