@@ -184,7 +184,8 @@ class SiteController extends Controller
         $urlPhoto = $_POST['urlPhoto'];
         $f = $_POST['filter'];
         $capPhoto = $_POST['capPhoto'];
-        echo $capPhoto;
+        echo nl2br($capPhoto);
+
         /*
         $namePhoto = Helper::getLastPath($urlPhoto);
         $min_rand=rand(0,1000);
