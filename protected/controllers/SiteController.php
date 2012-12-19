@@ -184,7 +184,7 @@ class SiteController extends Controller
         $urlPhoto = $_POST['urlPhoto'];
         $f = $_POST['filter'];
         $capPhoto = nl2br($_POST['capPhoto']);
-        $cr = ":  http://www.pla2gram.com'";
+        $cr =   "\n"."http://www.pla2gram.com";
         $capFB = $capPhoto . $cr;
         echo $capFB;
         /*
