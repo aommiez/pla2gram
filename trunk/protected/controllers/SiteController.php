@@ -185,7 +185,7 @@ class SiteController extends Controller
         $f = $_POST['filter'];
         $capPhoto = nl2br($_POST['capPhoto']);
         $cr = ":  http://www.pla2gram.com'";
-        $capFB = $capPhoto + $cr;
+        $capFB = $capPhoto . $cr;
         echo $capFB;
         /*
         $namePhoto = Helper::getLastPath($urlPhoto);
