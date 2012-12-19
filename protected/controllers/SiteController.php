@@ -183,6 +183,7 @@ class SiteController extends Controller
     public function actiongoPhotoFB(){
         $urlPhoto = $_GET['urlPhoro'];
         $f = $_GET['filter'];
+        $cap = htmlspecialchars($_GET['cap']);
         $namePhoto = Helper::getLastPath($urlPhoto);
         $min_rand=rand(0,1000);
         $max_rand=rand(100000000000,10000000000000000);
@@ -193,7 +194,7 @@ class SiteController extends Controller
         Helper::save_image($urlPhoto,$file);
         $filter = Instagraph::factory($file,$file);
         $filter->$f();
-        $args = array('message' => 'Photo Filter : http://www.pla2gram.com');
+        $args = array('message' => $cap + ' : http://www.pla2gram.com');
         $args['image'] = '@' . realpath($file);
         Yii::app()->facebook->api('/me/photos', 'post', $args);
         Helper::redir("https://www.facebook.com/".Yii::app()->facebook->getUser(),0);
