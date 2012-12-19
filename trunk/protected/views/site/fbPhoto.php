@@ -25,11 +25,12 @@ if ( isset($_GET['ref'])) {
         $("#go").click(function(){
            var filter = $("#filter").val();
            var urlPhoro = $("#urlPhoto").val();
+           var capPhoto = $("#capPhoto").val();
            if ( filter == "" ) {
                alert("กรุณาเลือก Filter ก่อนครับ");
                return false;
            }
-           document.location.href= "http://www.pla2gram.com<?php echo Yii::app()->createUrl("site/goPhotoFB"); ?>?filter="+filter+"&urlPhoro="+urlPhoro;
+           document.location.href= "http://www.pla2gram.com<?php echo Yii::app()->createUrl("site/goPhotoFB"); ?>?filter="+filter+"&urlPhoro="+urlPhoro+"&cap="+capPhoto;
         });
 
         $("#capPhoto").click(function(){
