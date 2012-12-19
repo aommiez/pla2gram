@@ -186,21 +186,38 @@ class SiteController extends Controller
         $capPhoto = $_POST['capPhoto'];
         $cr =   "\n"."http://www.pla2gram.com";
         $capFB = $capPhoto . $cr;
-
         $namePhoto = Helper::getLastPath($urlPhoto);
         $min_rand=rand(0,1000);
         $max_rand=rand(100000000000,10000000000000000);
         $name_file=rand($min_rand,$max_rand);//this part is for creating random name for image
         $ext=end(explode(".", $namePhoto));//gets extension
         $file = Yii::app()->request->baseUrl."fbPhoto/".$name_file.".".$ext;
-        $name = $name_file.".".$ext;
+
+        // Save Photo From Facebook And Add Filter
         Helper::save_image($urlPhoto,$file);
         $filter = Instagraph::factory($file,$file);
         $filter->$f();
+
+        // Post to Facebook
         $args = array('message' => $capFB );
         $args['image'] = '@' . realpath($file);
         Yii::app()->facebook->api('/me/photos', 'post', $args);
-        Helper::redir("https://www.facebook.com/".Yii::app()->facebook->getUser(),0);
+        //Helper::redir("https://www.facebook.com/".Yii::app()->facebook->getUser(),0);
+
+        // 320 Show Preview
+        $immid = new Imagick($file);
+        if ( $immid->getimagewidth() > 320 ) {
+            $immid->thumbnailImage(320,null);
+            $immid->writeImage(Yii::app()->request->baseUrl."thumb/thumb320_".$name_file.".".$ext);
+            $immid->destroy();
+            chmod(Yii::app()->request->baseUrl."thumb/thumb320_".$name_file.".".$ext, 0777);
+        } else {
+            $immid->writeImage(Yii::app()->request->baseUrl."thumb/thumb320_".$name_file.".".$ext);
+            $immid->destroy();
+            chmod(Yii::app()->request->baseUrl."thumb/thumb320_".$name_file.".".$ext, 0777);
+        }
+
+
 
     }
 
