@@ -25,7 +25,7 @@ if ( isset($_GET['ref'])) {
         $("#go").click(function(){
            var filter = $("#filter").val();
            var urlPhoro = $("#urlPhoto").val();
-           var capPhoto = $("#capPhoto").val();
+           var capPhoto = htmlspecialchars($("#capPhoto").val());
            if ( filter == "" ) {
                alert("กรุณาเลือก Filter ก่อนครับ");
                return false;
@@ -43,6 +43,9 @@ if ( isset($_GET['ref'])) {
                 return true
             }
         });
+        function htmlspecialchars(string)  {
+            return $('<span>').text(string).html();
+        }
     });
 </script>
 <style>
