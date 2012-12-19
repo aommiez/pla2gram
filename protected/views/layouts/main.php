@@ -34,6 +34,7 @@ if ( isset($_GET['code'])) {
 <script type="text/javascript">
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
         window.addEventListener("load", setTimeout( function(){ window.scrollTo(0, 1) }, 0));
+        $("body").css("min-height","900px");
     }
 </script>
 
