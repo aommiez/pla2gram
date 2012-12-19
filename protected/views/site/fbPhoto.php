@@ -65,7 +65,7 @@ if ( isset($_GET['ref'])) {
 <div>
     <div class="headText"> Photo From Facebook Album</div>
     <img src="<?php echo $_GET['ref']; ?>" style="margin-bottom: 20px;">
-    <textarea id="capPhoto">เพิ่มคำอธิบายรูป....</textarea>
+    <textarea name="capPhoto" id="capPhoto">เพิ่มคำอธิบายรูป....</textarea>
 </div>
 <div>
     <div class="headText"> Select Filter</div>
