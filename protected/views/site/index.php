@@ -38,6 +38,7 @@ if ( Yii::app()->facebook->getUser() == 0) {
         });
 
         $("#albumFB").click(function(){
+            event.preventDefault();
             document.location.href= "http://www.pla2gram.com<?php echo Yii::app()->createUrl("site/album"); ?>";
         });
     });
