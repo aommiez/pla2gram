@@ -40,9 +40,11 @@ else {
     <div id="fbNickname">
         {$fbNickname}<br>
     </div>
+    <!--
     <div id="userMenu">
         <span><a href="{$albumLink}">Albums</a></span>
     </div>
+    -->
 </div>
 HTML;
     } catch (FacebookApiException $e) {

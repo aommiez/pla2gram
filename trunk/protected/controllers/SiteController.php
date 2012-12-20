@@ -217,7 +217,31 @@ class SiteController extends Controller
             chmod(Yii::app()->request->baseUrl."thumb/thumb320_".$name_file.".".$ext, 0777);
         }
 
+        // null x 230 show last upload
+        $imlast = new Imagick($file);
+        $imlast->thumbnailimage(null,230);
+        $imlast->writeImage(Yii::app()->request->baseUrl."thumb/thumb230_".$name_file.".".$ext);
+        $imlast->destroy();
+        chmod(Yii::app()->request->baseUrl."thumb/thumb230_".$name_file.".".$ext, 0777);
 
+
+        // 130 x 110 thumbmail
+        $im = new Imagick($file);
+        $im->thumbnailImage(130,110);
+        $im->writeImage(Yii::app()->request->baseUrl."thumb/thumb_".$name_file.".".$ext);
+        chmod(Yii::app()->request->baseUrl."thumb/thumb_".$name_file.".".$ext, 0777);
+        $im->destroy();
+
+        $photo = new Photo;
+        $photo->link = $file;
+        $photo->fbid = Yii::app()->facebook->getUser();
+        $photo->ip = $_SERVER['REMOTE_ADDR'];
+        if ($photo->save()) {
+            $id = $photo->id;
+            Helper::redir("/?p=".$id,0);
+        } else {
+            print_r($photo->getErrors());
+        }
 
     }
 
