@@ -39,14 +39,12 @@
     var init = function() {
 
         var slider1 = document.getElementById('slider1');
-        var slider2 = document.getElementById('slider2');
+
         var cats = document.getElementById('cats');
 
         var myFlick = new Inflickity( slider1 );
 
-        var myDutchFlick = new Inflickity( slider2, {
-            offsetAngle: -Math.PI / 3
-        })
+
 
         window.myFlick = myFlick
 
@@ -70,22 +68,6 @@
         <li><img src="http://placekitten.com/249/200/" /></li>
     </ul>
 </div>
-
-<div id="slider2" class="slider">
-    <ul class="cats">
-        <li><img src="http://placekitten.com/240/200/" /></li>
-        <li><img src="http://placekitten.com/241/200/" /></li>
-        <li><img src="http://placekitten.com/242/200/" /></li>
-        <li><img src="http://placekitten.com/243/200/" /></li>
-        <li><img src="http://placekitten.com/244/200/" /></li>
-        <li><img src="http://placekitten.com/245/200/" /></li>
-        <li><img src="http://placekitten.com/246/200/" /></li>
-        <li><img src="http://placekitten.com/247/200/" /></li>
-        <li><img src="http://placekitten.com/248/200/" /></li>
-        <li><img src="http://placekitten.com/249/200/" /></li>
-    </ul>
-</div>
-
 
 
 
