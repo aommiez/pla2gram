@@ -35,6 +35,7 @@ if ( isset($_GET['code'])) {
 <body>
 <script type="text/javascript">
     $(function(){
+        /*
         $("html, body").animate({ scrollTop: 0 }, "slow");
         var imgLength=$("img").length; // หาจำนวนรูปทั้งหมด
         var countImg=0; // สำหรับนับจำนวนรูปภาพที่โหลดแล้ว
@@ -53,6 +54,7 @@ if ( isset($_GET['code'])) {
             });
 
         });
+        */
     });
 </script>
 
