@@ -50,7 +50,7 @@
         var myFlick = new Inflickity( slider1, {
             // options
             // you can overwrite these defaults as you like
-            clones: 1,
+            clones: 0,
             friction: 0.03,
             maxContactPoints: 3,
             offsetAngle: 0,
