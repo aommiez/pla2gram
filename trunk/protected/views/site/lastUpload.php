@@ -35,12 +35,6 @@
 </style>
 <script type="text/javascript">
 
-    $(function(){
-        $(".aLast").click(function(){
-            event.preventDefault();
-            return true;
-        });
-    });
 
     var init = function() {
 
@@ -55,7 +49,7 @@
             friction: 0.03,
             maxContactPoints: 3,
             offsetAngle: 0,
-            onClick: undefined,
+            onClick: aClick(),
             animationDuration: 400,
             // basically jQuery swing
             easing: function( progress, n, firstNum, diff ) {
@@ -65,7 +59,9 @@
 
         window.myFlick = myFlick
 
-
+        function aClick(){
+            alert("a");
+        }
 
     };
 
