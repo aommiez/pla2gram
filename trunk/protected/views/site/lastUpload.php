@@ -60,9 +60,10 @@
             }
         });
 
-        $(".aLast").mouseup(function(event){
+        $("aLast").click(function(event) {
             event.preventDefault();
         });
+
         window.myFlick = myFlick
 
     };
