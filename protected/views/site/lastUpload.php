@@ -76,9 +76,7 @@
                     e.preventDefault();
                 });
             } else {
-                $(".aLast").click(function(e){
-                    return true;
-                });
+                $(".aLast").unbind('click');
             }
         });
 
