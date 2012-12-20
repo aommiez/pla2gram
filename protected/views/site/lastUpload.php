@@ -40,6 +40,11 @@
 </style>
 <script type="text/javascript">
 
+    $(".aLast").mousemove(function(){
+        $(document).bind('mouseup',function(){
+            event.stopPropagation();
+        });
+    });
 
     var init = function() {
 

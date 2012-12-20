@@ -56,13 +56,6 @@ if ( isset($_GET['code'])) {
         });
         */
 
-        $(".aLast").mousemove(function(e){
-            $(document).mouseup(function(){
-                event.stopPropagation();
-            });
-        });
-
-
     });
 </script>
 
