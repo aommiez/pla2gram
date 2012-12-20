@@ -112,6 +112,7 @@ HTML;
         top: 0px;
         padding-top: 25%;
         z-index: 10;
+        display: none;
     }
     #PhotoShowLightBox {
         position: relative;
