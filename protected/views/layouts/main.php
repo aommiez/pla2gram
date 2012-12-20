@@ -40,13 +40,13 @@ if ( isset($_GET['code'])) {
                 countImg++;
                 if(countImg==imgLength){ // เมื่อโหลดรูปทั้งหมดแล้วปิดตัว loading
                     $("#lightbox").hide();
-                    $("html, body").css("overflow","none");
+                    $("html, body").css("overflow","auto");
                 }
             });
             // เมื่อเกิดข้อผิดพลาดในการโหลดให้ปิด loading เลย
             $(this).error(function(){
                 $("#lightbox").hide();
-                $("html, body").css("overflow","none");
+                $("html, body").css("overflow","auto");
             });
 
         });
