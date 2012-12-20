@@ -68,7 +68,7 @@
             }
         });
 
-        $('.aLast').touchend(function(){
+        $('.aLast').touchstart(function(){
             alert(clicker);
             if ( clicker != false ) {
                 var url = $(this).attr("href");
