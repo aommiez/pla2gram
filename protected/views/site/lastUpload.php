@@ -63,8 +63,7 @@
 
         $(".aLast").mousemove(function(e){
             $(document).mouseup(function(){
-                event.preventDefault();
-                return false;
+                event.stopPropagation();
             });
         });
 
