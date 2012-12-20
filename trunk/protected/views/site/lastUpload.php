@@ -72,13 +72,9 @@
 
         $(".aLast").mouseup(function(e){
             if ( clicker == false ) {
-                e.stopPropagation();
                 e.preventDefault();
-                // these two are older ways I like to add to maximize browser compat
-                e.returnValue = false;
-                e.cancelBubble = true;
-                return false;
             }
+            alert(clicker);
         });
 
 
