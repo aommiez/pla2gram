@@ -74,6 +74,7 @@
             if ( clicker == false ) {
                 event.preventDefault();
             }
+            alert(clicker);
         });
 
 
