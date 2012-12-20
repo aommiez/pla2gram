@@ -77,9 +77,7 @@
         });
 
         $(".aLast").bind('touchend',function(e){
-            if ( clicker == false) {
-
-            } else {
+            if ( clicker != false) {
                 var url = $(this).attr("href");
                 window.location.href = "http://www.pla2gram.com/"+url;
             }
