@@ -74,7 +74,11 @@
             if ( clicker == false ) {
                 $(".aLast").click(function(e){
                     e.preventDefault();
-                })
+                });
+            } else {
+                $(".aLast").click(function(e){
+                    return true;
+                });
             }
         });
 
