@@ -30,6 +30,10 @@ $image=urlencode("http://www.pla2gram.com/thumb/thumb_".$thumb);
         $("#lightBoxPhoto").click(function(){
             $("#lightBoxPhoto").hide();
         });
+
+        $("#PhotoShowLightBox").click(function(e){
+            e.preventDefault();
+        });
     });
 </script>
 <?php
@@ -114,11 +118,11 @@ HTML;
         z-index: 10;
         display: none;
         padding-top: 25%;
+        margin: 0px auto;
     }
     #PhotoShowLightBox {
         position: relative;
         z-index: 11;
-        margin: 0px auto;
     }
 </style>
 <div id="lightBoxPhoto">
