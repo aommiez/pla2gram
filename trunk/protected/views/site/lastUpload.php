@@ -35,6 +35,13 @@
 </style>
 <script type="text/javascript">
 
+    $(function(){
+        $(".cats li").mousemove(function(){
+            event.preventDefault();
+            return false;
+        });
+    });
+
     var init = function() {
 
         var slider1 = document.getElementById('slider1');
@@ -57,6 +64,8 @@
         });
 
         window.myFlick = myFlick
+
+
 
     };
 
