@@ -110,13 +110,15 @@ HTML;
         width: 100%;
         height: 100%;
         top: 0px;
-        padding-top: 25%;
+        left: 0px;
         z-index: 10;
         display: none;
+        padding-top: 25%;
     }
     #PhotoShowLightBox {
         position: relative;
         z-index: 11;
+        margin: 0px auto;
     }
 </style>
 <div id="lightBoxPhoto">
