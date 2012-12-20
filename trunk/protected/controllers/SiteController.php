@@ -184,8 +184,7 @@ class SiteController extends Controller
         $urlPhoto = $_POST['urlPhoto'];
         $f = $_POST['filter'];
         $capPhoto = $_POST['capPhoto'];
-        $cr =   "\n"."http://www.pla2gram.com";
-        $capFB = $capPhoto . $cr;
+
         $namePhoto = Helper::getLastPath($urlPhoto);
         $min_rand=rand(0,1000);
         $max_rand=rand(100000000000,10000000000000000);
@@ -198,11 +197,8 @@ class SiteController extends Controller
         $filter = Instagraph::factory($file,$file);
         $filter->$f();
 
-        // Post to Facebook
-        $args = array('message' => $capFB );
-        $args['image'] = '@' . realpath($file);
-        Yii::app()->facebook->api('/me/photos', 'post', $args);
-        //Helper::redir("https://www.facebook.com/".Yii::app()->facebook->getUser(),0);
+
+
 
         // 320 Show Preview
         $immid = new Imagick($file);
@@ -238,6 +234,13 @@ class SiteController extends Controller
         $photo->ip = $_SERVER['REMOTE_ADDR'];
         if ($photo->save()) {
             $id = $photo->id;
+            $cr =   "\n"."http://www.pla2gram.com/?p=".$id;
+            $capFB = $capPhoto . $cr;
+            // Post to Facebook
+            $args = array('message' => $capFB );
+            $args['image'] = '@' . realpath($file);
+            Yii::app()->facebook->api('/me/photos', 'post', $args);
+
             Helper::redir("/?p=".$id,0);
         } else {
             print_r($photo->getErrors());
