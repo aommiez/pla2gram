@@ -18,6 +18,8 @@
         width: 100%;
         height: 240px;
         overflow: hidden;
+        position: relative;
+        z-index: 1;
     }
     .slider img {
         display: block;
@@ -32,6 +34,11 @@
     .inflickity-clone li {
         /*  border-radius: 40px;*/
     }
+    #lastShow {
+        position: relative;
+        z-index: 2;
+    }
+
 </style>
 <script type="text/javascript">
 
