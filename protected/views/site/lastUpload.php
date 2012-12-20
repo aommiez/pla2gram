@@ -63,7 +63,7 @@
 
         var clicking = false;
 
-        $('.aLast').mousedown(function(){
+        $('.cats').mousedown(function(){
             clicking = true;
         });
 
@@ -71,7 +71,7 @@
             clicking = false;
         })
 
-        $('.aLast').mousemove(function(){
+        $('.cats').mousemove(function(){
             if(clicking == false) return;
         });
 
