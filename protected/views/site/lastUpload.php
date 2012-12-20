@@ -15,8 +15,7 @@
     }
 
     .slider {
-        width: 100%;
-        height: 240px;
+
         overflow: hidden;
         position: relative;
         z-index: 1;
@@ -24,13 +23,13 @@
     .slider img {
         display: block;
     }
-
+    /*
     .cats li:nth-child(5n+0) { background: black; }
     .cats li:nth-child(5n+1) { background: blue; }
     .cats li:nth-child(5n+2) { background: green; }
     .cats li:nth-child(5n+3) { background: orange; }
     .cats li:nth-child(5n+4) { background: red; }
-
+*/
     .inflickity-clone li {
         /*  border-radius: 40px;*/
     }
