@@ -26,7 +26,7 @@ if ( Yii::app()->facebook->getUser() == 0) {
                 alert("กรุณาเลือก Filter ก่อนครับ");
                 return false;
             }
-
+            $("html, body").animate({ scrollTop: 0 }, "slow");
             $("#lightbox").show();
             $("body").css("overflow","hidden");
             return true;
