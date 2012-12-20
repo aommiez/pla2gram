@@ -40,12 +40,6 @@
 </style>
 <script type="text/javascript">
 
-    $(".aLast").mousemove(function(){
-        $(document).bind('mouseup',function(){
-            event.stopPropagation();
-        });
-    });
-
     var init = function() {
 
         var slider1 = document.getElementById('slider1');
@@ -66,8 +60,9 @@
             }
         });
 
-
-
+        $(".aLast").mouseup(function(){
+           event.preventDefault();
+        });
         window.myFlick = myFlick
 
     };
