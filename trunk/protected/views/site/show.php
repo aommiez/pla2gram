@@ -128,6 +128,8 @@ HTML;
     #PhotoShowLightBox {
         position: relative;
         z-index: 11;
+        max-height: 680px;
+        max-width: 1200px;
     }
 </style>
 <div id="lightBoxPhoto">
