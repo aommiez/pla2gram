@@ -70,11 +70,11 @@
             clicker = false;
         });
 
-        $(".aLast").mouseup(function(event){
+        $(".aLast").mouseup(function(e){
             if ( clicker == false ) {
-                event.preventDefault();
+                e.preventDefault();
+                alert("off");
             }
-            alert(clicker);
         });
 
 
