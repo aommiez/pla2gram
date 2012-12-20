@@ -77,13 +77,7 @@
         });
 
         $(".aLast").bind('touchend',function(e){
-            if ( clicker == false ) {
-                $(".aLast").click(function(e){
-                    e.preventDefault();
-                });
-            } else {
-                $(".aLast").unbind('click');
-            }
+            alert(clicker);
         });
 
 
