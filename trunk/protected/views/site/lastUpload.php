@@ -62,6 +62,8 @@
 
         $(".aLast").mouseup(function(){
            event.preventDefault();
+            alert("mouse up");
+            return false;
         });
         window.myFlick = myFlick
 
