@@ -62,12 +62,9 @@
         });
 
         $(".aLast").mousemove(function(e){
-            if(e.which==1)
-            {
-
-            } else {
+            $(".aLast").mouseup(function(){
                 event.preventDefault();
-            }
+            });
         });
 
         window.myFlick = myFlick
