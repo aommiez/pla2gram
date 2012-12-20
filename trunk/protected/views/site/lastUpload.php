@@ -68,11 +68,15 @@
         });
 
         $(document).mouseup(function(){
+            if ( clicking == false ) {
+                event.preventDefault();
+                return;
+            }
             clicking = false;
         })
 
         $('.aLast').mousemove(function(){
-            if(clicking == false) return;
+            clicking = false;
         });
 
         window.myFlick = myFlick
