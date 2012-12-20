@@ -77,7 +77,11 @@
         });
 
         $(".aLast").bind('touchend',function(e){
-            alert(clicker);
+            if ( clicker == false) {
+
+            } else {
+
+            }
         });
 
 
