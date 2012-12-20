@@ -60,7 +60,7 @@
             }
         });
 
-        $("aLast").click(function(event) {
+        $(".aLast").click(function(event) {
             event.preventDefault();
         });
 
