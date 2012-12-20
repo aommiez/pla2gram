@@ -61,20 +61,24 @@
             }
         });
 
-        var clicking = true;
+        var clicking = false;
 
         $('.aLast').mousedown(function(){
             clicking = true;
+            $('.ss').text('mousedown');
         });
 
         $(document).mouseup(function(){
-            if(clicking == false) {
-                event.preventDefault();
-            }
+            clicking = false;
+            $('.ss').text('mouseup');
+            $('.ss').text('click released, no more move event');
         })
 
         $('.aLast').mousemove(function(){
-            clicking = false;
+            if(clicking == false) return;
+
+            // Mouse click + moving logic here
+            $('.ss').text('mouse moving');
         });
 
         window.myFlick = myFlick
@@ -84,6 +88,7 @@
     window.addEventListener( 'DOMContentLoaded', init, false);
 
 </script>
+<div id="ss"></div>
 <div id="lastShow">
     <div id="slider1" class="slider">
         <ul class="cats">
