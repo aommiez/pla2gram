@@ -46,7 +46,7 @@ if ( isset($_GET['ref'])) {
             }
             $("html, body").animate({ scrollTop: 0 }, "slow");
             $("#lightbox").show();
-            $("body").css("overflow","hidden");
+            $("html, body").css("overflow","hidden");
             return true;
         });
         $("#lightbox").click(function(){
