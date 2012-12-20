@@ -48,6 +48,25 @@
 
         var myFlick = new Inflickity( slider1);
 
+        var clicker = false;
+
+        $(".aLast").mousedown(function(){
+            clicker = true;
+        });
+
+        $(document).mousemove(function(){
+            clicker = false;
+        });
+
+        $(".aLast").mouseup(function(e){
+            if ( clicker == false ) {
+                $(".aLast").click(function(e){
+                    e.preventDefault();
+                });
+            } else {
+                $(".aLast").unbind('click');
+            }
+        });
 
         window.myFlick = myFlick
 
