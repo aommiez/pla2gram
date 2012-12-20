@@ -9,8 +9,6 @@
 
     .cats li {
         float: left;
-        width: 240px;
-        height: 200px;
         overflow: hidden;
     }
 
