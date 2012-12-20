@@ -46,7 +46,7 @@
 
         var cats = document.getElementById('cats');
 
-        var myFlick = new Inflickity( slider1);
+        //var myFlick = new Inflickity( slider1);
 
         var clicker = false;
 
@@ -68,15 +68,9 @@
             }
         });
 
-        $('.aLast').touchstart(function(){
-            alert(clicker);
-            if ( clicker != false ) {
-                var url = $(this).attr("href");
-                window.location.href = "http://www.pla2gram.com"+url;
-            }
-        });
 
-        window.myFlick = myFlick
+
+        //window.myFlick = myFlick
 
     };
 
