@@ -53,16 +53,25 @@
 <div id="lastShow">
     <div id="slider1" class="slider">
         <ul class="cats">
-            <li><img src="http://placekitten.com/240/200/" /></li>
-            <li><img src="http://placekitten.com/241/200/" /></li>
-            <li><img src="http://placekitten.com/242/200/" /></li>
-            <li><img src="http://placekitten.com/243/200/" /></li>
-            <li><img src="http://placekitten.com/244/200/" /></li>
-            <li><img src="http://placekitten.com/245/200/" /></li>
-            <li><img src="http://placekitten.com/246/200/" /></li>
-            <li><img src="http://placekitten.com/247/200/" /></li>
-            <li><img src="http://placekitten.com/248/200/" /></li>
-            <li><img src="http://placekitten.com/249/200/" /></li>
+            <?php
+            Helper::YiiImport("GetController");
+            $last = GetController::last_upload(10);
+            foreach ( $last as $key => $value ) {
+                $thumb = str_replace("photo/","",$value['link']);
+                $l = Yii::app()->baseUrl."/thumb/thumb230_".$thumb;
+                $i = $value['id'];
+
+                echo <<<HTML
+    <li >
+    <a href="/?p={$i}">
+        <img src="{$l}" />
+
+    </a>
+</li>
+HTML;
+            }
+            ?>
+            ?>
         </ul>
     </div>
 </div>
