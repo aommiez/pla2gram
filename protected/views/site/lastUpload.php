@@ -68,6 +68,13 @@
             }
         });
 
+        $('.aLast').touchend(function(){
+            if ( clicker != false ) {
+                var url = $(this).attr("href");
+                window.location.href = "http://www.pla2gram.com"+url;
+            }
+        });
+
         window.myFlick = myFlick
 
     };
