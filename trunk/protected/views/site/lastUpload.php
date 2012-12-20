@@ -49,7 +49,6 @@
             friction: 0.03,
             maxContactPoints: 3,
             offsetAngle: 0,
-            onClick: aClick(),
             animationDuration: 400,
             // basically jQuery swing
             easing: function( progress, n, firstNum, diff ) {
@@ -57,13 +56,12 @@
             }
         });
 
-        window.myFlick = myFlick
-
-        function aClick(){
+        $(".aLast").click(function(){
             event.preventDefault();
-            alert("a");
-            return false;
-        }
+            return true;
+        });
+
+        window.myFlick = myFlick
 
     };
 
