@@ -78,7 +78,7 @@
         <ul class="cats">
             <?php
             Helper::YiiImport("GetController");
-            $last = GetController::last_upload(15);
+            $last = GetController::last_upload(12);
             foreach ( $last as $key => $value ) {
                 $thumb = str_replace("photo/","",$value['link']);
                 $l = Yii::app()->baseUrl."/thumb/thumb230_".$thumb;
