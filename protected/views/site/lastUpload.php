@@ -72,9 +72,10 @@
 
         $(".aLast").mouseup(function(e){
             if ( clicker == false ) {
-                e.preventDefault();
+                $(".aLast").click(function(e){
+                    e.preventDefault();
+                })
             }
-            alert(clicker);
         });
 
 
