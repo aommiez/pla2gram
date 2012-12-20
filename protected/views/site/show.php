@@ -21,6 +21,17 @@ $image=urlencode("http://www.pla2gram.com/thumb/thumb_".$thumb);
 */
 ?>
 
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#photo_img").click(function(){
+            $("#lightBoxPhoto").show();
+        });
+
+        $("#lightBoxPhoto").click(function(){
+            $("#lightBoxPhoto").hide();
+        });
+    });
+</script>
 <?php
 echo <<<HTML
     <div style="text-align: center;color: white;text-align: left;">
@@ -93,4 +104,22 @@ HTML;
         width: 300px;
         vertical-align: top;
     }
+    #lightBoxPhoto {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        padding-top: 25%;
+        z-index: 10;
+    }
+    #PhotoShowLightBox {
+        position: relative;
+        z-index: 11;
+    }
 </style>
+<div id="lightBoxPhoto">
+    <div>
+        <img src="/<?php echo $link; ?>" id="PhotoShowLightBox">
+    </div>
+</div>
