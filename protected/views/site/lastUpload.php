@@ -65,17 +65,14 @@
 
         $('.aLast').mousedown(function(){
             clicking = true;
-            alert(clicking);
         });
 
         $(document).mouseup(function(){
             clicking = false;
-            alert(clicking);
         })
 
         $('.aLast').mousemove(function(){
             if(clicking == false) return;
-            alert(clicking);
         });
 
         window.myFlick = myFlick
