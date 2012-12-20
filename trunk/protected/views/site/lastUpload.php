@@ -36,8 +36,9 @@
 <script type="text/javascript">
 
     $(function(){
-        $(".cats li a").click(function(){
-           alert("aaa");
+        $(".aLast").click(function(){
+            event.preventDefault();
+            return true;
         });
     });
 
@@ -84,7 +85,7 @@
 
                 echo <<<HTML
     <li >
-    <a href="/?p={$i}">
+    <a href="/?p={$i}" class="aLast">
         <img src="{$l}" />
     </a>
 </li>
