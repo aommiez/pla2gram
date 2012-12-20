@@ -46,7 +46,7 @@
 
         var cats = document.getElementById('cats');
 
-        //var myFlick = new Inflickity( slider1);
+        var myFlick = new Inflickity( slider1,{ onClick: aClick() });
 
         var clicker = false;
 
@@ -68,9 +68,12 @@
             }
         });
 
+        function aClick () {
+            var url = (this).attr("href");
+            alert(url);
+        }
 
-
-        //window.myFlick = myFlick
+        window.myFlick = myFlick
 
     };
 
