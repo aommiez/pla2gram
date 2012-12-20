@@ -61,22 +61,13 @@
             }
         });
 
-        var clicking = false;
-
-        $('.aLast').mousedown(function(){
-            clicking = true;
-        });
-
-        $(document).mouseup(function(){
-            if ( clicking == false ) {
-                event.preventDefault();
-                return;
+        $(".aLast").mousemove(function(e){
+            if(e.which==1)
+            {
+                alert("#do job");
+            } else {
+                alert("1");
             }
-            clicking = false;
-        })
-
-        $('.aLast').mousemove(function(){
-            clicking = false;
         });
 
         window.myFlick = myFlick
