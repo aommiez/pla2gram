@@ -14,7 +14,6 @@
         overflow: hidden;
     }
 
-
     .slider {
         width: 100%;
         height: 240px;
@@ -51,21 +50,23 @@
     window.addEventListener( 'DOMContentLoaded', init, false);
 
 </script>
-
-<div id="slider1" class="slider">
-    <ul class="cats">
-        <li><img src="http://placekitten.com/240/200/" /></li>
-        <li><img src="http://placekitten.com/241/200/" /></li>
-        <li><img src="http://placekitten.com/242/200/" /></li>
-        <li><img src="http://placekitten.com/243/200/" /></li>
-        <li><img src="http://placekitten.com/244/200/" /></li>
-        <li><img src="http://placekitten.com/245/200/" /></li>
-        <li><img src="http://placekitten.com/246/200/" /></li>
-        <li><img src="http://placekitten.com/247/200/" /></li>
-        <li><img src="http://placekitten.com/248/200/" /></li>
-        <li><img src="http://placekitten.com/249/200/" /></li>
-    </ul>
+<div id="lastShow">
+    <div id="slider1" class="slider">
+        <ul class="cats">
+            <li><img src="http://placekitten.com/240/200/" /></li>
+            <li><img src="http://placekitten.com/241/200/" /></li>
+            <li><img src="http://placekitten.com/242/200/" /></li>
+            <li><img src="http://placekitten.com/243/200/" /></li>
+            <li><img src="http://placekitten.com/244/200/" /></li>
+            <li><img src="http://placekitten.com/245/200/" /></li>
+            <li><img src="http://placekitten.com/246/200/" /></li>
+            <li><img src="http://placekitten.com/247/200/" /></li>
+            <li><img src="http://placekitten.com/248/200/" /></li>
+            <li><img src="http://placekitten.com/249/200/" /></li>
+        </ul>
+    </div>
 </div>
+
 
 
 
