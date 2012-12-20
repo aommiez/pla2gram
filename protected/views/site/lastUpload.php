@@ -80,7 +80,8 @@
             if ( clicker == false) {
 
             } else {
-
+                var url = $(this).attr("href");
+                window.location.href = "http://www.pla2gram.com/"+url;
             }
         });
 
