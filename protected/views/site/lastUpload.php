@@ -68,9 +68,24 @@
             }
         });
 
-        $(".aLast").bind('touchend',function(){
-            alert(clicker);
+        $(".aLast").bind('touchstart',function(){
+            clicker = true;
         });
+
+        $(document).bind('touchmove',function(){
+            clicker = false;
+        });
+
+        $(".aLast").bind('touchend',function(e){
+            if ( clicker == false ) {
+                $(".aLast").click(function(e){
+                    e.preventDefault();
+                });
+            } else {
+                $(".aLast").unbind('click');
+            }
+        });
+
 
         window.myFlick = myFlick
 
