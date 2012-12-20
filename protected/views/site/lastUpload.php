@@ -14,14 +14,14 @@
         overflow: hidden;
     }
 
-    img {
-        display: block;
-    }
 
     .slider {
         width: 100%;
         height: 240px;
         overflow: hidden;
+    }
+    .slider img {
+        display: block;
     }
 
     .cats li:nth-child(5n+0) { background: black; }
@@ -43,8 +43,6 @@
         var cats = document.getElementById('cats');
 
         var myFlick = new Inflickity( slider1 );
-
-
 
         window.myFlick = myFlick
 
