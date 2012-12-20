@@ -80,7 +80,6 @@
             }
         });
 
-
         window.myFlick = myFlick
 
     };
