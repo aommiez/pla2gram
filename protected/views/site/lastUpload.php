@@ -60,20 +60,21 @@
             }
         });
 
+        var clicker = false;
+
         $(".aLast").mousedown(function(){
-            $(".aLast").bind('mousemove',function(){
-                $(".aLast").bind('click',function(event) {
-                    event.preventDefault();
-                });
-            });
+            clicker = true;
         });
 
-        $(document).mouseup(function(){
-            $(".aLast").unbind("mousemove");
-            $(".aLast").unbind("click");
+        $(document).mousemove(function(){
+            clicker = false;
         });
 
-
+        $(".aLast").mouseup(function(event){
+            if ( clicker == false ) {
+                event.preventDefault();
+            }
+        });
 
 
         window.myFlick = myFlick
