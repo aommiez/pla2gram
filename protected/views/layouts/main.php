@@ -52,5 +52,10 @@ if ( isset($_GET['code'])) {
     <div id="footer">Copyright © 2012-2013 Pla2.Com All Rights Reserved ( Powered By Pla2.Com )</div>
 </div><!-- page -->
 
+<div id="lightbox">
+    <div class="circle"></div>
+    <div class="circle1"></div>
+</div>
+
 </body>
 </html>
