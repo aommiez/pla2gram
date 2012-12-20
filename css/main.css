@@ -62,8 +62,11 @@ body
     margin: 10px;
     box-shadow: 0 0 1em #352F2A;
     opacity: 0.8;
+    padding: 6px;
 }
-#filters img:hover{cursor:pointer;}
+#filters img:hover{
+    cursor:pointer;
+}
 
 .upload{
     color: white;
