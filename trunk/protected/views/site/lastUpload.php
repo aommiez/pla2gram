@@ -61,9 +61,18 @@
             }
         });
 
-        $(".aLast").click(function(){
-            event.preventDefault();
-            return true;
+        var clicking = false;
+
+        $('.aLast').mousedown(function(){
+            clicking = true;
+        });
+
+        $(document).mouseup(function(){
+            clicking = false;
+        })
+
+        $('.aLast').mousemove(function(){
+            if(clicking == false) return;
         });
 
         window.myFlick = myFlick
