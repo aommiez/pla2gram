@@ -32,6 +32,7 @@ if ( isset($_GET['code'])) {
 <body>
 <script type="text/javascript">
     $(function(){
+        $("html, body").animate({ scrollTop: 0 }, "slow");
         var imgLength=$("img").length; // หาจำนวนรูปทั้งหมด
         var countImg=0; // สำหรับนับจำนวนรูปภาพที่โหลดแล้ว
         $("img").each(function(){
@@ -39,6 +40,7 @@ if ( isset($_GET['code'])) {
                 countImg++;
                 if(countImg==imgLength){ // เมื่อโหลดรูปทั้งหมดแล้วปิดตัว loading
                     $("#lightbox").hide();
+                    $("html, body").css("overflow"," ");
                 }
             });
             // เมื่อเกิดข้อผิดพลาดในการโหลดให้ปิด loading เลย

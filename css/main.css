@@ -4,7 +4,7 @@ body
 	padding: 0;
 	font: normal 10pt Arial,Helvetica,sans-serif;
     background: #000 url(/images/low_contrast_linen.png);
-
+    overflow : hidden;
 }
 
 #page
