@@ -41,7 +41,20 @@
 
         var cats = document.getElementById('cats');
 
-        var myFlick = new Inflickity( slider1 );
+        var myFlick = new Inflickity( slider1, {
+            // options
+            // you can overwrite these defaults as you like
+            clones: 1,
+            friction: 0.03,
+            maxContactPoints: 3,
+            offsetAngle: 0,
+            onClick: undefined,
+            animationDuration: 400,
+            // basically jQuery swing
+            easing: function( progress, n, firstNum, diff ) {
+                return ( ( -Math.cos( progress * Math.PI ) / 2 ) + 0.5 ) * diff + firstNum;
+            }
+        });
 
         window.myFlick = myFlick
 
@@ -65,7 +78,6 @@
     <li >
     <a href="/?p={$i}">
         <img src="{$l}" />
-
     </a>
 </li>
 HTML;
