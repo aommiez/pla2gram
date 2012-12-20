@@ -9,6 +9,7 @@ if ( isset($_GET['code'])) {
     Helper::redir("http://www.pla2gram.com",0);
 }
 
+Yii::app()->facebook->ogTags['og:description'] = "PLA2GRAM.COM : Stylize your photo";
 Yii::app()->facebook->ogTags['og:site_name'] = "PLA2GRAM.COM : Stylize your photo";
 Yii::app()->facebook->ogTags['og:title'] = "PLA2GRAM.COM : Stylize your photo";
 Yii::app()->facebook->ogTags['og:image'] = "http://www.pla2gram.com/images/pla2gram.png";
