@@ -117,8 +117,8 @@ HTML;
         left: 0px;
         z-index: 10;
         display: none;
-        padding-top: 25%;
-        margin: 0px auto;
+        padding-top: 6%;
+        text-align: center;
     }
     #PhotoShowLightBox {
         position: relative;
