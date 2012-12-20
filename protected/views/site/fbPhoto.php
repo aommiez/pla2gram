@@ -44,7 +44,13 @@ if ( isset($_GET['ref'])) {
             } else if ( urlPhoro == "" ) {
                 return false;
             }
+
+            $("#lightbox").show();
+            $("body").css("overflow","hidden");
             return true;
+        });
+        $("#lightbox").click(function(){
+            return false;
         });
     });
 </script>

@@ -26,7 +26,14 @@ if ( Yii::app()->facebook->getUser() == 0) {
                 alert("กรุณาเลือก Filter ก่อนครับ");
                 return false;
             }
+
+            $("#lightbox").show();
+            $("body").css("overflow","hidden");
             return true;
+        });
+
+        $("#lightbox").click(function(){
+            return false;
         });
 
         $(".filterList").click(function(){
