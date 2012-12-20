@@ -24,15 +24,20 @@ $image=urlencode("http://www.pla2gram.com/thumb/thumb_".$thumb);
 <script type="text/javascript">
     $(document).ready(function() {
         $("#photo_img").click(function(){
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $("html, body").css("overflow","hidden");
             $("#lightBoxPhoto").show();
         });
 
         $("#lightBoxPhoto").click(function(){
+            $("html, body").css("overflow","auto");
             $("#lightBoxPhoto").hide();
         });
 
         $("#PhotoShowLightBox").click(function(e){
             e.preventDefault();
+            e.stopPropagation();
+            return false;
         });
     });
 </script>
