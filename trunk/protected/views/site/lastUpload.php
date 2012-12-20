@@ -61,8 +61,7 @@
         });
 
         $(".aLast").mouseup(function(event){
-            event.stopPropagation();
-            alert("mouse up");
+            event.preventDefault();
         });
         window.myFlick = myFlick
 
