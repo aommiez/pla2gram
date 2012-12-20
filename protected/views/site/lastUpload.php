@@ -36,11 +36,9 @@
 <script type="text/javascript">
 
     $(function(){
-        $(".cats li").mousemove(function(){
-            $("a").click(function(){
-                event.preventDefault();
-                return false;
-            });
+        $(".cats li a").click(function(){
+            event.preventDefault();
+            return false;
         });
     });
 
