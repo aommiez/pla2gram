@@ -38,8 +38,11 @@ if ( Yii::app()->facebook->getUser() == 0) {
 
         $(".filterList").click(function(){
            var filter = $(this).attr("data");
+
+           $(".filterList").css("border","0px dashed #DBDBDB");
            $(".filterList").css("opacity","0.8");
            $(this).css("opacity","1");
+           $(this).css("border","1px dashed #DBDBDB");
            $("#filter").val(filter);
             return true;
         });
