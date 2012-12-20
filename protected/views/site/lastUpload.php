@@ -37,8 +37,7 @@
 
     $(function(){
         $(".cats li a").click(function(){
-            event.preventDefault();
-            return false;
+           alert("aaa");
         });
     });
 
