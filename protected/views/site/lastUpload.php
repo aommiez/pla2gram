@@ -64,9 +64,9 @@
         $(".aLast").mousemove(function(e){
             if(e.which==1)
             {
-                alert("#do job");
+
             } else {
-                alert("1");
+                event.preventDefault();
             }
         });
 
