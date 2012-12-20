@@ -62,7 +62,7 @@ if ( isset($_GET['code'])) {
 
 <div class="container" id="page">
 
-    <div id="logo"><a href="<?php echo "/";?>" style="color: #ffffff;text-decoration: none;"><img src="/images/pla2gram_logo.png" style="width: 300px;"> </a></div>
+    <div id="logo"><a href="<?php echo "/";?>" style="color: #ffffff;text-decoration: none;"><img src="/images/pla2gram_logo.png" style="width: 600px;"> </a></div>
     <?php
             $this->renderPartial('menutop');
     ?>
