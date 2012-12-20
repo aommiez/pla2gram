@@ -57,7 +57,7 @@ if ( Yii::app()->facebook->getUser() == 0) {
 
     <div class="headText">1. Select Image</div>
 
-    <button id="albumFB">Choose from Album</button> <input type="file" id="file" name="file" value="" class="upload" onchange="this.style.width = '100%';" >
+    <button id="albumFB">Choose from Album</button> <input type="file" id="file" name="file" value="" class="upload" onchange="this.style.width = '300px';" >
 
     <div class="headText">2. Select Filter</div>
 
