@@ -37,8 +37,10 @@
 
     $(function(){
         $(".cats li").mousemove(function(){
-            event.preventDefault();
-            return false;
+            $("a").click(function(){
+                event.preventDefault();
+                return false;
+            });
         });
     });
 
