@@ -65,7 +65,12 @@ body
 }
 #filters img:hover{cursor:pointer;}
 
-.upload{background:#7c7264;padding:10px;color:#fff;font-weight:bold;border:3px solid #514a40;border-radius:8px;width: 100px;}
+.upload{
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 80px;
+}
 #last_upload {
     font-family: Droid Serif;
     color: white !important;
