@@ -61,18 +61,21 @@
             }
         });
 
-        var clicking = false;
+        var clicking = true;
 
         $('.cats').mousedown(function(){
-            clicking = true;
+            clicking = false;
         });
 
         $(document).mouseup(function(){
-            clicking = false;
+            clicking = true;
         })
 
         $('.cats').mousemove(function(){
-            if(clicking == false) return;
+            if(clicking == false) {
+                event.preventDefault();
+            }
+             return;
         });
 
         window.myFlick = myFlick
