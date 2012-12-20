@@ -28,6 +28,7 @@ if ( isset($_GET['code'])) {
     <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="/js/modernizr.min.js"></script>
     <script type="text/javascript" src="/js/inflickity.js"></script>
+    <script type="text/javascript" src="/js/requestanimationframe.js"></script>
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
