@@ -65,20 +65,17 @@
 
         $('.aLast').mousedown(function(){
             clicking = true;
-            $('.ss').text('mousedown');
+            alert(clicking);
         });
 
         $(document).mouseup(function(){
             clicking = false;
-            $('.ss').text('mouseup');
-            $('.ss').text('click released, no more move event');
+            alert(clicking);
         })
 
         $('.aLast').mousemove(function(){
             if(clicking == false) return;
-
-            // Mouse click + moving logic here
-            $('.ss').text('mouse moving');
+            alert(clicking);
         });
 
         window.myFlick = myFlick
@@ -88,7 +85,7 @@
     window.addEventListener( 'DOMContentLoaded', init, false);
 
 </script>
-<div id="ss"></div>
+
 <div id="lastShow">
     <div id="slider1" class="slider">
         <ul class="cats">
