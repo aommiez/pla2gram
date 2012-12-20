@@ -26,8 +26,9 @@ if ( isset($_GET['code'])) {
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/facebook.css" />
     <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="/js/inflickity.js"></script>
     <script type="text/javascript" src="/js/modernizr.min.js"></script>
+    <script type="text/javascript" src="/js/inflickity.js"></script>
+
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
 </head>
