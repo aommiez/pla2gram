@@ -60,7 +60,9 @@
         window.myFlick = myFlick
 
         function aClick(){
+            event.preventDefault();
             alert("a");
+            return false;
         }
 
     };
