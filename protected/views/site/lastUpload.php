@@ -62,8 +62,9 @@
         });
 
         $(".aLast").mousemove(function(e){
-            $(".aLast").mouseup(function(){
+            $(document).mouseup(function(){
                 event.preventDefault();
+                return false;
             });
         });
 
