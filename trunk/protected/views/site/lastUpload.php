@@ -15,7 +15,8 @@
     }
 
     .slider {
-
+        width: 100%;
+        height: 240px;
         overflow: hidden;
         position: relative;
         z-index: 1;
