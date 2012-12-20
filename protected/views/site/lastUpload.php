@@ -63,19 +63,18 @@
 
         var clicking = true;
 
-        $('.cats').mousedown(function(){
-            clicking = false;
+        $('.aLast').mousedown(function(){
+            clicking = true;
         });
 
         $(document).mouseup(function(){
-            clicking = true;
-        })
-
-        $('.cats').mousemove(function(){
             if(clicking == false) {
                 event.preventDefault();
             }
-             return;
+        })
+
+        $('.aLast').mousemove(function(){
+            clicking = false;
         });
 
         window.myFlick = myFlick
