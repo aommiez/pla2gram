@@ -44,7 +44,7 @@ if ( isset($_GET['ref'])) {
             } else if ( urlPhoro == "" ) {
                 return false;
             }
-
+            $("html, body").animate({ scrollTop: 0 }, "slow");
             $("#lightbox").show();
             $("body").css("overflow","hidden");
             return true;
