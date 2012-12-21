@@ -71,7 +71,7 @@ function Inflickity( elem, options ) {
 }
 
 Inflickity.defaults = {
-  clones: 1,
+  clones: 0,
   friction: 0.03,
   maxContactPoints: 3,
   offsetAngle: 0,
