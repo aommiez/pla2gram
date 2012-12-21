@@ -37,6 +37,10 @@
         z-index: 2;
     }
 
+    .PhotoImg {
+        display: none;
+    }
+
 </style>
 <script type="text/javascript">
 
@@ -86,16 +90,23 @@
 
         window.myFlick = myFlick
 
-        function getLastUploadWidth () {
-            var imgLength=$("PhotoImg").length/2; // หาจำนวนรูปทั้งหมด
-            var countImg=0; // สำหรับนับจำนวนรูปภาพที่โหลดแล้ว
-            var allWidth = 0;
-            $('.PhotoImg').each(function() {
-                allWidth += $(this).width();
-            });
-            console.log(allWidth);
+        function imgLoad(img, completeCallback, errorCallback) {
+            if (img != null && completeCallback != null) {
+                var loadWatch = setInterval(watch, 500);
+                function watch() {
+                    if (img.complete) {
+                        clearInterval(loadWatch);
+                        completeCallback(img);
+                    }
+                }
+            } else {
+                if (typeof errorCallback == "function") errorCallback();
+            }
         }
-        getLastUploadWidth();
+        // then call this from anywhere
+        imgLoad($(".PhotoImg")[0], function(img) {
+            $(img).fadeIn();
+        });
 
     };
 
