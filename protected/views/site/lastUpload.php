@@ -87,7 +87,7 @@
         window.myFlick = myFlick
 
         function getLastUploadWidth () {
-            $(".PhotoImg").each(function()
+            $("#cats").find("img").each(function()
             {
                 console.log(this.width());
                 console.log(this.height());
