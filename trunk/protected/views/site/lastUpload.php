@@ -90,7 +90,7 @@
 
         var divWidthShow = 0;
         $('.PhotoImg').each(function(){
-            imgLoad($(this)[0], function(img) {
+            imgLoad(this, function(img) {
                 console.log(img);
                 $(img).fadeIn();
             });
