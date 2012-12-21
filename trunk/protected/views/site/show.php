@@ -12,22 +12,19 @@ $name = $user['name'];
 $mid = str_replace("photo/","",$photo['link']);
 $mid = Yii::app()->baseUrl."thumb/thumb320_".$thumb;
 Yii::app()->facebook->ogTags['og:image'] = "http://www.pla2gram.com/thumb/thumb_".$thumb;
-if ( $_GET['theater'] == 1 ) {
-    ?>
+if ( isset($_GET['theater'])) {
+   $theater = 0;
+} else {
+    $theater = 1;
+}
+if ( $theater == 1 ) {
+?>
 <script type="text/javascript">
     $("#photo_img").click();
 </script>
-<?
+<?php
 }
 ?>
-/*
-$title=urlencode("PLA2GRAM.COM : Stylize your photo");
-$url=urlencode("http://www.pla2gram.com/?p=".$id);
-$summary=urlencode("เว็บแต่งภาพสไตล์ retro ");
-$image=urlencode("http://www.pla2gram.com/thumb/thumb_".$thumb);
-*/
-?>
-
 <script type="text/javascript">
     $(document).ready(function() {
         $("#photo_img").click(function(){
