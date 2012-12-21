@@ -4,6 +4,7 @@
         list-style: none;
         margin: 0;
         padding: 0;
+        width: 0px;
     }
 
     .cats li {
@@ -96,7 +97,7 @@
                 console.log($(img).width());
                 if (i == lastID) {
                     console.log(divWidthShow);
-                    $(".cats").css('width',divWidthShow);
+                    $(".cats").css('width',divWidthShow+"px");
                 }
             });
         });
