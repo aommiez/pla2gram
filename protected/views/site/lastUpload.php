@@ -101,10 +101,7 @@
                 if (typeof errorCallback == "function") errorCallback();
             }
         }
-        // then call this from anywhere
-        imgLoad($(".PhotoImg")[0], function(img) {
-            $(img).fadeIn();
-        });
+
 
         $('.PhotoImg').each(function(){
             imgLoad($(this), function(img) {
