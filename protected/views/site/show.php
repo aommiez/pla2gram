@@ -12,8 +12,13 @@ $name = $user['name'];
 $mid = str_replace("photo/","",$photo['link']);
 $mid = Yii::app()->baseUrl."thumb/thumb320_".$thumb;
 Yii::app()->facebook->ogTags['og:image'] = "http://www.pla2gram.com/thumb/thumb_".$thumb;
+if ( isset($_GET['theater'])) {
+    $theater = 1;
+} else {
+    $theater = 0;
+}
 
-if ( $_GET['theater'] == 1 ) {
+if ( $theater == 1 ) {
 ?>
 <script type="text/javascript">
     $(document).ready(function() {
