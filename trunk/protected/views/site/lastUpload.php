@@ -103,7 +103,7 @@
         }
         // then call this from anywhere
         imgLoad($(".PhotoImg")[0], function(img) {
-            //$(img).fadeIn();
+            $(img).fadeIn();
         });
 
     };
