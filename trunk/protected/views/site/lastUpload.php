@@ -106,6 +106,12 @@
             $(img).fadeIn();
         });
 
+        $('.PhotoImg').each(function(){
+            imgLoad($(this), function(img) {
+                $(img).fadeIn();
+            });
+        });
+
     };
 
 
