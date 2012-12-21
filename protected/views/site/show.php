@@ -22,7 +22,7 @@ if ( $theater == 1 ) {
 ?>
 <script type="text/javascript">
     $(document).ready(function() {
-        $("#photo_img").click();
+        alert("aaa");
     });
 </script>
 <?php
