@@ -102,9 +102,8 @@
             }
         }
 
-
         $('.PhotoImg').each(function(){
-            imgLoad($(this), function(img) {
+            imgLoad($(this)[0], function(img) {
                 $(img).fadeIn();
             });
         });
