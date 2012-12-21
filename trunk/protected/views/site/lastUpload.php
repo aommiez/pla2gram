@@ -91,7 +91,8 @@
         var divWidthShow = 0;
         $('.PhotoImg').each(function(){
             imgLoad($(this)[0], function(img) {
-                divWidthShow += $(img).width();
+                console.log($(this)[0].offsetWidth);
+                divWidthShow += $(this)[0].offsetWidth;
                 $(img).fadeIn();
             });
         });
