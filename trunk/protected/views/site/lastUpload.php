@@ -87,12 +87,11 @@
         window.myFlick = myFlick
 
         function getLastUploadWidth () {
-            var accum_width = 0;
-            $('.PhotoImg').each(function() {
-                accum_width += $(this).width() + 2;
+            $(".PhotoImg").each(function()
+            {
+                console.log(this.width());
+                console.log(this.height());
             });
-            //$('#thumbnails').width(accum_width);
-            alert(accum_width);
         }
         getLastUploadWidth();
     };
