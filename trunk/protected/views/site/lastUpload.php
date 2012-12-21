@@ -88,7 +88,7 @@
 
         function getLastUploadWidth () {
             var accum_width = 0;
-            $('.cats').find('img').each(function() {
+            $('.PhotoImg').each(function() {
                 accum_width += $(this).width() + 2;
             });
             //$('#thumbnails').width(accum_width);
@@ -103,7 +103,7 @@
 
 <div id="lastShow">
     <div id="slider1" class="slider">
-        <ul class="cats">
+        <ul class="cats" id="cats">
             <?php
             Helper::YiiImport("GetController");
             $last = GetController::last_upload(11);
@@ -115,7 +115,7 @@
                 echo <<<HTML
     <li >
     <a href="/?p={$i}" class="aLast">
-        <img src="{$l}" />
+        <img src="{$l}" class="PhotoImg"/>
     </a>
 </li>
 HTML;
