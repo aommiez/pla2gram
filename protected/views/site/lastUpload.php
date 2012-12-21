@@ -91,7 +91,7 @@
             var countImg = 0;
             alert(imgLength);
         }
-
+        getLastUploadWidth();
     };
 
     window.addEventListener( 'DOMContentLoaded', init, false);
