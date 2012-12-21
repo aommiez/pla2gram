@@ -93,6 +93,7 @@
             $('.PhotoImg').each(function() {
                 allWidth += $(this).width();
             });
+            console.log(allWidth);
         }
         getLastUploadWidth();
 
