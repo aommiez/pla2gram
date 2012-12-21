@@ -34,6 +34,9 @@
         position: relative;
         z-index: 2;
     }
+    .PhotoImg {
+        display: none;
+    }
 
 
 </style>
