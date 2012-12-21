@@ -17,16 +17,6 @@ if ( isset($_GET['theater'])) {
 } else {
     $theater = 0;
 }
-
-if ( $theater == 1 ) {
-?>
-<script type="text/javascript">
-    $(document).ready(function() {
-        alert("aaa");
-    });
-</script>
-<?php
-}
 ?>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -48,6 +38,25 @@ if ( $theater == 1 ) {
         });
     });
 </script>
+
+<?php
+if ( isset($_GET['theater'])) {
+    $theater = 1;
+} else {
+    $theater = 0;
+}
+
+if ( $theater == 1 ) {
+?>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#photo_img").click();
+    });
+</script>
+<?php
+}
+?>
+
 <?php
 echo <<<HTML
     <div style="text-align: center;color: white;text-align: left;">
