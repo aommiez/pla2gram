@@ -89,15 +89,17 @@
         window.myFlick = myFlick
 
         var divWidthShow = 0;
-        $('.PhotoImg').each(function(){
+        var lastID = $('.PhotoImg').length - 1;
+        $('.PhotoImg').each(function(i){
             imgLoad(this, function(img) {
                 $(img).fadeIn();
                 divWidthShow += $(img).width() +2;
                 console.log($(img).width());
+                if (i == lastID) {
+                    console.log(divWidthShow);
+                }
             });
         });
-
-        console.log(divWidthShow);
     };
 
 
