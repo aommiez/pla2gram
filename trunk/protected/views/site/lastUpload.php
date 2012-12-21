@@ -2,7 +2,6 @@
 <style>
     .cats {
         list-style: none;
-        width: 3000px;
         margin: 0;
         padding: 0;
     }
@@ -97,6 +96,7 @@
                 console.log($(img).width());
                 if (i == lastID) {
                     console.log(divWidthShow);
+                    $(".cats").css('width',divWidthShow);
                 }
             });
         });
