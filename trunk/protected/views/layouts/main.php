@@ -31,6 +31,7 @@ Yii::app()->facebook->ogTags['og:image'] = "http://www.pla2gram.com/images/pla2g
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/facebook.css" />
     <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/js/helper.js"></script>
     <script type="text/javascript" src="/js/modernizr.min.js"></script>
     <script type="text/javascript" src="/js/inflickity.js"></script>
     <script type="text/javascript" src="/js/requestanimationframe.js"></script>
