@@ -90,11 +90,12 @@
 
         var divWidthShow = 0;
         $('.PhotoImg').each(function(){
+            console.log($(this).width());
             imgLoad(this, function(img) {
-                console.log(img);
                 $(img).fadeIn();
             });
         });
+
     };
 
 
