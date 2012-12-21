@@ -90,16 +90,8 @@
             var imgLength=$("PhotoImg").length/2; // หาจำนวนรูปทั้งหมด
             var countImg=0; // สำหรับนับจำนวนรูปภาพที่โหลดแล้ว
             var allWidth = 0;
-            $(".PhotoImg").each(function(){
-                $(this).load(function(){
-                    countImg++;
-                    if(countImg==imgLength){ // เมื่อโหลดรูปทั้งหมดแล้วปิดตัว loading
-                        $('.PhotoImg').each(function() {
-                            allWidth += $(this).width();
-                        });
-                        console.log(allWidth);
-                    }
-                });
+            $('.PhotoImg').each(function() {
+                allWidth += $(this).width();
             });
         }
         getLastUploadWidth();
