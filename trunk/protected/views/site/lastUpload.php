@@ -89,6 +89,7 @@
         function getLastUploadWidth () {
             var imgLength = $(".cats li a img").length;
             var countImg = 0;
+            alert(imgLength);
         }
 
     };
