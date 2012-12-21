@@ -19,9 +19,7 @@
         position: relative;
         z-index: 1;
     }
-    .slider img {
-        display: block;
-    }
+
     /*
     .cats li:nth-child(5n+0) { background: black; }
     .cats li:nth-child(5n+1) { background: blue; }
@@ -37,9 +35,6 @@
         z-index: 2;
     }
 
-    .PhotoImg {
-        display: none;
-    }
 
 </style>
 <script type="text/javascript">
@@ -105,7 +100,7 @@
         }
         // then call this from anywhere
         imgLoad($(".PhotoImg")[0], function(img) {
-            $(img).fadeIn();
+            //$(img).fadeIn();
         });
 
     };
