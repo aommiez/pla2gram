@@ -2,7 +2,7 @@
 <style>
     .cats {
         list-style: none;
-        width: 2400px;
+        width: 3000px;
         margin: 0;
         padding: 0;
     }
@@ -85,6 +85,11 @@
 
 
         window.myFlick = myFlick
+
+        function getLastUploadWidth () {
+            var imgLength = $(".cats li a img").length;
+            var countImg = 0;
+        }
 
     };
 
