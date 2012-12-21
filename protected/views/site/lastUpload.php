@@ -88,19 +88,6 @@
 
         window.myFlick = myFlick
 
-        function imgLoad(img, completeCallback, errorCallback) {
-            if (img != null && completeCallback != null) {
-                var loadWatch = setInterval(watch, 500);
-                function watch() {
-                    if (img.complete) {
-                        clearInterval(loadWatch);
-                        completeCallback(img);
-                    }
-                }
-            } else {
-                if (typeof errorCallback == "function") errorCallback();
-            }
-        }
 
         $('.PhotoImg').each(function(){
             imgLoad($(this)[0], function(img) {
