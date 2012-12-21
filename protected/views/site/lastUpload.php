@@ -4,7 +4,7 @@
         list-style: none;
         margin: 0;
         padding: 0;
-        width: 0px;
+        width: 3000px;
     }
 
     .cats li {
