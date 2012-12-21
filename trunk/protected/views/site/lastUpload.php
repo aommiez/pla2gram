@@ -90,8 +90,8 @@
 
         var divWidthShow = 0;
         $('.PhotoImg').each(function(){
-            console.log(this.offsetWidth);
             imgLoad(this, function(img) {
+                console.log(img);
                 $(img).fadeIn();
             });
         });
