@@ -234,7 +234,7 @@ class SiteController extends Controller
         $photo->ip = $_SERVER['REMOTE_ADDR'];
         if ($photo->save()) {
             $id = $photo->id;
-            $cr =   "\n"."http://www.pla2gram.com/?p=".$id;
+            $cr =   "\n"."http://www.pla2gram.com/?p=".$id."&theater=1";
             $capFB = $capPhoto . $cr;
             // Post to Facebook
             $args = array('message' => $capFB );
