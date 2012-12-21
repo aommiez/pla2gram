@@ -92,10 +92,12 @@
         $('.PhotoImg').each(function(){
             imgLoad(this, function(img) {
                 $(img).fadeIn();
+                divWidthShow += $(img).width() +2;
                 console.log($(img).width());
             });
         });
 
+        console.log(divWidthShow);
     };
 
 
