@@ -54,27 +54,30 @@
         var hereVal = 0;
         var mms = false;
         $(".aLast").mousedown(function(e){
+            e.preventDefault();
             clicker = true;
             hereVal = e.pageX;
             mms = true;
+            $(document).bind('mousemove',function(e){
+                clicker = false;
+                if ( mms != false ) {
+                    var newVal = e.pageX;
+                    var LR = 0;
+                    if ( hereVal > newVal ) {
+                        LR = hereVal - newVal;
+                    } else if ( newVal > hereVal ) {
+                        LR = newVal - hereVal;
+                    }
+                    $('#theater').html(e.pageX +', '+ e.pageY + ', ' + LR);
+                }
+            });
         });
 
-        $(document).mousemove(function(e){
-            clicker = false;
-            if ( mms != false ) {
-                var newVal = e.pageX;
-                var LR = 0;
-                if ( hereVal > newVal ) {
-                    LR = hereVal - newVal;
-                } else if ( newVal > hereVal ) {
-                    LR = newVal - hereVal;
-                }
-                $('#theater').html(e.pageX +', '+ e.pageY + ', ' + LR);
-            }
-        });
+
+
 
         $(".aLast").mouseup(function(e){
-            mms = false;
+            $(document).unbind('mousemove');
             if ( clicker == false ) {
                 $(".aLast").click(function(e){
                     e.preventDefault();
