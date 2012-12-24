@@ -49,6 +49,40 @@
                 }
             });
         });
+
+        var clicker = false;
+        var hereVal = 0;
+        $(".aLast").mousedown(function(){
+            clicker = true;
+            hereVal = e.pageX;
+        });
+
+        $(document).mousemove(function(e){
+            clicker = false;
+            var newVal = e.pageX
+            var LR;
+            if ( newVal > hereVal ) {
+                LR = newVal-hereVal;
+            } else {
+                LR = hereVal-newVal;
+            }
+            $('#cats').animate({ left : 200 }, {
+                        duration: 'slow',
+                        easing: 'easeOutBounce'
+            });
+        });
+
+        $(".aLast").mouseup(function(e){
+            if ( clicker == false ) {
+                $(".aLast").click(function(e){
+                    e.preventDefault();
+                });
+            } else {
+                $(".aLast").unbind('click');
+            }
+        });
+
+
     });
 </script>
 
