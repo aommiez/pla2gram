@@ -52,22 +52,24 @@
 
         var clicker = false;
         var hereVal = 0;
-        var MMR = false;
+        var mms = false;
         $(".aLast").mousedown(function(e){
             clicker = true;
             hereVal = e.pageX;
-            MMR = true;
+            mms = true;
         });
 
         $(document).mousemove(function(e){
             clicker = false;
-            if ( MMS == true) {
-                alert(e.pageX);
+            if ( mms == false ) {
+                return true;
+            } else {
+                alert("move");
             }
         });
 
         $(".aLast").mouseup(function(e){
-            MMR = false;
+            mms = false;
             $(document).unbind('mousemove');
             if ( clicker == false ) {
                 $(".aLast").click(function(e){
