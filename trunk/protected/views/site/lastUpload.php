@@ -56,7 +56,7 @@
                 divWidthShow += $(img).width() +2;
                 console.log($(img).width());
                 if (i == lastID) {
-                    console.log(divWidthShow);
+                    divWidthShow +300;
                     $(".cats").css('width',divWidthShow+"px");
                 }
             });
