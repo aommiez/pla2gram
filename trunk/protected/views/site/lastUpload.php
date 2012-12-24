@@ -61,23 +61,20 @@
 
         $(document).mousemove(function(e){
             clicker = false;
-            if ( mms == false ) {
-                return true;
-            } else {
+            if ( mms != false ) {
                 var newVal = e.pageX;
                 var LR = 0;
-                if ( hereVal = newVal ) {
+                if ( hereVal > newVal ) {
                     LR = hereVal - newVal;
                 } else if ( newVal > hereVal ) {
                     LR = newVal - hereVal;
                 }
-                $('#theater').html(e.pageX +', '+ e.pageY);
+                $('#theater').html(e.pageX +', '+ e.pageY + ', ' + LR);
             }
         });
 
         $(".aLast").mouseup(function(e){
             mms = false;
-            $(document).unbind('mousemove');
             if ( clicker == false ) {
                 $(".aLast").click(function(e){
                     e.preventDefault();
