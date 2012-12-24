@@ -61,7 +61,7 @@
 
         $(document).mousemove(function(e){
             clicker = false;
-            if (MMS) {
+            if ( MMS == true) {
                 alert(e.pageX);
             }
         });
