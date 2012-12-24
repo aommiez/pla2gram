@@ -53,10 +53,10 @@
         $('.PhotoImg').each(function(i){
             imgLoad(this, function(img) {
                 $(img).fadeIn();
-                divWidthShow += $(img).width() +2;
+                divWidthShow += $(img).width() +50;
                 console.log($(img).width());
                 if (i == lastID) {
-                    divWidthShow +300;
+                    console.log(divWidthShow);
                     $(".cats").css('width',divWidthShow+"px");
                 }
             });
