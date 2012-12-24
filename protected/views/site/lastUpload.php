@@ -62,7 +62,7 @@
         $(document).mousemove(function(e){
             clicker = false;
             if ( MMS) {
-                MMS();
+                MMS(e.pageX);
             }
         });
 
@@ -77,8 +77,8 @@
             }
         });
 
-        function MMS (){
-            var newVal = e.pageX;
+        function MMS (e){
+            var newVal = e;
             var LR;
             if ( newVal > hereVal ) {
                 LR = newVal-hereVal;
