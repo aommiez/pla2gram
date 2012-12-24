@@ -79,7 +79,6 @@
         });
 
         $(".aLast").bind('touchstart',function(){
-            e.preventDefault();
             clicker = true;
             hereVal = e.pageX;
             scVal =  $('.slider').scrollLeft();
