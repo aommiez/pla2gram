@@ -1,15 +1,20 @@
 <div id="last_upload">Last Upload</div>
 <style>
     .cats {
-
+        list-style: none;
+        position: relative;
+        z-index: 0;
+        width: 3000px;
     }
 
     .cats li {
-
+        display: inline-block;
     }
 
     .slider {
-
+        position: relative;
+        z-index: 1;
+        width: 100%;
     }
 
     /*
