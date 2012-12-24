@@ -36,6 +36,7 @@
 </style>
 <script type="text/javascript">
     $(document).ready(function() {
+        var m = false;
         if (navigator.userAgent.match(/Android/i) ||
                 navigator.userAgent.match(/webOS/i) ||
                 navigator.userAgent.match(/iPhone/i) ||
@@ -46,6 +47,7 @@
                 navigator.userAgent.match(/ZuneWP7/i)
                 ) {
             $('.slider').css("overflow",'scroll').css('-webkit-overflow-scrolling','touch');
+            m = true;
         }
 
         var divWidthShow = 0;
@@ -53,10 +55,16 @@
         $('.PhotoImg').each(function(i){
             imgLoad(this, function(img) {
                 $(img).fadeIn();
-                divWidthShow += $(img).width() +30;
+                if ( m == true ) {
+                    divWidthShow += $(img).width() +10;
+                } else {
+                    divWidthShow += $(img).width() +30;
+                }
+
                 console.log($(img).width());
                 if (i == lastID) {
                     console.log(divWidthShow);
+
                     $(".cats").css('width',divWidthShow+"px");
                 }
             });
