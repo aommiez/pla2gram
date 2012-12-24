@@ -15,6 +15,7 @@
         position: relative;
         z-index: 1;
         width: 100%;
+        overflow: hidden;
     }
 
     /*
@@ -34,8 +35,21 @@
 
 </style>
 <script type="text/javascript">
-
-
+    $(document).ready(function() {
+        var divWidthShow = 0;
+        var lastID = $('.PhotoImg').length - 1;
+        $('.PhotoImg').each(function(i){
+            imgLoad(this, function(img) {
+                $(img).fadeIn();
+                divWidthShow += $(img).width() +2;
+                console.log($(img).width());
+                if (i == lastID) {
+                    console.log(divWidthShow);
+                    $(".cats").css('width',divWidthShow+"px");
+                }
+            });
+        });
+    });
 </script>
 
 <div id="lastShow">
