@@ -21,6 +21,7 @@ class GetController extends Controller
     }
 
     public static function last_upload ($limit){
+        /*
         $lastUploadKey = md5(trim("Photo::model()->findAll(array('limit' => $limit, 'order' => 'id DESC'))"));
         if ( Yii::app()->cache->get($lastUploadKey) == false ) {
             $photo = Photo::model()->findAll(array('limit' => $limit, 'order' => 'id DESC'));
@@ -29,6 +30,9 @@ class GetController extends Controller
         } else {
             return Yii::app()->cache->get($lastUploadKey);
         }
+        */
+        $photo = Photo::model()->findAll(array('limit' => $limit, 'order' => 'id DESC'));
+        return $photo;
     }
 
     public static function fbSync ($fbID) {
