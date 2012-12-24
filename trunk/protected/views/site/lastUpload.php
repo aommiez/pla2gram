@@ -65,10 +65,16 @@
                     var LR = 0;
                     if ( hereVal > newVal ) {
                         LR = hereVal - newVal;
+                        $('#cats').animate({
+                            left: '-='+LR }, {duration: 'fast'});
                     } else if ( newVal > hereVal ) {
                         LR = newVal - hereVal;
+                        $('#cats').animate({
+                            right: '+='+LR
+                        }, {duration: 'fast'});
                     }
                     $('#theater').html(e.pageX +', '+ e.pageY + ', ' + LR);
+
                 }
             });
         });
