@@ -55,12 +55,12 @@
                     var LR = 0;
                     if ( hereVal > newVal ) {
                         LR = hereVal - newVal;
-                        $('.slider').scrollLeft(scVal+hereVal-LR);
+                        $('.slider').scrollLeft(scVal-LR);
                     } else if ( newVal > hereVal ) {
                         LR = newVal - hereVal;
-                        $('.slider').scrollLeft(scVal+hereVal+LR);
+                        $('.slider').scrollLeft(scVal+LR);
                     }
-                    $('#theater').html(e.pageX +', '+ e.pageY + ', ' + LR);
+                    $('#theater').html(e.pageX +', '+ e.pageY + ', ' + LR + ',' + scVal);
 
                 }
             });
