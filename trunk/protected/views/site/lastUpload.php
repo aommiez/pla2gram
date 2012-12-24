@@ -59,14 +59,14 @@
 
         $(document).mousemove(function(e){
             clicker = false;
-            var newVal = e.pageX
+            var newVal = e.pageX;
             var LR;
             if ( newVal > hereVal ) {
                 LR = newVal-hereVal;
             } else {
                 LR = hereVal-newVal;
             }
-            $('#cats').animate({ left : 200 }, {
+            $('#cats').animate({ left : LR }, {
                         duration: 'slow'
             });
         });
