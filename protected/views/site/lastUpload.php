@@ -72,6 +72,7 @@
         });
 
         $(".aLast").mouseup(function(e){
+            $(document).unbind('mousemove');
             if ( clicker == false ) {
                 $(".aLast").click(function(e){
                     e.preventDefault();
