@@ -79,40 +79,10 @@
         });
 
         $(".aLast").bind('touchstart',function(){
-            e.preventDefault();
-            clicker = true;
-            hereVal = e.pageX;
-            scVal =  $('.slider').scrollLeft();
-            mms = true;
-            $(document).bind('touchmove',function(e){
-                clicker = false;
-                if ( mms != false ) {
-                    var newVal = e.pageX;
-                    var LR = 0;
-                    if ( hereVal > newVal ) {
-                        LR = hereVal - newVal;
-                        $('.slider').scrollLeft(scVal+LR);
-                    } else if ( newVal > hereVal ) {
-                        LR = newVal - hereVal;
-                        $('.slider').scrollLeft(scVal-LR);
-                    }
-                    $('#theater').html(e.pageX +', '+ e.pageY + ', ' + LR + ',' + scVal);
-
-                }
-            });
+            alert('a');
         });
 
-        $(document).bind('touchmove',function(){
-            clicker = false;
-        });
 
-        $(document).bind('touchend',function(e){
-            $(document).unbind('touchmove');
-            if ( clicker != false) {
-                var url = $(this).attr("href");
-                window.location.href = "http://www.pla2gram.com/"+url;
-            }
-        });
 
     });
 </script>
