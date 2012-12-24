@@ -79,7 +79,7 @@
 
 
 
-        $(".aLast").mouseup(function(e){
+        $(document).mouseup(function(e){
             $(document).unbind('mousemove');
             if ( clicker == false ) {
                 $(".aLast").click(function(e){
