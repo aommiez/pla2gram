@@ -53,10 +53,12 @@
         var clicker = false;
         var hereVal = 0;
         var mms = false;
+        var scVal = 0;
         $(".aLast").mousedown(function(e){
             e.preventDefault();
             clicker = true;
             hereVal = e.pageX;
+            scVal =  $('.slider').scrollLeft();
             mms = true;
             $(document).bind('mousemove',function(e){
                 clicker = false;
@@ -65,10 +67,10 @@
                     var LR = 0;
                     if ( hereVal > newVal ) {
                         LR = hereVal - newVal;
-                        $('.slider').scrollLeft(hereVal-LR);
+                        $('.slider').scrollLeft(scVal+hereVal-LR);
                     } else if ( newVal > hereVal ) {
                         LR = newVal - hereVal;
-                        $('.slider').scrollLeft(hereVal+LR);
+                        $('.slider').scrollLeft(scVal+hereVal+LR);
                     }
                     $('#theater').html(e.pageX +', '+ e.pageY + ', ' + LR);
 
