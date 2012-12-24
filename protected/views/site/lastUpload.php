@@ -64,7 +64,14 @@
             if ( mms == false ) {
                 return true;
             } else {
-                alert("move");
+                var newVal = e.pageX;
+                var LR = 0;
+                if ( hereVal = newVal ) {
+                    LR = hereVal - newVal;
+                } else if ( newVal > hereVal ) {
+                    LR = newVal - hereVal;
+                }
+                $("#theater").text(LR);
             }
         });
 
@@ -108,10 +115,5 @@ HTML;
 </div>
 
 <div id="theater">
-    <div id="theaterPhoto">
-        <img src="data" id="theaterPhotoSrc">
-    </div>
-    <div id="theaterConntent">
-        test
-    </div>
+
 </div>
