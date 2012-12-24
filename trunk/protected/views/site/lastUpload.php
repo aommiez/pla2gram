@@ -67,8 +67,7 @@
                 LR = hereVal-newVal;
             }
             $('#cats').animate({ left : 200 }, {
-                        duration: 'slow',
-                        easing: 'easeOutBounce'
+                        duration: 'slow'
             });
         });
 
