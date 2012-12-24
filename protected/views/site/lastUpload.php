@@ -71,7 +71,7 @@
                 } else if ( newVal > hereVal ) {
                     LR = newVal - hereVal;
                 }
-                $("#theater").text(LR);
+                $('#theater').html(e.pageX +', '+ e.pageY);
             }
         });
 
