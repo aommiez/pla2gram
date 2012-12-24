@@ -1,22 +1,15 @@
 <div id="last_upload">Last Upload</div>
 <style>
     .cats {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+
     }
 
     .cats li {
-        float: left;
-        overflow: hidden;
+
     }
 
     .slider {
-        width: 100%;
-        height: 240px;
-        overflow: hidden;
-        position: relative;
-        z-index: 1;
+
     }
 
     /*
@@ -27,11 +20,10 @@
     .cats li:nth-child(5n+4) { background: red; }
 */
     #lastShow {
-        position: relative;
-        z-index: 2;
+
     }
     .PhotoImg {
-        display: none;
+
     }
 
 
