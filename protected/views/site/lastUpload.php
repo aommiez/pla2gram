@@ -53,7 +53,7 @@
         var clicker = false;
         var hereVal = 0;
         var MMR = false;
-        $(".aLast").mousedown(function(){
+        $(".aLast").mousedown(function(e){
             clicker = true;
             hereVal = e.pageX;
             MMR = true;
@@ -62,7 +62,7 @@
         $(document).mousemove(function(e){
             clicker = false;
             if (MMS) {
-                alert(e);
+                alert(e.pageX);
             }
         });
 
