@@ -53,7 +53,7 @@
         $('.PhotoImg').each(function(i){
             imgLoad(this, function(img) {
                 $(img).fadeIn();
-                divWidthShow += $(img).width() +50;
+                divWidthShow += $(img).width() +30;
                 console.log($(img).width());
                 if (i == lastID) {
                     console.log(divWidthShow);
