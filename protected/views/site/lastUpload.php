@@ -61,12 +61,13 @@
 
         $(document).mousemove(function(e){
             clicker = false;
-            if ( MMS) {
-                MMS(e.pageX);
+            if (MMS) {
+                alert(e);
             }
         });
 
         $(".aLast").mouseup(function(e){
+            MMR = false;
             $(document).unbind('mousemove');
             if ( clicker == false ) {
                 $(".aLast").click(function(e){
@@ -76,20 +77,6 @@
                 $(".aLast").unbind('click');
             }
         });
-
-        function MMS (e){
-            var newVal = e;
-            var LR;
-            if ( newVal > hereVal ) {
-                LR = newVal-hereVal;
-            } else {
-                LR = hereVal-newVal;
-            }
-            $('#cats').animate({ left : LR }, {
-                duration: 'fast'
-            });
-        }
-
 
     });
 </script>
