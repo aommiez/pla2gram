@@ -58,7 +58,7 @@
                 if ( m == true ) {
                     divWidthShow += $(img).width() +8;
                 } else {
-                    divWidthShow += $(img).width() +20;
+                    divWidthShow += $(img).width() +30;
                 }
 
                 console.log($(img).width());
