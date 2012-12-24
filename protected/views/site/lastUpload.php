@@ -36,7 +36,17 @@
 </style>
 <script type="text/javascript">
     $(document).ready(function() {
-
+        if (navigator.userAgent.match(/Android/i) ||
+                navigator.userAgent.match(/webOS/i) ||
+                navigator.userAgent.match(/iPhone/i) ||
+                navigator.userAgent.match(/iPad/i) ||
+                navigator.userAgent.match(/iPod/i) ||
+                navigator.userAgent.match(/BlackBerry/) ||
+                navigator.userAgent.match(/Windows Phone/i) ||
+                navigator.userAgent.match(/ZuneWP7/i)
+                ) {
+            $('.slider').css("overflow",'scroll').css('-webkit-overflow-scrolling','touch');
+        }
 
         var clicker = false;
         var hereVal = 0;
@@ -78,40 +88,6 @@
             }
         });
 
-        $(".aLast").bind('touchstart',function(){
-            clicker = true;
-            hereVal = e.pageX;
-            scVal =  $('.slider').scrollLeft();
-            mms = true;
-            $(document).bind('touchmove',function(e){
-                clicker = false;
-                if ( mms != false ) {
-                    var newVal = e.pageX;
-                    var LR = 0;
-                    if ( hereVal > newVal ) {
-                        LR = hereVal - newVal;
-                        $('.slider').scrollLeft(scVal+LR);
-                    } else if ( newVal > hereVal ) {
-                        LR = newVal - hereVal;
-                        $('.slider').scrollLeft(scVal-LR);
-                    }
-                    $('#theater').html(e.pageX +', '+ e.pageY + ', ' + LR + ',' + scVal);
-
-                }
-            });
-        });
-
-        $(document).bind('touchmove',function(){
-            clicker = false;
-        });
-
-        $(document).bind('touchend',function(e){
-            $(document).unbind('touchmove');
-            if ( clicker != false) {
-                var url = $(this).attr("href");
-                window.location.href = "http://www.pla2gram.com/"+url;
-            }
-        });
 
     });
 </script>
