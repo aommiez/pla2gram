@@ -2,9 +2,9 @@
 <style>
     .cats {
         list-style: none;
-        position: fixed;
+        position: relative;
         z-index: 0;
-        width:100%;
+        width: 3000px;
     }
 
     .cats li {
@@ -49,6 +49,25 @@
             $('.slider').css("overflow",'scroll').css('-webkit-overflow-scrolling','touch');
             m = true;
         }
+
+        var divWidthShow = 0;
+        var lastID = $('.PhotoImg').length - 1;
+        $('.PhotoImg').each(function(i){
+            imgLoad(this, function(img) {
+                $(img).fadeIn();
+                if ( m == true ) {
+                    divWidthShow += $(img).width() +10;
+                } else {
+                    divWidthShow += $(img).width() +40;
+                }
+
+                console.log($(img).width());
+                if (i == lastID) {
+                    console.log(divWidthShow);
+                    $(".cats").css('width',divWidthShow+"px");
+                }
+            });
+        });
 
         var clicker = false;
         var hereVal = 0;
