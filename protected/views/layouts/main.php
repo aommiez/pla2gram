@@ -38,7 +38,7 @@ Yii::app()->facebook->ogTags['og:image'] = "http://www.pla2gram.com/images/pla2g
 <body>
 <script type="text/javascript">
     $(function(){
-
+            /*
         $("html, body").animate({ scrollTop: 0 }, "slow");
         var imgLength=$("img").length; // หาจำนวนรูปทั้งหมด
         var countImg=0; // สำหรับนับจำนวนรูปภาพที่โหลดแล้ว
@@ -57,7 +57,7 @@ Yii::app()->facebook->ogTags['og:image'] = "http://www.pla2gram.com/images/pla2g
             });
 
         });
-
+*/
 
     });
 </script>
