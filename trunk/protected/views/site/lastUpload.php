@@ -56,15 +56,14 @@
             imgLoad(this, function(img) {
                 $(img).fadeIn();
                 if ( m == true ) {
-                    divWidthShow += $(img).width() +10;
+                    divWidthShow += $(img).width() +8;
                 } else {
-                    divWidthShow += $(img).width() +30;
+                    divWidthShow += $(img).width() +25;
                 }
 
                 console.log($(img).width());
                 if (i == lastID) {
                     console.log(divWidthShow);
-
                     $(".cats").css('width',divWidthShow+"px");
                 }
             });
