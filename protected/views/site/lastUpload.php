@@ -65,13 +65,10 @@
                     var LR = 0;
                     if ( hereVal > newVal ) {
                         LR = hereVal - newVal;
-                        $('#cats').animate({
-                            left: '-='+LR }, {duration: 'fast'});
+                        $('.slider').scrollLeft(hereVal-LR);
                     } else if ( newVal > hereVal ) {
                         LR = newVal - hereVal;
-                        $('#cats').animate({
-                            right: '+='+LR
-                        }, {duration: 'fast'});
+                        $('.slider').scrollLeft(hereVal+LR);
                     }
                     $('#theater').html(e.pageX +', '+ e.pageY + ', ' + LR);
 
