@@ -49,25 +49,33 @@
             $('.slider').css("overflow",'scroll').css('-webkit-overflow-scrolling','touch');
             m = true;
         }
-
+        var imageTotal = $('img').length;
+        var imageCount = 0;
         var divWidthShow = 0;
-        var lastID = $('.PhotoImg').length - 1;
-        $('.PhotoImg').each(function(i){
-            imgLoad(this, function(img) {
-                $(img).fadeIn();
-                if ( m == true ) {
-                    divWidthShow += $(img).width() +8;
-                } else {
-                    divWidthShow += $(img).width() +30;
-                }
+        $('img').load(function(){
+            if (++imageCount == imageTotal) {
+                var lastID = $('.PhotoImg').length - 1;
+                $('.PhotoImg').each(function(i){
+                    imgLoad(this, function(img) {
+                        $(img).fadeIn();
+                        if ( m == true ) {
+                            divWidthShow += $(img).width() +8;
+                        } else {
+                            divWidthShow += $(img).width() +30;
+                        }
 
-                console.log($(img).width());
-                if (i == lastID) {
-                    console.log(divWidthShow);
-                    $(".cats").css('width',divWidthShow+"px");
-                }
-            });
+                        console.log($(img).width());
+                        if (i == lastID) {
+                            console.log(divWidthShow);
+                            $(".cats").css('width',divWidthShow+"px");
+                        }
+                    });
+                });
+            }
         });
+
+
+
 
         var clicker = false;
         var hereVal = 0;
