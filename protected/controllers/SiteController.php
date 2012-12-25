@@ -62,6 +62,7 @@ class SiteController extends Controller
         else
         {
             $f = $_POST['filter'];
+            $capPhoto = $_POST['capPhoto'];
             $min_rand=rand(0,1000);
             $max_rand=rand(100000000000,10000000000000000);
             $name_file=rand($min_rand,$max_rand);//this part is for creating random name for image
@@ -156,6 +157,15 @@ class SiteController extends Controller
             $photo->ip = $_SERVER['REMOTE_ADDR'];
             if ($photo->save()) {
                 $id = $photo->id;
+
+                $cr =   "\n"."http://www.pla2gram.com/?p=".$id."&theater=1";
+                $capFB = $capPhoto . $cr;
+                Helper::debugConsole("set fb ok");
+                // Post to Facebook
+                $args = array('message' => $capFB );
+                $args['image'] = '@' . realpath($file);
+                Yii::app()->facebook->api('/me/photos', 'post', $args);
+
                 Helper::redir("/?p=".$id,0);
             } else {
                 print_r($photo->getErrors());
