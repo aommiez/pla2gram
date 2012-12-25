@@ -169,8 +169,10 @@ class SiteController extends Controller
                     $args = array('message' => $capFB );
                     $args['image'] = '@' . realpath($file);
                     Yii::app()->facebook->api('/me/photos', 'post', $args);
+                    Helper::redir("/?p=".$id,0);
+                } else {
+                    Helper::redir("/?p=".$id,0);
                 }
-                Helper::redir("/?p=".$id,0);
             } else {
                 print_r($photo->getErrors());
             }
