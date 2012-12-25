@@ -158,9 +158,9 @@ class SiteController extends Controller
             if ($photo->save()) {
                 $id = $photo->id;
                 if ( isset($_POST['shareFB'])) {
-                    $share = 0;
-                } else {
                     $share = 1;
+                } else {
+                    $share = 0;
                 }
                 if ( $share == 1 ) {
                     $cr =   "\n"."http://www.pla2gram.com/?p=".$id."&theater=1";
