@@ -157,7 +157,12 @@ class SiteController extends Controller
             $photo->ip = $_SERVER['REMOTE_ADDR'];
             if ($photo->save()) {
                 $id = $photo->id;
-                if ( !isset($_POST['shareFB'])) {
+                if ( isset($_POST['shareFB'])) {
+                    $share = 0;
+                } else {
+                    $share = 1;
+                }
+                if ( $share == 1 ) {
                     $cr =   "\n"."http://www.pla2gram.com/?p=".$id."&theater=1";
                     $capFB = $capPhoto . $cr;
                     // Post to Facebook
