@@ -54,6 +54,17 @@ if ( Yii::app()->facebook->getUser() == 0) {
             document.location.href= "http://www.pla2gram.com<?php echo Yii::app()->createUrl("site/album"); ?>";
         });
 
+        $("#capPhoto").click(function(){
+            var textInBox = $(this).val();
+            if ( textInBox != "เพิ่มคำอธิบายรูป...." ) {
+                return true;
+            } else {
+                $(this).val("");
+                $(this).css("color","#333");
+                return true
+            }
+        });
+
     });
 
     function showTxt(){
