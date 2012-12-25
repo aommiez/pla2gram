@@ -74,12 +74,7 @@ class Instagraph
         $args[1] = 100 - $level;
         $negate = $type == 0? '-negate': '';
 
-        $this->execute("convert 
-        {$input} 
-        ( -clone 0 -fill $color -colorize 100% ) 
-        ( -clone 0 -colorspace gray $negate ) 
-        -compose blend -define compose:args=$args[0],$args[1] -composite 
-        {$input}");
+        $this->execute("convert {$input} -clone 0 -fill $color -colorize 100%  -clone 0 -colorspace gray $negate -compose blend -define compose:args=$args[0],$args[1] -composite {$input}");
     }
 
     public function border($input, $color = 'black', $width = 20)
@@ -137,8 +132,8 @@ class Instagraph
     {
         $this->tempfile();
         
-        //$this->colortone($this->_tmp, '#222b6d', 100, 0);
-        //$this->colortone($this->_tmp, '#f7daae', 100, 1);
+        $this->colortone($this->_tmp, '#222b6d', 100, 0);
+        $this->colortone($this->_tmp, '#f7daae', 100, 1);
         
         $this->execute("convert $this->_tmp -contrast -modulate 100,150,100 -auto-gamma $this->_tmp");
         $this->frame($this->_tmp, __FUNCTION__);
