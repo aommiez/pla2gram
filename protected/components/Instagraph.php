@@ -137,7 +137,7 @@ class Instagraph
     {
         $this->tempfile();
         
-        $this->colortone($this->_tmp, '#222b6d', 100, 0);
+        //$this->colortone($this->_tmp, '#222b6d', 100, 0);
         $this->colortone($this->_tmp, '#f7daae', 100, 1);
         
         $this->execute("convert $this->_tmp -contrast -modulate 100,150,100 -auto-gamma $this->_tmp");
