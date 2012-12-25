@@ -181,6 +181,8 @@ class SiteController extends Controller
     }
 
     public function actiongoPhotoFB(){
+        ignore_user_abort(1);
+        set_time_limit(0);
         $urlPhoto = $_POST['urlPhoto'];
         $f = $_POST['filter'];
         $capPhoto = $_POST['capPhoto'];
