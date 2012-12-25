@@ -253,7 +253,7 @@ class SiteController extends Controller
 
     }
 
-    public function fbUploadDemo(){
+    public function actionfbUploadDemo(){
         // Post to Facebook
         $args = array('message' => "test" );
         $args['image'] = '@' . realpath("photo/1412192065970630.jpg");
