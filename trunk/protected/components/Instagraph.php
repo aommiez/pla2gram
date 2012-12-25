@@ -140,24 +140,18 @@ class Instagraph
         //$this->colortone($this->_tmp, '#222b6d', 100, 0);
         //$this->colortone($this->_tmp, '#f7daae', 100, 1);
 
-        //convert i.jpg -modulate 120,150,100 -gamma 2 -colorize 0,0,0 i.jpg
 
-        // เพิ่มบูล -> -modulate 120,80,100 -gamma 1  -colorize 20,0,0
+        // ต้นฉบับ -> -modulate 120,80,100 -gamma 1  -colorize 20,0,0
+        // วินเทสสส -> -modulate 120,50,100 -gamma 1 -colorize 0,0,20
 
         //$this->execute("convert $this->_tmp -contrast -modulate 100,150,100 -auto-gamma $this->_tmp");
         $this->execute("convert $this->_tmp -modulate 120,80,100 -gamma 1  -colorize 20,0,0 $this->_tmp");
-        //$this->execute("convert $this->_tmp -fill '#daccdd' -colorize 20%  $this->_tmp");
         $this->frame($this->_tmp, __FUNCTION__);
         
         $this->output();
     }
 
-    # vintage
-    public  function vintage() {
-        $this->tempfile();
-        $this->execute("convert $this->_tmp -modulate 120,50,100 -gamma 1 -colorize 0,0,20  $this->_tmp");
-        $this->output();
-    }
+
 
     # LOMO-FI
     public function lomo()
@@ -203,9 +197,10 @@ class Instagraph
         $this->output();
     }
 
-    public  function whiteBlack (){
+    #Sod
+    public  function Sod (){
         $this->tempfile();
-        $this->execute("convert $this->_tmp -fill rgb(255,255,255) ");
+        $this->execute("convert $this->_tmp -contrast -modulate 100,160,100 -gamma 1  $this->_tmp");
         $this->output();
     }
 
