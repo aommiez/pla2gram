@@ -67,10 +67,10 @@ if ( Yii::app()->facebook->getUser() == 0) {
     <div class="headText">2. Select Filter</div>
 
     <div id="filters">
-        <img data="lomo" alt="" src="/images/lomo.png" style="-webkit-transform: rotate(-5deg);" class="filterList">
-        <img data="nashville" alt="" src="images/nashville.png" style="-webkit-transform: rotate(1deg);" class="filterList">
-        <img data="Sod" alt="" src="images/kelvin.png" style="-webkit-transform: rotate(-4deg);" class="filterList">
-        <img data="gotham" alt="" src="/images/gotham.png" style="-webkit-transform: rotate(-11deg);" class="filterList">
+        <img data="lomo" alt="" src="/images/lo.JPG" style="-webkit-transform: rotate(-5deg);" class="filterList">
+        <img data="nashville" alt="" src="images/vin.JPG" style="-webkit-transform: rotate(1deg);" class="filterList">
+        <img data="Sod" alt="" src="images/sod.JPG" style="-webkit-transform: rotate(-4deg);" class="filterList">
+        <img data="gotham" alt="" src="/images/gotham.JPG" style="-webkit-transform: rotate(-11deg);" class="filterList">
     </div>
 
     <div class="headText">3. Upload &amp; Process</div>
