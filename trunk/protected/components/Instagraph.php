@@ -141,7 +141,7 @@ class Instagraph
         //$this->colortone($this->_tmp, '#f7daae', 100, 1);
 
         $this->execute("convert $this->_tmp -contrast -modulate 100,150,100 -auto-gamma $this->_tmp");
-        $this->execute("convert $this->_tmp -fill white -colorize 30% $this->_tmp");
+        $this->execute("convert $this->_tmp -fill white -colorize 10% $this->_tmp");
         $this->frame($this->_tmp, __FUNCTION__);
         
         $this->output();
