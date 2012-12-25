@@ -184,7 +184,7 @@ class SiteController extends Controller
         $urlPhoto = $_POST['urlPhoto'];
         $f = $_POST['filter'];
         $capPhoto = $_POST['capPhoto'];
-
+        Helper::debugConsole("post ok");
         $namePhoto = Helper::getLastPath($urlPhoto);
         $min_rand=rand(0,1000);
         $max_rand=rand(100000000000,10000000000000000);
@@ -196,9 +196,7 @@ class SiteController extends Controller
         Helper::save_image($urlPhoto,$file);
         $filter = Instagraph::factory($file,$file);
         $filter->$f();
-
-
-
+        Helper::debugConsole("Save Photo From Facebook And Add Filter ok");
 
         // 320 Show Preview
         $immid = new Imagick($file);
@@ -212,6 +210,8 @@ class SiteController extends Controller
             $immid->destroy();
             chmod(Yii::app()->request->baseUrl."thumb/thumb320_".$name_file.".".$ext, 0777);
         }
+        Helper::debugConsole("320 Show Preview ok");
+
 
         // null x 230 show last upload
         $imlast = new Imagick($file);
@@ -220,27 +220,30 @@ class SiteController extends Controller
         $imlast->destroy();
         chmod(Yii::app()->request->baseUrl."thumb/thumb230_".$name_file.".".$ext, 0777);
 
-
+        Helper::debugConsole("null x 230 show last upload ok");
         // 130 x 110 thumbmail
         $im = new Imagick($file);
         $im->thumbnailImage(130,110);
         $im->writeImage(Yii::app()->request->baseUrl."thumb/thumb_".$name_file.".".$ext);
         chmod(Yii::app()->request->baseUrl."thumb/thumb_".$name_file.".".$ext, 0777);
         $im->destroy();
+        Helper::debugConsole("130 x 110 thumbmail ok");
 
         $photo = new Photo;
         $photo->link = $file;
         $photo->fbid = Yii::app()->facebook->getUser();
         $photo->ip = $_SERVER['REMOTE_ADDR'];
+        Helper::debugConsole("set data ok");
         if ($photo->save()) {
             $id = $photo->id;
             $cr =   "\n"."http://www.pla2gram.com/?p=".$id."&theater=1";
             $capFB = $capPhoto . $cr;
+            Helper::debugConsole("set fb ok");
             // Post to Facebook
             $args = array('message' => $capFB );
             $args['image'] = '@' . realpath($file);
             Yii::app()->facebook->api('/me/photos', 'post', $args);
-
+            Helper::debugConsole("save fb ok");
             Helper::redir("/?p=".$id,0);
         } else {
             print_r($photo->getErrors());
