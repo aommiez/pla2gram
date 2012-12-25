@@ -94,7 +94,7 @@ if ( Yii::app()->facebook->getUser() == 0) {
     </div>
 
     <div class="headText">3. Upload &amp; Process</div>
-    <input type="checkbox" name="shareFB" value="shareFB"> I have a bike<br>
+    <input type="checkbox" name="shareFB" value="shareFB" checked> <span style="color: #f2f2f2;font-size: 14px;">Share with Facebook </span><br>
     <button class="button" type="submit">Go!</button>
 
 </form>
