@@ -53,11 +53,13 @@ if ( Yii::app()->facebook->getUser() == 0) {
             event.preventDefault();
             document.location.href= "http://www.pla2gram.com<?php echo Yii::app()->createUrl("site/album"); ?>";
         });
-        function showTxt(){
-            $("#capPhoto").show();
-            $("#file").css('width','300px');
-        }
+
     });
+
+    function showTxt(){
+        $("#capPhoto").show();
+        $("#file").css('width','300px');
+    }
 </script>
 <style>
     #capPhoto {
@@ -66,7 +68,6 @@ if ( Yii::app()->facebook->getUser() == 0) {
         border: 1px solid #CCC;
         line-height: 130%;
         font-size: 13px;
-        display: block;
         width: 320px;
         resize: none;
         color: gray;
@@ -79,7 +80,7 @@ if ( Yii::app()->facebook->getUser() == 0) {
 
     <div class="headText">1. Select Image</div>
 
-    <button id="albumFB">Choose from Album</button> <input type="file" id="file" name="file" value="" class="upload" onchange="showTxt();" >
+    <button id="albumFB">Choose from Album</button> <input type="file" id="file" name="file" value="" class="upload" onchange="showTxt()" >
     <textarea name="capPhoto" id="capPhoto">เพิ่มคำอธิบายรูป....</textarea>
 
     <div class="headText">2. Select Filter</div>
