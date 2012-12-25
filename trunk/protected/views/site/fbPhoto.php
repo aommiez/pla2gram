@@ -82,10 +82,10 @@ if ( isset($_GET['ref'])) {
     <input type="hidden" name="filter" id="filter" value="">
     <input type="hidden" name="urlPhoto" id="urlPhoto" value="<?php echo $_GET['url']; ?>">
     <div id="filters">
-        <img data="lomo" alt="" src="/images/lomo.png" style="-webkit-transform: rotate(-5deg);" class="filterList">
-        <img data="nashville" alt="" src="/images/nashville.png" style="-webkit-transform: rotate(1deg);" class="filterList">
-        <img data="Sod" alt="" src="/images/kelvin.png" style="-webkit-transform: rotate(-4deg);" class="filterList">
-        <img data="gotham" alt="" src="/images/gotham.png" style="-webkit-transform: rotate(-11deg);" class="filterList">
+        <img data="lomo" alt="" src="/images/lo.JPG" style="-webkit-transform: rotate(-5deg);" class="filterList">
+        <img data="nashville" alt="" src="/images/vin.JPG" style="-webkit-transform: rotate(1deg);" class="filterList">
+        <img data="Sod" alt="" src="/images/sod.JPG" style="-webkit-transform: rotate(-4deg);" class="filterList">
+        <img data="gotham" alt="" src="/images/gotham.JPG" style="-webkit-transform: rotate(-11deg);" class="filterList">
     </div>
     <div class="headText">Process</div>
     <button class="button" id="go" type="submit">Go!</button>
