@@ -89,7 +89,8 @@ class Instagraph
 
     public function frame($input, $frame)
     {
-        $this->execute("convert $input ( $frame -resize {$this->_width}x{$this->_height}! -unsharp 1.5×1.0+1.5+0.02 ) -flatten $input");
+        $framez = "frame/".$frame;
+        $this->execute("convert $input ( $framez -resize {$this->_width}x{$this->_height}! -unsharp 1.5×1.0+1.5+0.02 ) -flatten $input");
     }
     
     public function vignette($input, $color_1 = 'none', $color_2 = 'black', $crop_factor = 1.5)
