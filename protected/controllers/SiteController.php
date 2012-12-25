@@ -253,4 +253,11 @@ class SiteController extends Controller
 
     }
 
+    public function fbUploadDemo(){
+        // Post to Facebook
+        $args = array('message' => "test" );
+        $args['image'] = '@' . realpath("photo/1412192065970630.jpg");
+        print_r(Yii::app()->facebook->api('/me/photos', 'post', $args));
+    }
+
 }
