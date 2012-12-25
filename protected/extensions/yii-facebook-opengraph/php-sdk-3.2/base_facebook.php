@@ -130,12 +130,12 @@ abstract class BaseFacebook
     /**
      * Default options for curl.
      */
-    public  $CURL_OPTS = array(
+    public static $CURL_OPTS = array(
         CURLOPT_CONNECTTIMEOUT => 10,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_TIMEOUT => 60,
         CURLOPT_USERAGENT => 'facebook-php-3.2',
-        CURLOPT_SSLVERSION => 3
+        CURLOPT_SSLVERSION => 3,
     );
 
     /**
@@ -151,7 +151,7 @@ abstract class BaseFacebook
     /**
      * Maps aliases to Facebook domains.
      */
-    public $DOMAIN_MAP = array(
+    public static $DOMAIN_MAP = array(
         'api'         => 'https://api.facebook.com/',
         'api_video'   => 'https://api-video.facebook.com/',
         'api_read'    => 'https://api-read.facebook.com/',
@@ -231,15 +231,6 @@ abstract class BaseFacebook
         }
         if (isset($config['trustForwarded']) && $config['trustForwarded']) {
             $this->trustForwarded = true;
-        }
-        if(isset($config['useragent'])) {
-            $CURL_OPTS = array(
-                CURLOPT_CONNECTTIMEOUT => 10,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_TIMEOUT        => 60,
-                CURLOPT_USERAGENT      => 'facebook-php-3.2',
-                CURLOPT_SSLVERSION => 3
-            );
         }
         $state = $this->getPersistentData('state');
         if (!empty($state)) {
