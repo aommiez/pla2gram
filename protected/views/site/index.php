@@ -81,7 +81,7 @@ if ( Yii::app()->facebook->getUser() == 0) {
     <div class="headText">1. Select Image</div>
 
     <button id="albumFB">Choose from Album</button> <input type="file" id="file" name="file" value="" class="upload" onchange="showTxt()" >
-    <div>
+    <div style="padding-top: 12px;">
     <textarea name="capPhoto" id="capPhoto">เพิ่มคำอธิบายรูป....</textarea>
     </div>
     <div class="headText">2. Select Filter</div>
@@ -94,7 +94,7 @@ if ( Yii::app()->facebook->getUser() == 0) {
     </div>
 
     <div class="headText">3. Upload &amp; Process</div>
-
+    <input type="checkbox" name="shareFB" value="shareFB"> I have a bike<br>
     <button class="button" type="submit">Go!</button>
 
 </form>
