@@ -66,7 +66,6 @@ echo <<<HTML
         <div id="showDetail">
             <div>Photo By : {$name}</div>
             <div>Upload Time : {$timeCreate}</div>
-            <div class="fb-like" data-send="true" data-width="300" data-show-faces="true"></div>
         </div>
     </div>
 HTML;
