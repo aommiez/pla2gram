@@ -74,7 +74,12 @@ class Instagraph
         $args[1] = 100 - $level;
         $negate = $type == 0? '-negate': '';
 
-        $this->execute("convert {$input} -clone 0 -fill $color -colorize 100%  -clone 0 -colorspace gray $negate -compose blend -define compose:args=$args[0],$args[1] -composite {$input}");
+        $this->execute("convert
+        {$input}
+        ( -clone 0 -fill $color -colorize 100% )
+        ( -clone 0 -colorspace gray $negate )
+        -compose blend -define compose:args=$args[0],$args[1] -composite
+        {$input}");
     }
 
     public function border($input, $color = 'black', $width = 20)
