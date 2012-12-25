@@ -151,7 +151,14 @@ class Instagraph
         
         $this->output();
     }
-        
+
+    # vintage
+    public  function vintage() {
+        $this->tempfile();
+        $this->execute("convert $this->_tmp -modulate 120,50,100 -gamma 1 -colorize 0,0,20  $this->_tmp");
+        $this->output();
+    }
+
     # LOMO-FI
     public function lomo()
     {
