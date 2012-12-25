@@ -169,12 +169,14 @@ class Instagraph
     public function kelvin()
     {
         $this->tempfile();
-        
+        /*
         $this->execute("convert 
         ( $this->_tmp -auto-gamma -modulate 120,50,100 ) 
         ( -size {$this->_width}x{$this->_height} -fill rgba(255,153,0,0.5) -draw 'rectangle 0,0 {$this->_width},{$this->_height}' ) 
         -compose multiply 
         $this->_tmp");
+        */
+        $this->execute("convert $this->_tmp -modulate 120,80,100 -gamma 1  -colorize 0,0,20 $this->_tmp");
         $this->frame($this->_tmp, __FUNCTION__);
 
         $this->output();
