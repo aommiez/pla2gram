@@ -20,3 +20,14 @@ function imgLoad(img, completeCallback, errorCallback) {
         if (typeof errorCallback == "function") errorCallback();
     }
 }
+
+function clearSelection() {
+    var sel ;
+    if(document.selection && document.selection.empty){
+        document.selection.empty() ;
+    } else if(window.getSelection) {
+        sel=window.getSelection();
+        if(sel && sel.removeAllRanges)
+            sel.removeAllRanges() ;
+    }
+}
