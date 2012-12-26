@@ -271,9 +271,31 @@ class SiteController extends Controller
 
     public function actionfbUploadDemo(){
         // Post to Facebook
-        $args = array('message' => "test" );
-        $args['image'] = '@' . realpath("photo/1412192065970630.jpg");
-        print_r(Yii::app()->facebook->api('/me/photos', 'post', $args));
+        //$args = array('message' => "test" );
+        //$args['image'] = '@' . realpath("photo/1412192065970630.jpg");
+        //print_r(Yii::app()->facebook->api('/me/photos', 'post', $args));
+
+        //upload photo
+        $file = 'photo/1412192065970630.jpg';
+        $args = array(
+            'message' => 'Photo from application',
+        );
+        $user_id = Yii::app()->facebook->getUser();
+        $access_token = Yii::app()->facebook->getAccessToken();
+        $album_id = Yii::app()->facebook->api("/".$user_id."/albums/");
+        $args[basename($file)] = '@' . realpath($file);
+        $ch = curl_init();
+        $url = 'http://graph.facebook.com/'.$album_id.'/photos?access_token='.$access_token;
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $args);
+        $data = curl_exec($ch);
+        //returns the photo id
+        print_r(json_decode($data,true));
+
+
     }
 
 }
